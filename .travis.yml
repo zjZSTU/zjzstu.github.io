@@ -26,8 +26,8 @@ before_script:
 script:
   - pwd
   - hexo clean
-  - hexo algolia # 用于algolia搜集信息
   - hexo generate
+  - hexo algolia # 用于algolia搜集信息
 
 after_success:
   - sed -i'' "s~https://github.com/zjZSTU/zjzstu.github.com.git~https://${GITHUB_REPO_TOKEN}@github.com/zjZSTU/zjzstu.github.com.git~" _config.yml
