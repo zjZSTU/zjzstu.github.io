@@ -33,7 +33,7 @@ script:
   - hexo generate
 
 after_success:
-  - sed -i'' "s~https://github.com/zjZSTU/Hexo-Travis-CI-Test.git~https://${GITHUB_REPO_TOKEN}@github.com/zjZSTU/Hexo-Travis-CI-Test.git~" _config.yml
+  - sed -i'' "s~https://github.com/zjZSTU/zjzstu.github.com.git~https://${GITHUB_REPO_TOKEN}@github.com/zjZSTU/zjzstu.github.com.git~" _config.yml
   - hexo deploy
 
 # deploy:
