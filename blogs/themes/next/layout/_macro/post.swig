@@ -203,13 +203,13 @@
             </span>
           {% endif %}
 
-          <span id="busuanzi_container_page_pv">
+          <!-- <span id="busuanzi_container_page_pv">
             <span class="post-meta-divider">|</span>
             <span class="post-meta-item-icon">
               <i class="fa fa-eye"></i>
             </span>
             阅读量: <span id="busuanzi_value_page_pv"></span>次
-          </span>
+          </span> -->
 
           {% if not is_index and theme.busuanzi_count.enable and theme.busuanzi_count.post_views %}
             <span class="post-meta-divider">|</span>
