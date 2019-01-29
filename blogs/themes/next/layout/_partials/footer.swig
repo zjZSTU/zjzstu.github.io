@@ -41,7 +41,10 @@
 
   <span class="post-meta-divider">|</span>
   <span id="busuanzi_container_site_pv">
-    本站总访问量: <span id="busuanzi_value_site_pv"></span>次
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    总访问量: <span id="busuanzi_value_site_pv"></span>次
   </span>
 </div>
 

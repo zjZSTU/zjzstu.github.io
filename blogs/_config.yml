@@ -92,7 +92,7 @@ deploy:
   - type: git
     repo: https://github.com/zjZSTU/zjzstu.github.com.git
     branch: master
-  - type: leancloud_counter_security_sync
+  # - type: leancloud_counter_security_sync
   - type: baidu_url_submitter
 
 # abbrlink config
@@ -114,12 +114,12 @@ symbols_count_time:
   total_symbols: true
   total_time: true
 
-leancloud_counter_security:
-  enable_sync: true
-  app_id: 7710vwEq3TDMc7fW09CR4mxa-gzGzoHsz
-  app_key: EdjEcmyWJrk4M8q4OhRuvbBP
-  username: zhujian
-  password: zhujian123456
+# leancloud_counter_security:
+#   enable_sync: true
+#   app_id: 7710vwEq3TDMc7fW09CR4mxa-gzGzoHsz
+#   app_key: EdjEcmyWJrk4M8q4OhRuvbBP
+#   username: zhujian
+#   password: zhujian123456
 
 sitemap: 
   path: sitemap.xml
