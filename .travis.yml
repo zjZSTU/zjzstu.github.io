@@ -1,4 +1,4 @@
-dist: xenial # Ubuntu 16.04
+themes/next/dist: xenial # Ubuntu 16.04
 
 language: node_js
 
@@ -16,6 +16,8 @@ before_install:
 install:
   - cd ./blogs/
   - npm install
+  - git clone https://github.com/theme-next/theme-next-canvas-nest themes/next/source/lib/canvas-nest
+  - git clone https://github.com/theme-next/theme-next-algolia-instant-search themes/next/source/lib/algolia-instant-search
 
 # Notice: Replace 'YOUR NAME' and 'YOUR EMAIL'
 before_script:
