@@ -15,7 +15,6 @@ before_install:
 
 install:
   - cd ./blogs/
-  - mkdir themes
   - git clone https://github.com/zjZSTU/hexo-theme-next.git themes/next
   - git clone https://github.com/theme-next/theme-next-canvas-nest themes/next/source/lib/canvas-nest
   - git clone https://github.com/theme-next/theme-next-algolia-instant-search themes/next/source/lib/algolia-instant-search
