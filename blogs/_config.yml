@@ -90,10 +90,8 @@ theme: next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   - type: git
-    repo: 
-      github: https://github.com/zjZSTU/zjzstu.github.com.git,master
-      gitee: git@gitee.com:zjZSTU/zjzstu.gitee.io.git,master
-    # branch: master
+    repo: https://github.com/zjZSTU/zjzstu.github.com.git
+    branch: master
   # - type: leancloud_counter_security_sync
   - type: baidu_url_submitter
 
