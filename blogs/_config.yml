@@ -61,6 +61,7 @@ category_map:
   测试: test
   数学: maths
   文档: document
+  编程: programming
 tag_map:
   概率论: probability-theory
   统计学: statistics
