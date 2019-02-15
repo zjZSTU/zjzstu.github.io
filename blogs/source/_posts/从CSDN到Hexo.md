@@ -4,7 +4,6 @@ categories: 随笔
 tags: 编程
 abbrlink: 359e7c3c
 date: 2019-01-21 13:58:07
-top: 1
 ---
 
 最开始在`CSDN`上进行博客写作，到现在利用`Hexo`自建博客网站，中间还利用了`sphinx`生成文档
