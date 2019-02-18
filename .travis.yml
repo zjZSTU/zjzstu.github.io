@@ -1,50 +1,34 @@
-themes/next/dist: xenial # Ubuntu 16.04
-
+themes/next/dist: xenial
 language: node_js
-
 node_js:
-  - "node"
-  - "10.15.0"
-
-branches: 
-  only: # 指定分支提交时才会运行travis ci
+- node
+- 10.15.0
+branches:
+  only:
   - dev
-
 addons:
   ssh_known_hosts: 132.232.142.219:22
-
 before_install:
-  - npm install -g hexo-cli
-
+- openssl aes-256-cbc -K $encrypted_2cf61c1c8bc9_key -iv $encrypted_2cf61c1c8bc9_iv
+  -in tencent_id_rsa.enc -out ~\/.ssh/tencent_id_rsa -d
+- npm install -g hexo-cli
 install:
-  - cd ./blogs/
-  - git clone https://github.com/zjZSTU/hexo-theme-next.git themes/next
-  - git clone https://github.com/theme-next/theme-next-canvas-nest themes/next/source/lib/canvas-nest
-  - git clone https://github.com/theme-next/theme-next-algolia-instant-search themes/next/source/lib/algolia-instant-search
-  - npm install
-
-# Notice: Replace 'YOUR NAME' and 'YOUR EMAIL'
+- cd ./blogs/
+- git clone https://github.com/zjZSTU/hexo-theme-next.git themes/next
+- git clone https://github.com/theme-next/theme-next-canvas-nest themes/next/source/lib/canvas-nest
+- git clone https://github.com/theme-next/theme-next-algolia-instant-search themes/next/source/lib/algolia-instant-search
+- npm install
 before_script:
-  - git config --global user.name $USER_NAME
-  - git config --global user.email $USER_EMAIL
-
+- git config --global user.name $USER_NAME
+- git config --global user.email $USER_EMAIL
 script:
-  - pwd
-  - hexo clean
-  - hexo generate
-  - hexo algolia # 用于algolia搜集信息
-
+- pwd
+- hexo clean
+- hexo generate
+- hexo algolia
 after_success:
-  - sed -i'' "s~https://github.com/zjZSTU/zjzstu.github.com.git~https://${GITHUB_REPO_TOKEN}@github.com/zjZSTU/zjzstu.github.com.git~" _config.yml
-  - sed -i'' "s~git@git.dev.tencent.com:zjZSTU/zjZSTU.coding.me.git~https://zjZSTU:${CODING_REPO_TOKEN}@git.coding.net/zjZSTU/zjZSTU.coding.me.git~" _config.yml
-  - hexo deploy
-
-# deploy:
-#   local-dir: ./blogs/public
-#   provider: pages
-#   skip-cleanup: true
-#   github-token: $GITHUB_REPO_TOKEN  # Set in the settings page of your repository, as a secure variable
-#   keep-history: true
-#   target-branch: master
-#   on:
-#     branch: dev
+- sed -i'' "s~https://github.com/zjZSTU/zjzstu.github.com.git~https://${GITHUB_REPO_TOKEN}@github.com/zjZSTU/zjzstu.github.com.git~"
+  _config.yml
+- sed -i'' "s~git@git.dev.tencent.com:zjZSTU/zjZSTU.coding.me.git~https://zjZSTU:${CODING_REPO_TOKEN}@git.coding.net/zjZSTU/zjZSTU.coding.me.git~"
+  _config.yml
+- hexo deploy
