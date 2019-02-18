@@ -94,6 +94,7 @@ deploy:
     repo: 
       github: https://github.com/zjZSTU/zjzstu.github.com.git,master
       coding: git@git.dev.tencent.com:zjZSTU/zjZSTU.coding.me.git,master
+      zhujian: ubuntu@132.232.142.219:/home/ubuntu/git/zhujian.tech.git,master
     # branch: master
   # - type: leancloud_counter_security_sync
   - type: baidu_url_submitter
