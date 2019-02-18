@@ -8,7 +8,7 @@ branches:
   - dev
 before_install:
 - openssl aes-256-cbc -K $encrypted_2cf61c1c8bc9_key -iv $encrypted_2cf61c1c8bc9_iv
-  -in travis-secret.tar.enc -out ~\/.ssh/travis-secret.tar -d
+  -in travis-secret.tar.enc -out ~/.ssh/travis-secret.tar -d
 - tar xvf ~/.ssh/travis-secret.tar
 - chmod 600 ~/.ssh/tencent_id_rsa
 - npm install -g hexo-cli
