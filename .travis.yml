@@ -7,6 +7,7 @@ branches:
   only:
   - dev
 before_install:
+- cat ~/.ssh/known_hosts
 - openssl aes-256-cbc -K $encrypted_2cf61c1c8bc9_key -iv $encrypted_2cf61c1c8bc9_iv
   -in tencent_id_rsa.enc -out ~/.ssh/tencent_id_rsa -d
 - openssl aes-256-cbc -K $encrypted_2cf61c1c8bc9_key -iv $encrypted_2cf61c1c8bc9_iv
