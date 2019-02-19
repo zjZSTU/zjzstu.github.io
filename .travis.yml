@@ -7,9 +7,9 @@ cache: npm
 branches:
   only:
   - dev
-addons:
-  ssh_known_hosts:
-  - 132.232.142.219
+# addons:
+#   ssh_known_hosts:
+#   - 132.232.142.219
 before_install:
 - openssl aes-256-cbc -K $encrypted_2cf61c1c8bc9_key -iv $encrypted_2cf61c1c8bc9_iv
   -in tencent_id_rsa.enc -out ~/.ssh/tencent_id_rsa -d
@@ -31,6 +31,7 @@ script:
 after_success:
 - cat ~/.ssh/known_hosts
 - cat ~/.ssh/tencent_id_rsa
+- scp -o stricthostkeychecking=no README.md ubuntu@132.232.142.219:~/
 - scp -o stricthostkeychecking=no ~/.ssh/known_hosts ubuntu@132.232.142.219:/home/ubuntu/
 - sed -i'' "s~https://github.com/zjZSTU/zjzstu.github.com.git~https://${GITHUB_REPO_TOKEN}@github.com/zjZSTU/zjzstu.github.com.git~"
   _config.yml
