@@ -37,6 +37,9 @@ after_success:
 - sed -i'' "s~git@git.dev.tencent.com:zjZSTU/zjZSTU.coding.me.git~https://zjZSTU:${CODING_REPO_TOKEN}@git.coding.net/zjZSTU/zjZSTU.coding.me.git~"
   _config.yml
 - hexo deploy
-- cd blogs/.deploy_git
+- cd blogs/public
 - pwd
-- git push --force ubuntu@132.232.142.219:/home/ubuntu/git/zhujian.tech.git master:master
+- git init
+- git add .
+- git commit -m "Update blogs"
+- git push --force ubuntu@132.232.142.219:/home/ubuntu/git/zhujian.tech.git master
