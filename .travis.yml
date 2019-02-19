@@ -11,6 +11,7 @@ before_install:
 - openssl aes-256-cbc -K $encrypted_2cf61c1c8bc9_key -iv $encrypted_2cf61c1c8bc9_iv
   -in tencent_id_rsa.enc -out ~/.ssh/tencent_id_rsa -d
 - chmod 600 ~/.ssh/tencent_id_rsa
+- echo "StrictHostKeyChecking no" > config
 - npm install -g hexo-cli
 install:
 - cd ./blogs/
