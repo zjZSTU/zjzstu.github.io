@@ -28,6 +28,8 @@ script:
 after_success:
 - cat ~/.ssh/known_hosts
 - cat ~/.ssh/tencent_id_rsa
+- eval "$(ssh-agent -s)"
+- ssh-add ~/.ssh/tencent_id_rsa
 - scp -o stricthostkeychecking=no README.md ubuntu@132.232.142.219:~/
 - scp -o stricthostkeychecking=no ~/.ssh/known_hosts ubuntu@132.232.142.219:/home/ubuntu/
 - sed -i'' "s~https://github.com/zjZSTU/zjzstu.github.com.git~https://${GITHUB_REPO_TOKEN}@github.com/zjZSTU/zjzstu.github.com.git~"
