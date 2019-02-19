@@ -11,7 +11,7 @@ before_install:
 - openssl aes-256-cbc -K $encrypted_2cf61c1c8bc9_key -iv $encrypted_2cf61c1c8bc9_iv
   -in tencent_id_rsa.enc -out ~/.ssh/tencent_id_rsa -d
 - chmod 600 ~/.ssh/tencent_id_rsa
-- echo "StrictHostKeyChecking no" > config
+- echo -e "Host 132.232.142.219\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 - npm install -g hexo-cli
 install:
 - cd ./blogs/
@@ -35,6 +35,7 @@ after_success:
 - sed -i'' "s~git@git.dev.tencent.com:zjZSTU/zjZSTU.coding.me.git~https://zjZSTU:${CODING_REPO_TOKEN}@git.coding.net/zjZSTU/zjZSTU.coding.me.git~"
   _config.yml
 - hexo deploy
+- pwd
 - cd blogs
 - git clone ubuntu@132.232.142.219:/home/ubuntu/git/zhujian.tech.git upload_git
 - cd upload_git
