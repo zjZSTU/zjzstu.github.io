@@ -28,19 +28,16 @@ script:
 - hexo generate
 - hexo algolia
 after_success:
-- pwd
 - eval "$(ssh-agent -s)"
 - ssh-add ~/.ssh/tencent_id_rsa
 - git clone ubuntu@132.232.142.219:/home/ubuntu/git/zhujian.tech.git upload_git
 - cd upload_git
-- pwd
 - rm -rf !(.git)
 - cp -r ../public/* ./
 - git add .
 - git commit -m "Update blogs"
 - git push --force ubuntu@132.232.142.219:/home/ubuntu/git/zhujian.tech.git master
 - cd ..
-- pwd
 - sed -i'' "s~https://github.com/zjZSTU/zjzstu.github.com.git~https://${GITHUB_REPO_TOKEN}@github.com/zjZSTU/zjzstu.github.com.git~"
   _config.yml
 - sed -i'' "s~git@git.dev.tencent.com:zjZSTU/zjZSTU.coding.me.git~https://zjZSTU:${CODING_REPO_TOKEN}@git.coding.net/zjZSTU/zjZSTU.coding.me.git~"
