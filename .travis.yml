@@ -30,9 +30,11 @@ script:
 after_success:
 - eval "$(ssh-agent -s)"
 - ssh-add ~/.ssh/tencent_id_rsa
-- git clone ubuntu@132.232.142.219:/home/ubuntu/git/zhujian.tech.git upload_git
+# - git clone ubuntu@132.232.142.219:/home/ubuntu/git/zhujian.tech.git upload_git
+- mkdir upload_git
 - cd upload_git
-- rm -rf !(.git)
+- git init
+# - rm -rf !(.git)
 - cp -r ../public/* ./
 - git add .
 - git commit -m "Update blogs"
