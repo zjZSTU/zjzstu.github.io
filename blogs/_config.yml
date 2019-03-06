@@ -60,7 +60,7 @@ category_map:
   随笔: essay
   测试: test
   数学: maths
-  文档: document
+  一系列: series
   编程: programming
 tag_map:
   概率论: probability-theory
@@ -68,7 +68,8 @@ tag_map:
   数学: maths
   测试: test
   编程: programming
-  一系列: series
+  文档: document
+  软件工程: software-engineer
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
