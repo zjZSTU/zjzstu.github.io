@@ -32,7 +32,6 @@ script:
 after_success:
 - eval "$(ssh-agent -s)"
 - ssh-add ~/.ssh/tencent_id_rsa
-# - git clone ubuntu@132.232.142.219:/home/ubuntu/git/zhujian.tech.git upload_git
 - mkdir upload_git
 - cd upload_git
 - git init
@@ -40,7 +39,7 @@ after_success:
 - cp -r ../public/* ./
 - git add .
 - git commit -m "Update blogs"
-- git push --force ubuntu@132.232.142.219:/home/ubuntu/git/zhujian.tech.git master
+- git push --force git@132.232.142.219:/data/repositories/blogs.git master
 - cd ..
 - sed -i'' "s~https://github.com/zjZSTU/zjzstu.github.com.git~https://${GITHUB_REPO_TOKEN}@github.com/zjZSTU/zjzstu.github.com.git~"
   _config.yml
