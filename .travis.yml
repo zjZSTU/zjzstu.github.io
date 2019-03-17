@@ -35,7 +35,7 @@ after_success:
 - cp -r ../public/* ./
 - git add .
 - git commit -m "Update blogs"
-- git push --force git@132.232.142.219:/data/repositories/blogs.git master
+- git push --force git@148.70.133.9:/data/repositories/blogs.git master
 - cd ..
 - sed -i'' "s~https://github.com/zjZSTU/zjzstu.github.com.git~https://${GITHUB_REPO_TOKEN}@github.com/zjZSTU/zjzstu.github.com.git~"
   _config.yml
