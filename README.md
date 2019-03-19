@@ -2,6 +2,10 @@
 
 [![Build Status](https://travis-ci.org/zjZSTU/zjzstu.github.com.svg?branch=dev)](https://travis-ci.org/zjZSTU/zjzstu.github.com)
 
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
+
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+
 基于`Hexo`实现的个人网站 - https://www.zhujian.tech
 
 使用主题：[NexT](https://github.com/zjZSTU/hexo-theme-next)
