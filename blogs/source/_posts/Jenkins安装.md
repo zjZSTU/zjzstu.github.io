@@ -52,3 +52,19 @@ date: 2019-03-22 13:35:53
     This may also be found at: /home/ubuntu/.jenkins/secrets/initialAdminPassword
 
 *`Jetkins`需要安装额外插件，选择官方建议的插件进行安装*
+
+### 重新安装
+
+删除`home`目录下的`.jenkins`文件夹，重新执行命令即可
+
+### 登录失败
+
+参考：[jenkins忘记密码问题解决](https://blog.csdn.net/qq_38318622/article/details/79448018)
+
+忘记用户名，进入`~/.jenkins/users`，每个登录用户有一个专属文件夹，以`用户名+id`命名
+
+忘记密码，进入用户文件夹，修改`config.xml`文件，修改`<passwordHash>`属性为
+
+    #jbcrypt:$2a$10$MiIVR0rr/UhQBqT.bBq0QehTiQVqgNpUGyWW2nJObaVAM/2xSQdSq
+
+上面这个是密码`123456`的加密版本，重新启动`jenkins`即可
