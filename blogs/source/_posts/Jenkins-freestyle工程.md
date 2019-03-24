@@ -50,12 +50,14 @@ date: 2019-03-23 10:14:45
 
 当前测试脚本如下
 
-    # 输出信息
-    echo "hello jenkins"
-    # 当前路径
-    pwd
-    # 当前文件信息
-    ls -al
+```
+# 输出信息
+echo "hello jenkins"
+# 当前路径
+pwd
+# 当前文件信息
+ls -al
+```
 
 ## 构建
 
@@ -63,17 +65,19 @@ date: 2019-03-23 10:14:45
 
 点击本次构建，跳转到构建页面后选择左侧菜单栏`->Console Output`
 
-    。。。
-    。。。
-    [freestyle-test] $ /bin/sh -xe /tmp/jenkins191262132818038393.sh
-    + echo hello jenkins
-    hello jenkins
-    + pwd
-    /home/zj/.jenkins/workspace/freestyle-test
-    + ls -al
-    总用量 16
-    drwxrwxr-x 3 zj zj 4096 3月  23 15:16 .
-    drwxrwxr-x 4 zj zj 4096 3月  23 15:16 ..
-    drwxrwxr-x 8 zj zj 4096 3月  23 15:22 .git
-    -rw-rw-r-- 1 zj zj   19 3月  23 15:16 hi.txt
-    Finished: SUCCESS
+```
+。。。
+。。。
+[freestyle-test] $ /bin/sh -xe /tmp/jenkins191262132818038393.sh
++ echo hello jenkins
+hello jenkins
++ pwd
+/home/zj/.jenkins/workspace/freestyle-test
++ ls -al
+总用量 16
+drwxrwxr-x 3 zj zj 4096 3月  23 15:16 .
+drwxrwxr-x 4 zj zj 4096 3月  23 15:16 ..
+drwxrwxr-x 8 zj zj 4096 3月  23 15:22 .git
+-rw-rw-r-- 1 zj zj   19 3月  23 15:16 hi.txt
+Finished: SUCCESS
+```
