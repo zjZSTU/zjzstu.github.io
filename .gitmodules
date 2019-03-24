@@ -1,3 +1,4 @@
 [submodule "blogs/themes/next"]
 	path = blogs/themes/next
 	url = https://github.com/zjZSTU/hexo-theme-next.git
+	ignore = all
