@@ -9,6 +9,7 @@
     "ansi-regex": "^4.0.0",
     "balanced-match": "^1.0.0",
     "brace-expansion": "^1.1.11",
+    "clipboard": "^2.0.4",
     "code-point-at": "^1.1.0",
     "concat-map": "0.0.1",
     "console-control-strings": "^1.1.0",
