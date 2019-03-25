@@ -1,5 +1,5 @@
 ---
-title: Jenkins安装
+title: [Jenkins]安装
 categories: 构建
 tags: 自动化
 abbrlink: 5d15ec84
