@@ -14,6 +14,7 @@ before_install:
 - echo -e "Host 148.70.133.9\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 - npm install -g hexo-cli
 install:
+- git submodule foreach git pull
 - cd ./blogs/
 - git clone https://github.com/theme-next/theme-next-canvas-nest themes/next/source/lib/canvas-nest
 - git clone https://github.com/theme-next/theme-next-algolia-instant-search themes/next/source/lib/algolia-instant-search
