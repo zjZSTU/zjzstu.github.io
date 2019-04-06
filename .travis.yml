@@ -28,6 +28,7 @@ script:
 - hexo clean
 - hexo generate
 - hexo algolia
+- gulp
 after_success:
 - eval "$(ssh-agent -s)"
 - ssh-add ~/.ssh/tencent_id_rsa
