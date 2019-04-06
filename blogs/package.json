@@ -58,6 +58,7 @@
     "yallist": "^3.0.3"
   },
   "scripts": {
-    "gg": "hexo clean && hexo generate && gulp && hexo server"
+    "gg": "hexo clean && hexo generate && gulp && hexo server",
+    "gs": "hexo clean && hexo generate && gulp"
   }
 }
