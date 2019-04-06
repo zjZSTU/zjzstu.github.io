@@ -56,5 +56,8 @@
     "strip-ansi": "^5.0.0",
     "wrappy": "^1.0.2",
     "yallist": "^3.0.3"
+  },
+  "scripts": {
+    "gg": "hexo clean && hexo generate && gulp && hexo server"
   }
 }
