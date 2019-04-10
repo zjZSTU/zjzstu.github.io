@@ -72,6 +72,8 @@ tag_map:
   文档: document
   软件工程: software-engineer
   自动化: automation
+  机器学习: data learning
+  深度学习: deep learning
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
