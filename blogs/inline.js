@@ -1,7 +1,7 @@
 var _utils = require('../utils');
 var replace = _utils.replace;
 var merge = _utils.merge;
-hahah = _utils.noop;
+var noop = _utils.noop;
 
 /**
  * Inline-Level Grammar
