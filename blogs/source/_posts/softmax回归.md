@@ -9,7 +9,9 @@ abbrlink: 2626bec3
 date: 2019-04-23 14:23:20
 ---
 
-参考：[Softmax回归](http://ufldl.stanford.edu/wiki/index.php/Softmax%E5%9B%9E%E5%BD%92)
+参考：
+
+[Softmax回归](http://ufldl.stanford.edu/wiki/index.php/Softmax%E5%9B%9E%E5%BD%92)
 
 `softmax`回归常用于多分类问题，其输出可直接看成对类别的预测概率
 
@@ -341,7 +343,11 @@ $$
 =(-1)\cdot \frac{1}{m}\cdot X_{m\times n}^T \cdot (I_{m\times k} - Y_{m\times k})
 $$
 
-参考：[Softmax regression for Iris classification](https://www.kaggle.com/saksham219/softmax-regression-for-iris-classification)
+参考：
+
+[Softmax regression for Iris classification](https://www.kaggle.com/saksham219/softmax-regression-for-iris-classification)
+
+[Derivative of Softmax loss function](https://math.stackexchange.com/questions/945871/derivative-of-softmax-loss-function)
 
 上述计算的是输入单个数据时的评分、损失和求导，所以使用随机梯度下降法进行权重更新，分类
 
@@ -550,7 +556,7 @@ def compute_scores(W, b, X):
     return softmax(linear(X, W, b))
 
 
-def compute_loss(scores, indicator, W, b, lamb=1e-4):
+def compute_loss(scores, indicator, W, b, la=2e-4):
     """
     计算损失值
     :param scores: 大小为(m, n)
@@ -558,30 +564,29 @@ def compute_loss(scores, indicator, W, b, lamb=1e-4):
     :param W: (n, k)
     :return: (m,1)
     """
-    return -1 * np.sum(np.log(scores) * indicator, axis=1) + lamb / 2 * (np.sum(W ** 2) + b ** 2)
+    cost = -1 / scores.shape[0] * np.sum(np.log(scores) * indicator)
+    reg = la / 2 * (np.sum(W ** 2) + b ** 2)
+    return cost + reg
 
 
-def compute_gradient(indicator, scores, x, W, lamb=1e-4):
+def compute_gradient(scores, indicator, x, W, la=2e-4):
     """
     计算梯度
-    :param indicator: 大小为(m,k)
     :param scores: 大小为(m,k)
+    :param indicator: 大小为(m,k)
     :param x: 大小为(m,n)
     :param W: (n, k)
     :return: (n,k)
     """
-    return -1 * x.T.dot((indicator - scores)) + lamb * W
+    return -1 / scores.shape[0] * x.T.dot((indicator - scores)) + la * W
 
 
-def compute_accuracy(W, b, X, Y):
+def compute_accuracy(scores, Y):
     """
     计算精度
-    :param W: 大小为(n,k)
-    :param b: 大小为(1)
-    :param X: 大小为(m,n)
-    :param Y: 大小为(m,1)
+    :param scores: (m,k)
+    :param Y: (m,1)
     """
-    scores = compute_scores(W, b, X)
     res = np.dstack((np.argmax(scores, axis=1), Y.squeeze())).squeeze()
 
     return len(list(filter(lambda x: x[0] == x[1], res[:]))) / len(res)
@@ -596,7 +601,7 @@ def draw(res_list, title=None, xlabel=None):
     plt.show()
 
 
-def compute_gradient_descent(batch_size=8, epoches=2000, alpha=1e-4):
+def compute_gradient_descent(batch_size=8, epoches=2000, alpha=2e-4):
     x_train, x_test, y_train, y_test, y_train_indicator, y_test_indicator = load_data()
 
     n = x_train.shape[1]
@@ -607,35 +612,36 @@ def compute_gradient_descent(batch_size=8, epoches=2000, alpha=1e-4):
 
     loss_list = []
     accuracy_list = []
-    best_weight = None
-    best_accuracy = 0
-    range_list = np.arange(0, x_train.shape[0], step=batch_size)
+    bestW = None
+    bestA = 0
+    range_list = np.arange(0, x_train.shape[0] - batch_size, step=batch_size)
     for i in range(epoches):
         for j in range_list:
-            if j == range_list[-1]:
-                loss = compute_loss(scores, labels, W, b)[0]
-                loss_list.append(loss)
-
-                accuracy = compute_accuracy(W, b, x_train, y_train)
-                accuracy_list.append(accuracy)
-                if accuracy >= best_accuracy:
-                    best_accuracy = accuracy
-                    best_weight = W.copy()
-                break
             data = x_train[j:j + batch_size]
             labels = y_train_indicator[j:j + batch_size]
 
             # 计算分类概率
             scores = np.atleast_2d(compute_scores(W, b, data))
             # 更新梯度
-            tempW = W - alpha * compute_gradient(labels, scores, data, W)
+            tempW = W - alpha * compute_gradient(scores, labels, data, W)
             W = tempW
+
+            if j == range_list[-1]:
+                loss = compute_loss(scores, labels, W, b)
+                loss_list.append(loss)
+
+                accuracy = compute_accuracy(compute_scores(W, b, x_train), y_train)
+                accuracy_list.append(accuracy)
+                if accuracy >= bestA:
+                    bestA = accuracy
+                    bestW = W.copy()
+                break
 
     draw(loss_list, title='损失值')
     draw(accuracy_list, title='训练精度')
 
-    print(max(accuracy_list))
-    print(compute_accuracy(best_weight, b, x_test, y_test))
+    print(bestA)
+    print(compute_accuracy(compute_scores(bestW, b, x_test), y_test))
 
 
 if __name__ == '__main__':
@@ -646,9 +652,9 @@ if __name__ == '__main__':
 
 ```
 # 测试集精度
-0.975
+0.9916666666666667
 # 验证集精度
-0.9666666666666667
+0.9
 ```
 
 ## softmax回归和logistic回归
