@@ -9,6 +9,8 @@ abbrlink: 2626bec3
 date: 2019-04-23 14:23:20
 ---
 
+参考：[Softmax回归](http://ufldl.stanford.edu/wiki/index.php/Softmax%E5%9B%9E%E5%BD%92)
+
 `softmax`回归常用于多分类问题，其输出可直接看成对类别的预测概率
 
 假设对`k`类标签（`[1, 2, ..., k]`）进行分类，那么经过`softmax`回归计算后，输出一个`k`维向量，向量中每个值都代表对一个类别的预测概率
