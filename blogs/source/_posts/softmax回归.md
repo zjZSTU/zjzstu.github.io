@@ -327,7 +327,7 @@ $$
 
 ## 梯度下降
 
-权重$W$大小为$n\times k$，输入数据集大小为$m\times n$，输出数据集大小为$m\times k$
+权重$W$大小为$(n+1)\times k$，输入数据集大小为$m\times (n+1)$，输出数据集大小为$m\times k$
 
 矩阵求导如下：
 
@@ -340,7 +340,7 @@ $$
 ...\\ 
 (-1)\cdot\left[ 1\left\{y=k \right\} - p\left(y=k | x; \theta\right) \right]\cdot x
 \end{bmatrix}
-=(-1)\cdot \frac{1}{m}\cdot X_{m\times n}^T \cdot (I_{m\times k} - Y_{m\times k})
+=(-1)\cdot \frac{1}{m}\cdot X_{m\times n+1}^T \cdot (I_{m\times k} - Y_{m\times k})
 $$
 
 参考：
@@ -524,14 +524,14 @@ def load_data(shuffle=True, tsize=0.8):
     return x_train, x_test, y_train, y_test, y_train_indicator, y_test_indicator
 
 
-def linear(x, w, b):
+def linear(x, w):
     """
     线性操作
-    :param x: 大小为(m,n)
-    :param w: 大小为(k,n)
+    :param x: 大小为(m,n+1)
+    :param w: 大小为(n+1,k)
     :return: 大小为(m,k)
     """
-    return x.dot(w) + b
+    return x.dot(w)
 
 
 def softmax(x):
@@ -545,27 +545,26 @@ def softmax(x):
     return exps / np.atleast_2d(np.sum(exps, axis=1)).T
 
 
-def compute_scores(W, b, X):
+def compute_scores(X, W):
     """
     计算精度
-    :param X: 大小为(m,n)
-    :param W: 大小为(k,n)
-    :param b: 1
+    :param X: 大小为(m,n+1)
+    :param W: 大小为(n+1,k)
     :return: (m,k)
     """
-    return softmax(linear(X, W, b))
+    return softmax(linear(X, W))
 
 
-def compute_loss(scores, indicator, W, b, la=2e-4):
+def compute_loss(scores, indicator, W, la=2e-4):
     """
     计算损失值
-    :param scores: 大小为(m, n)
-    :param indicator: 大小为(m, n)
-    :param W: (n, k)
-    :return: (m,1)
+    :param scores: 大小为(m, k)
+    :param indicator: 大小为(m, k)
+    :param W: (n+1, k)
+    :return: (1)
     """
     cost = -1 / scores.shape[0] * np.sum(np.log(scores) * indicator)
-    reg = la / 2 * (np.sum(W ** 2) + b ** 2)
+    reg = la / 2 * np.sum(W ** 2)
     return cost + reg
 
 
@@ -574,9 +573,9 @@ def compute_gradient(scores, indicator, x, W, la=2e-4):
     计算梯度
     :param scores: 大小为(m,k)
     :param indicator: 大小为(m,k)
-    :param x: 大小为(m,n)
-    :param W: (n, k)
-    :return: (n,k)
+    :param x: 大小为(m,n+1)
+    :param W: (n+1, k)
+    :return: (n+1,k)
     """
     return -1 / scores.shape[0] * x.T.dot((indicator - scores)) + la * W
 
@@ -604,11 +603,12 @@ def draw(res_list, title=None, xlabel=None):
 def compute_gradient_descent(batch_size=8, epoches=2000, alpha=2e-4):
     x_train, x_test, y_train, y_test, y_train_indicator, y_test_indicator = load_data()
 
-    n = x_train.shape[1]
-    cates = y_train_indicator.shape[1]
-    # 初始化权重和添加偏置值
-    W = 0.01 * np.random.normal(loc=0.0, scale=1.0, size=(n, cates))
-    b = 0.01 * np.random.normal(loc=0.0, scale=1.0, size=1)
+    m, n = x_train.shape[:2]
+    k = y_train_indicator.shape[1]
+    # 初始化权重(n+1,k)
+    W = 0.01 * np.random.normal(loc=0.0, scale=1.0, size=(n + 1, k))
+    x_train = np.insert(x_train, 0, np.ones(m), axis=1)
+    x_test = np.insert(x_test, 0, np.ones(x_test.shape[0]), axis=1)
 
     loss_list = []
     accuracy_list = []
@@ -621,16 +621,16 @@ def compute_gradient_descent(batch_size=8, epoches=2000, alpha=2e-4):
             labels = y_train_indicator[j:j + batch_size]
 
             # 计算分类概率
-            scores = np.atleast_2d(compute_scores(W, b, data))
+            scores = np.atleast_2d(compute_scores(data, W))
             # 更新梯度
             tempW = W - alpha * compute_gradient(scores, labels, data, W)
             W = tempW
 
             if j == range_list[-1]:
-                loss = compute_loss(scores, labels, W, b)
+                loss = compute_loss(scores, labels, W)
                 loss_list.append(loss)
 
-                accuracy = compute_accuracy(compute_scores(W, b, x_train), y_train)
+                accuracy = compute_accuracy(compute_scores(x_train, W), y_train)
                 accuracy_list.append(accuracy)
                 if accuracy >= bestA:
                     bestA = accuracy
@@ -641,20 +641,20 @@ def compute_gradient_descent(batch_size=8, epoches=2000, alpha=2e-4):
     draw(accuracy_list, title='训练精度')
 
     print(bestA)
-    print(compute_accuracy(compute_scores(bestW, b, x_test), y_test))
+    print(compute_accuracy(compute_scores(x_test, bestW), y_test))
 
 
 if __name__ == '__main__':
     compute_gradient_descent(batch_size=8, epoches=100000)
 ```
 
-测试结果：
+训练10万次的最好训练结果以及对应的测试结果：
 
 ```
 # 测试集精度
-0.975
+0.9916666666666667
 # 验证集精度
-1.0
+0.9666666666666667
 ```
 
 ![](/imgs/softmax回归/numpy_softmax_loss.png)
