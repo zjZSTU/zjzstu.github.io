@@ -608,7 +608,7 @@ def compute_gradient_descent(batch_size=8, epoches=2000, alpha=2e-4):
     cates = y_train_indicator.shape[1]
     # 初始化权重和添加偏置值
     W = 0.01 * np.random.normal(loc=0.0, scale=1.0, size=(n, cates))
-    b = 1e-4 * np.random.normal(loc=0.0, scale=1.0, size=1)
+    b = 0.01 * np.random.normal(loc=0.0, scale=1.0, size=1)
 
     loss_list = []
     accuracy_list = []
@@ -652,10 +652,14 @@ if __name__ == '__main__':
 
 ```
 # 测试集精度
-0.9916666666666667
+0.975
 # 验证集精度
-0.9
+1.0
 ```
+
+![](/imgs/softmax回归/numpy_softmax_loss.png)
+
+![](/imgs/softmax回归/numpy_softmax_accuracy.png)
 
 ## softmax回归和logistic回归
 
