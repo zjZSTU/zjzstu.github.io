@@ -637,3 +637,180 @@ def compute_gradient_descent(batch_size=8, epoches=2000, alpha=2e-4):
 ![](/imgs/从numpy到pytorch实现softmax回归/pytorch_advanced_softmax_loss_v2.png)
 
 ![](/imgs/从numpy到pytorch实现softmax回归/pytorch_advanced_softmax_accuracy_v2.png)
+
+## `pytorch`实现 - 使用`TensorDataset`和`DataLoader`简化批量数据操作
+
+`pytorch.util.data`包提供了类`TensorDataset`和`DataLoader`，用于批量加载数据
+
+`TensorDataset`是一个数据集包装类；`DataLoader`是一个数据加载类，能够实现批量采样、数据打乱
+
+```
+# 包装数据集和标记
+dataset = TensorDataset(x_train, y_train)
+# 加载包装类，设置批量和打乱数据
+dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=True)
+# 获取批量数据个数
+batch_len = dataloader.__len__()
+# 依次获取批量数据
+for j, items in enumerate(dataloader, 0):
+    data, labels = items
+```
+
+完整代码如下：
+
+```
+import torch
+import torch.nn as nn
+import torch.optim as optim
+from torch.utils.data import TensorDataset
+from torch.utils.data import DataLoader
+import numpy as np
+from sklearn import utils
+import pandas as pd
+from sklearn.model_selection import train_test_split
+import matplotlib.pyplot as plt
+
+import warnings
+
+warnings.filterwarnings('ignore')
+
+data_path = '../data/iris-species/Iris.csv'
+
+
+def load_data(shuffle=True, tsize=0.8):
+    """
+    加载iris数据
+    """
+    data = pd.read_csv(data_path, header=0, delimiter=',')
+
+    if shuffle:
+        data = utils.shuffle(data)
+
+    species_dict = {
+        'Iris-setosa': 0,
+        'Iris-versicolor': 1,
+        'Iris-virginica': 2
+    }
+    data['Species'] = data['Species'].map(species_dict)
+
+    data_x = np.array(
+        [data['SepalLengthCm'], data['SepalWidthCm'], data['PetalLengthCm'], data['PetalWidthCm']]).T
+    data_y = data['Species']
+
+    x_train, x_test, y_train, y_test = train_test_split(data_x, data_y, train_size=tsize, test_size=(1 - tsize),
+                                                        shuffle=False)
+
+    y_train = np.atleast_2d(y_train).T
+    y_test = np.atleast_2d(y_test).T
+
+    return torch.from_numpy(x_train).float(), torch.from_numpy(x_test).float(), torch.from_numpy(
+        y_train), torch.from_numpy(y_test)
+
+
+def compute_accuracy(scores, Y):
+    """
+    计算精度
+    :param scores: (m,k)
+    :param Y: (m,1)
+    """
+    predictions = torch.argmax(scores, dim=1)
+    res = (predictions == Y.squeeze())
+    return 1.0 * torch.sum(res).item() / scores.size()[0]
+
+
+def draw(res_list, title=None, xlabel=None):
+    if title is not None:
+        plt.title(title)
+    if xlabel is not None:
+        plt.xlabel(xlabel)
+    plt.plot(res_list)
+    plt.show()
+
+
+class SoftmaxModule(nn.Module):
+
+    def __init__(self, inputs, outputs):
+        super(SoftmaxModule, self).__init__()
+        self.linear = nn.Linear(inputs, outputs)
+        self.softmax = nn.LogSoftmax()
+
+    def forward(self, input):
+        x = self.linear.forward(input)
+        x = self.softmax.forward(x)
+        return x
+
+    def getParameter(self):
+        return self.linear.weight, self.linear.bias
+
+    def setParameter(self, weight, bias):
+        self.linear.weight = nn.Parameter(weight)
+        self.linear.bias = nn.Parameter(bias)
+
+
+def compute_gradient_descent(batch_size=8, epoches=2000, alpha=2e-4):
+    x_train, x_test, y_train, y_test = load_data()
+
+    m, n = x_train.size()[:2]
+    k = 3
+    # print(m, n, k)
+
+    # softmax模型
+    module = SoftmaxModule(n, k)
+    # 损失函数
+    criterion = nn.CrossEntropyLoss()
+    # 优化器
+    optimizer = optim.SGD(module.parameters(), lr=alpha)
+
+    loss_list = []
+    accuracy_list = []
+    bestW = None
+    bestB = None
+    bestA = 0
+
+    dataset = TensorDataset(x_train, y_train)
+    dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=True)
+    batch_len = dataloader.__len__()
+    for i in range(epoches):
+        for j, items in enumerate(dataloader, 0):
+            data, labels = items
+
+            scores = module.forward(data)
+            loss = criterion(scores, labels.squeeze())
+            optimizer.zero_grad()
+            # 反向传播
+            loss.backward()
+            # 梯度更新
+            optimizer.step()
+
+            if j == (batch_len - 1):
+                loss_list.append(loss.item())
+                accuracy = compute_accuracy(module.forward(x_train), y_train)
+                accuracy_list.append(accuracy)
+                if accuracy >= bestA:
+                    bestA = accuracy
+                    bestW, bestB = module.getParameter()
+
+    draw(loss_list, title='损失值')
+    draw(accuracy_list, title='训练精度')
+
+    module.setParameter(bestW, bestB)
+    print(bestA)
+    print(compute_accuracy(module.forward(x_test), y_test))
+
+
+if __name__ == '__main__':
+    compute_gradient_descent(batch_size=8, epoches=50000)
+```
+
+测试结果：
+
+```
+# 测试集精度
+0.975
+# 验证集精度
+1.0
+```
+
+![](/imgs/从numpy到pytorch实现softmax回归/pytorch_advanced_softmax_loss_v3.png)
+
+![](/imgs/从numpy到pytorch实现softmax回归/pytorch_advanced_softmax_accuracy_v3.png)
