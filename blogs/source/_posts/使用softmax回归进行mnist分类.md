@@ -318,6 +318,8 @@ transform = transforms.Compose([
 ])
 ```
 
+**使用`ToTensor`进行`PIL Image`或`numpy.ndarray`格式图像转换，从通道（`H, W, C`）、取值（`0,255`）转换为通道（`C, H, W`）、取值（`0,1`）**
+
 最后将数据集载入`pytorch`提供的`DataLoader`，用于批量处理和数据打乱
 
 ```
