@@ -30,7 +30,6 @@ date: 2019-04-28 11:13:16
 先利用`numpy`获取`iris`数据，再转换`为torch.Tensor`结构
 
 ```
-    # 
     x_train, x_test, y_train, y_test, y_train_indicator = load_data()
     
     x_train = torch.FloatTensor(x_train)
@@ -331,7 +330,7 @@ if __name__ == '__main__':
 
 ![](/imgs/从numpy到pytorch实现softmax回归/pytorch_basic_softmax_accuracy.png)
 
-## `pytorch`实现 - 使用`nn`类优化`softmax`回归模型和损失函数
+## `pytorch`实现 - 使用`nn`包优化`softmax`回归模型和损失函数
 
 `pytorch`在包`nn`中提供了大量算法和损失函数实现，并且能够自动计算梯度
 
