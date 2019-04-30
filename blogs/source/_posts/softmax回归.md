@@ -661,6 +661,30 @@ if __name__ == '__main__':
 
 ![](/imgs/softmax回归/numpy_softmax_accuracy.png)
 
+### 指数计算 - 数值稳定性考虑
+
+参考：[Practical issues: Numeric stability.](http://cs231n.github.io/linear-classify/)
+
+在`softmax`回归中，需要利用指数函数$e^x$对线性操作的结果进行归一化，这有可能会造成数值溢出，常用的做法是对分数上下同乘以一个常数$C$
+
+$$
+\frac{e^{f_{i_{i}}}}{\sum_{j} e^{f_{j}}}=\frac{C e^{f_{y_{i}}}}{C \sum_{j} e^{f_{j}}}=\frac{e^{f_{i_{i}}+\log C}}{\sum_{j} e^{f_{j}+\log C}}
+$$
+
+这个操作不改变结果，如果取值$C$为线性操作结果最大值负数$\log C=-\max _{j} f_{j}$，就能够将向量$f$的取值范围降低，最大值为$0$，避免数值不稳定
+
+```
+def softmax(x):
+    """
+    softmax归一化计算
+    :param x: 大小为(m, k)
+    :return: 大小为(m, k)
+    """
+    x -= np.atleast_2d(np.max(x, axis=1)).T
+    exps = np.exp(x)
+    return exps / np.atleast_2d(np.sum(exps, axis=1)).T
+```
+
 ## softmax回归和logistic回归
 
 `softmax`回归是`logistic`回归在多分类任务上的扩展，将$k=2$时，`softmax`回归模型可转换成`logistic`回归模型
