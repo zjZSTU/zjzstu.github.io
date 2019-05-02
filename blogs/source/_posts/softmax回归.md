@@ -252,10 +252,7 @@ $$
 $$
 \frac{\varphi J(\theta)}{\varphi \theta_{s}}
 =(-1)\cdot \frac{1}{m}\cdot \sum_{i=1}^{m}\cdot \frac{\varphi }{\varphi \theta_{s}}
-\left[ \\
-\sum_{j=1,j\neq s}^{k} 1\left\{y_{i}=j \right\} \ln p\left(y_{i}=j | x_{i}; \theta\right)
-+1\left\{y_{i}=s \right\} \ln p\left(y_{i}=s | x_{i}; \theta\right) \\
-\right]
+\left[ \sum_{j=1,j\neq s}^{k} 1\left\{y_{i}=j \right\} \ln p\left(y_{i}=j | x_{i}; \theta\right)+1\left\{y_{i}=s \right\} \ln p\left(y_{i}=s | x_{i}; \theta\right) \right]
 $$
 
 $$
