@@ -60,5 +60,13 @@
   "scripts": {
     "gg": "hexo clean && hexo generate && gulp && hexo server",
     "gs": "hexo clean && hexo generate && gulp"
+  },
+  "devDependencies": {
+    "cz-conventional-changelog": "^2.1.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
