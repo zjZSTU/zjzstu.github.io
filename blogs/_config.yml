@@ -66,6 +66,8 @@ category_map:
 tag_map:
   概率论: probability-theory
   统计学: statistics
+  微积分: calculus
+  线性代数: linear-albegra
   数学: maths
   测试: test
   编程: programming
