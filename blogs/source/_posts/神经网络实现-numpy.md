@@ -949,17 +949,17 @@ class ThreeNet(object):
 
 ```
 # 批量大小
-batch_size = 32
+N = 120
 # 输入维数
 D = 4
 # 隐藏层大小
-H1 = 200
-H2 = 80
+H1 = 20
+H2 = 20
 # 输出类别
 K = 3
 
 # 学习率
-learning_rate = 2e-3
+learning_rate = 5e-2
 # 正则化强度
 lambda_rate = 1e-3
 ```
@@ -967,6 +967,11 @@ lambda_rate = 1e-3
 完整代码如下：
 
 ```
+# -*- coding: utf-8 -*-
+
+# @Time    : 19-5-18 下午2:23
+# @Author  : zj
+
 # -*- coding: utf-8 -*-
 
 # @Time    : 19-5-18 上午11:48
@@ -980,17 +985,17 @@ from sklearn import utils
 from sklearn.model_selection import train_test_split
 
 # 批量大小
-batch_size = 32
+N = 120
 # 输入维数
 D = 4
 # 隐藏层大小
-H1 = 200
-H2 = 80
+H1 = 20
+H2 = 20
 # 输出类别
 K = 3
 
 # 学习率
-learning_rate = 2e-3
+learning_rate = 5e-2
 # 正则化强度
 lambda_rate = 1e-3
 
@@ -1028,8 +1033,9 @@ def init_weights(inputs, outputs):
 
 
 class ThreeNet(object):
-    。。。
-    。。。
+    ...
+    ...
+
 
 def compute_loss(score, y):
     num = score.shape[0]
@@ -1067,30 +1073,24 @@ if __name__ == '__main__':
     accuracy_list = []
     bestA = 0
     best_net = None
-    range_list = np.arange(0, x_train.shape[0] - batch_size, step=batch_size)
-    for i in range(30000):
-        for j in range_list:
-            data = x_train[j:j + batch_size]
-            labels = y_train[j:j + batch_size]
+    for i in range(10000):
+        score = net.forward(x_train)
+        total_loss += compute_loss(score, y_train)
+        net.backward(y_train)
+        net.update()
 
-            score = net.forward(data)
-            total_loss += compute_loss(score, labels)
-            net.backward(labels)
-            net.update()
+        if i % 100 == 99:
+            avg_loss = total_loss / 100
+            print('epoch: %d loss: %.4f' % (i + 1, avg_loss))
+            loss_list.append(avg_loss)
+            total_loss = 0
 
-            if (i % 100 == 99) and (j == range_list[-1]):
-                avg_loss = total_loss / len(range_list) / 100
-                print('epoch: %d loss: %.4f' % (i + 1, avg_loss))
-                loss_list.append(avg_loss)
-                total_loss = 0
-
-                # 计算训练数据集检测精度
-                accuracy = compute_accuracy(net.forward(x_train), y_train)
-                accuracy_list.append(accuracy)
-                if accuracy >= bestA:
-                    bestA = accuracy
-                    best_net = net.__copy__()
-                break
+            # 计算训练数据集检测精度
+            accuracy = compute_accuracy(net.forward(x_train), y_train)
+            accuracy_list.append(accuracy)
+            if accuracy >= bestA:
+                bestA = accuracy
+                best_net = net.__copy__()
 
     draw(loss_list, 'iris数据集')
     draw(accuracy_list, '训练精度', '检测精度')
@@ -1101,12 +1101,20 @@ if __name__ == '__main__':
     print('test accuracy: %.2f %%' % (res * 100))
 ```
 
-训练`3`万次结果如下：
+训练`1`万次结果如下：
 
 ```
 best train accuracy: 98.33 %
 test accuracy: 100.00 %
 ```
+
+![](../imgs/神经网络实现-numpy/iris_loss.png)
+
+![](../imgs/神经网络实现-numpy/iris_accuracy.png)
+
+|       | softmax回归 | 神经网络 |
+|:-----:|:-----------:|:--------:|
+| iris  |    96.67%   |  98.33%  |
 
 ### mnist数据集
 
