@@ -34,7 +34,7 @@ date: 2019-05-17 13:24:43
 
 *`OneNet`就是逻辑回归模型*
 
-![](../imgs/神经网络实现-numpy/1-layer-network.png)
+![](/imgs/神经网络实现-numpy/1-layer-network.png)
 
 * $L=1$
 * $a^{(0)}\in R^{m\times 2}$
@@ -286,7 +286,7 @@ bias: [[-5.69865399 -5.69921649]]
 [1 1] 1 0.8136486739472225
 ```
 
-![](../imgs/神经网络实现-numpy/logical_and.png)
+![](/imgs/神经网络实现-numpy/logical_and.png)
 
 ### 逻辑或
 
@@ -330,7 +330,7 @@ bias: [[-1.87568775]]
 [1 1] 1 0.9993872646847757
 ```
 
-![](../imgs/神经网络实现-numpy/logical_or.png)
+![](/imgs/神经网络实现-numpy/logical_or.png)
 
 ### 逻辑非
 
@@ -369,7 +369,7 @@ bias: [[3.26280938]]
 [0] 1 0.9631306816639573
 ```
 
-![](../imgs/神经网络实现-numpy/logical_non.png)
+![](/imgs/神经网络实现-numpy/logical_non.png)
 
 ## 使用2层神经网络TwoNet实现逻辑异或分类
 
@@ -384,7 +384,7 @@ bias: [[3.26280938]]
 * 评分函数是`softmax`评分
 * 损失函数是交叉熵损失平凡
 
-![](../imgs/神经网络实现-numpy/two_layer_network.png)
+![](/imgs/神经网络实现-numpy/two_layer_network.png)
 
 * $a^{(0)}\in R^{N\times D}$
 * $W^{(1)}\in R^{D\times H}$
@@ -724,7 +724,7 @@ predict: [0 1 1 0]
 training accuracy: 100.00 %
 ```
 
-![](../imgs/神经网络实现-numpy/logical_xor.png)
+![](/imgs/神经网络实现-numpy/logical_xor.png)
 
 ## 使用3层神经网络ThreeNet实现iris数据集和mnist数据集分类
 
@@ -740,7 +740,7 @@ training accuracy: 100.00 %
 * 评分函数是`softmax`评分
 * 损失函数是交叉熵损失平凡
 
-![](../imgs/神经网络实现-numpy/three_layer_net.png)
+![](/imgs/神经网络实现-numpy/three_layer_net.png)
 
 * $a^{(0)}\in R^{N\times D}$
 * $W^{(1)}\in R^{D\times H1}$
@@ -1108,9 +1108,9 @@ best train accuracy: 98.33 %
 test accuracy: 100.00 %
 ```
 
-![](../imgs/神经网络实现-numpy/iris_loss.png)
+![](/imgs/神经网络实现-numpy/iris_loss.png)
 
-![](../imgs/神经网络实现-numpy/iris_accuracy.png)
+![](/imgs/神经网络实现-numpy/iris_accuracy.png)
 
 |       | softmax回归 | 神经网络 |
 |:-----:|:-----------:|:--------:|
@@ -1311,9 +1311,9 @@ best train accuracy: 100.00 %
 test accuracy: 97.92 %
 ```
 
-![](../imgs/神经网络实现-numpy/mnist_loss.png)
+![](/imgs/神经网络实现-numpy/mnist_loss.png)
 
-![](../imgs/神经网络实现-numpy/mnist_accuracy.png)
+![](/imgs/神经网络实现-numpy/mnist_accuracy.png)
 
 |       | softmax回归 | 神经网络 |
 |:-----:|:-----------:|:--------:|
