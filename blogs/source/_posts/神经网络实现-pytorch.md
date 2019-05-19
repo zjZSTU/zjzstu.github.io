@@ -19,6 +19,10 @@ date: 2019-05-18 15:01:30
 
 使用`pytorch`实现`3`层神经网络模型`ThreeNet`
 
+## 网络结构
+
+`ThreeNet`是一个`3`层神经网络，输入层大小为`784`，隐藏层大小分别为`200`和`60`，输出层大小为`10`，激活函数使用`relu`，评分函数使用`softmax`
+
 网络参数如下：
 
 ```
@@ -33,13 +37,93 @@ H2 = 60
 K = 10
 
 # 学习率
-learning_rate = 1e-3
+learning_rate = 1e-2
 
 # 迭代次数
 epoches = 500
 ```
 
-完整代码如下：
+网络定义如下：
+
+```
+class NNModule(nn.Module):
+
+    def __init__(self):
+        super(NNModule, self).__init__()
+        self.fc1 = nn.Linear(D, H1)
+        self.fc2 = nn.Linear(H1, H2)
+        self.fc3 = nn.Linear(H2, K)
+
+    def forward(self, input):
+        x = F.relu(self.fc1(input))
+        x = F.relu(self.fc2(x))
+        x = F.log_softmax(self.fc3(x))
+        return x
+
+    def __copy__(self, device):
+        module = NNModule().to(device=device)
+        module.fc1.weight = copy.deepcopy(self.fc1.weight)
+        module.fc1.bias = copy.deepcopy(self.fc1.bias)
+
+        module.fc2.weight = copy.deepcopy(self.fc2.weight)
+        module.fc2.bias = copy.deepcopy(self.fc2.bias)
+
+        module.fc3.weight = copy.deepcopy(self.fc3.weight)
+        module.fc3.bias = copy.deepcopy(self.fc3.bias)
+
+        return module
+```
+
+## mnist数据
+
+`pytorch`的`torchvision`模块内置了`MNIST`类，用于下载`mnist`数据集`
+
+利用`torchvision.transforms`将数据转换为`Tensor`结构并进行初始化
+
+```
+transform = transforms.Compose([
+    transforms.Grayscale(),
+    transforms.ToTensor(),
+    transforms.Normalize(mean=(0.5,), std=(0.5,))
+])
+```
+
+* `Grayscale()`将`PIL`图像转换为灰度图像
+
+* `ToTensor()`将`PIL`图像或`numpy.ndarray`数据转换为`tensor`，将原先$(H\times W\times C)$通道转换成$(C\times H\times W)$，同时将取值范围`[0,255]`压缩到`[0.0, 1.0]`
+
+* `Normalize()`对数据进行归一化，均值为`0.5`，标准差为`0.5`
+
+$$
+y = \frac {x-mean}{std}
+$$
+
+利用`torch.utils.data.DataLoader`保存数据，方便打乱和批量加载
+
+代码如下：
+
+```
+def load_data(batch_size=128, shuffle=False):
+    data_dir = '../data/'
+
+    transform = transforms.Compose([
+        transforms.Grayscale(),
+        transforms.ToTensor(),
+        transforms.Normalize(mean=(0.5,), std=(0.5,))
+    ])
+
+    train_data_set = datasets.MNIST(root=data_dir, train=True, download=True, transform=transform)
+    test_data_set = datasets.MNIST(root=data_dir, train=False, download=True, transform=transform)
+
+    train_loader = DataLoader(train_data_set, batch_size=batch_size, shuffle=shuffle)
+    test_loader = DataLoader(test_data_set, batch_size=batch_size, shuffle=shuffle)
+
+    return train_loader, test_loader
+```
+
+## pytorch实现
+
+完整代码如下，实现`pytorch gpu`训练
 
 ```
 # -*- coding: utf-8 -*-
@@ -73,7 +157,7 @@ H2 = 60
 K = 10
 
 # 学习率
-learning_rate = 1e-3
+learning_rate = 1e-2
 
 # 迭代次数
 epoches = 500
@@ -227,3 +311,34 @@ all train and test need time: 71.90 minutes
 ![](/imgs/神经网络实现-pytorch/mnist_loss.png)
 
 ![](/imgs/神经网络实现-pytorch/mnist_accuracy.png)
+
+## softmax/log_softmax和NLLLoss/CrossEntropyLoss
+
+`pytorch`提供了多种`softmax`评分以及损失函数
+
+### 评分函数
+
+1. [torch.nn.Softmax](https://pytorch.org/docs/stable/nn.html?highlight=softmax#torch.nn.Softmax)：标准的`softmax`评分函数，在官网中提示了`LogSoftmax`有更快和更好的数值属性
+
+    $$
+    \text{Softmax}(x_{i}) = \frac{\exp(x_i)}{\sum_j \exp(x_j)}
+    $$
+
+        This module doesn’t work directly with NLLLoss, which expects the Log to be computed between the Softmax and itself. 
+        Use LogSoftmax instead (it’s faster and has better numerical properties).
+2. [torch.nn.LogSoftmax](https://pytorch.org/docs/stable/nn.html#logsoftmax)：在$Softmax(x)$的基础上添加了对数运算
+
+    $$
+    \text{LogSoftmax}(x_{i}) = \log\left(\frac{\exp(x_i) }{ \sum_j \exp(x_j)} \right)
+    $$
+
+### 损失函数
+
+1. [torch.nn.CrossEntropyLoss](https://pytorch.org/docs/stable/nn.html#torch.nn.CrossEntropyLoss)：结合了$nn.LogSoftmax()$和$nn.NLLLoss()$操作
+
+2. [torch.nn.NLLLoss](https://pytorch.org/docs/stable/nn.html#nllloss)：负对数似然损失（`negative log likelihood loss`）
+
+### 组合使用
+
+所以得到隐藏层输出向量后，使用$nn.CrossEntropyLoss$或者$nn.LogSoftmax+nn.NLLLoss$就能够实现损失值的计算，如果想要输出评分值，那么使用$nn.Softmax$
+
