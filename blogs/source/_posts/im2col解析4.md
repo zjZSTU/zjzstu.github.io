@@ -17,10 +17,10 @@ date: 2019-05-25 20:31:41
 ## 实现代码
 
 ```
-def convert_conv_to_fc(input, filter_size=3, stride=1, padding=0):
+def convert_conv_to_fc(input, filter_height=3, filter_width=3, stride=1, padding=0):
     input_padded = np.pad(input, ((0, 0), (0, 0), (padding, padding), (padding, padding)),
                           'constant', constant_values=(0, 0))
-    # 批量大小、深度、长度、宽度
+    # [N, C, H, W]
     num, depth, height, width = input_padded.shape[:4]
 
     res = []
@@ -29,21 +29,24 @@ def convert_conv_to_fc(input, filter_size=3, stride=1, padding=0):
         while i < height:
             j = 0
             while j < width:
-                arr = input_padded[k, :, i:i + filter_size, j:j + filter_size]
+                arr = input_padded[k, :, i:i + filter_height, j:j + filter_width]
                 res.append(arr.flatten())
                 j += stride
-                if (j + filter_size) > width:
+                if (j + filter_width) > width:
                     break
             i += stride
-            if (i + filter_size) > height:
+            if (i + filter_height) > height:
                 break
 
     return np.array(res)
 
 
-def deconvert_fc_to_conv(input, output, filter_height=3, filter_width=3, stride=2, padding=0, isstinct=False):
-    # 批量大小、深度、长度、宽度
-    num, depth, height, width = output.shape[:4]
+def deconvert_fc_to_conv(input, output_shape, filter_height=3, filter_width=3, stride=2, padding=0, isstinct=False):
+    output = np.zeros(output_shape)
+    output_padded = np.pad(output, ((0, 0), (0, 0), (padding, padding), (padding, padding)),
+                           'constant', constant_values=(0, 0))
+    # [N, C, H, W]
+    num, depth, height, width = output_padded.shape[:4]
 
     number = 0
     for k in range(num):
@@ -52,10 +55,10 @@ def deconvert_fc_to_conv(input, output, filter_height=3, filter_width=3, stride=
             j = 0
             while j < width:
                 if isstinct:
-                    output[k, :, i:i + filter_height, j:j + filter_width] = \
+                    output_padded[k, :, i:i + filter_height, j:j + filter_width] = \
                         input[number].reshape(depth, filter_height, filter_width)
                 else:
-                    output[k, :, i:i + filter_height, j:j + filter_width] += \
+                    output_padded[k, :, i:i + filter_height, j:j + filter_width] += \
                         input[number].reshape(depth, filter_height, filter_width)
                 j += stride
                 number += 1
@@ -66,103 +69,10 @@ def deconvert_fc_to_conv(input, output, filter_height=3, filter_width=3, stride=
                 break
 
     if padding == 0:
-        return output
+        return output_padded
 
-    return output[:, :, padding:-padding, padding:-padding]
+    return output_padded[:, :, padding:-padding, padding:-padding]
 ```
-
-## 准确度测试
-
-1. 图像转行向量
-
-    ```
-    import im2row
-
-    import numpy as np
-
-    if __name__ == '__main__':
-        x = np.arange(32).reshape(2, 1, 4, 4)
-        rows = im2row_indices(x, 2, 2, padding=0, stride=2)
-        print(rows)
-        print(rows.shape)
-        rows2 = convert_conv_to_fc(x, filter_size=2, stride=2, padding=0)
-        print(rows2)
-        print(rows2.shape)
-        print(rows == rows2)
-    ```
-
-    ```
-    [[ 0  1  4  5]
-    [ 2  3  6  7]
-    [ 8  9 12 13]
-    [10 11 14 15]
-    [16 17 20 21]
-    [18 19 22 23]
-    [24 25 28 29]
-    [26 27 30 31]]
-    (8, 4)
-    [[ 0  1  4  5]
-    [ 2  3  6  7]
-    [ 8  9 12 13]
-    [10 11 14 15]
-    [16 17 20 21]
-    [18 19 22 23]
-    [24 25 28 29]
-    [26 27 30 31]]
-    (8, 4)
-    [[ True  True  True  True]
-    [ True  True  True  True]
-    [ True  True  True  True]
-    [ True  True  True  True]
-    [ True  True  True  True]
-    [ True  True  True  True]
-    [ True  True  True  True]
-    [ True  True  True  True]]
-    ```
-
-2. 行向量转图像
-    
-    ```
-    if __name__ == '__main__':
-        x = np.arange(32).reshape(2, 1, 4, 4)
-        rows = im2row_indices(x, 2, 2, padding=0, stride=2)
-        output = row2im_indices(rows, x.shape, field_height=2, field_width=2, padding=0, stride=2)
-        print(output)
-        print(output.shape)
-        output2 = deconvert_fc_to_conv(rows, np.zeros(x.shape), filter_height=2, filter_width=2, stride=2, padding=0)
-        print(output2)
-        print(output2.shape)
-        print(output2 == output)
-    ```
-
-    ```
-    [[[[ 0  1  2  3]
-    [ 4  5  6  7]
-    [ 8  9 10 11]
-    [12 13 14 15]]]
-    [[[16 17 18 19]
-    [20 21 22 23]
-    [24 25 26 27]
-    [28 29 30 31]]]]
-    (2, 1, 4, 4)
-    [[[[ 0.  1.  2.  3.]
-    [ 4.  5.  6.  7.]
-    [ 8.  9. 10. 11.]
-    [12. 13. 14. 15.]]]
-    [[[16. 17. 18. 19.]
-    [20. 21. 22. 23.]
-    [24. 25. 26. 27.]
-    [28. 29. 30. 31.]]]]
-    (2, 1, 4, 4)
-    [[[[ True  True  True  True]
-    [ True  True  True  True]
-    [ True  True  True  True]
-    [ True  True  True  True]]]
-    [[[ True  True  True  True]
-    [ True  True  True  True]
-    [ True  True  True  True]
-    [ True  True  True  True]]]]
-    ```
 
 ## 时间测试
 
