@@ -287,3 +287,105 @@ class LeNet5(Net):
         self.fc1.set_params(params['fc1'])
         self.fc2.set_params(params['fc2'])
 ```
+
+## 保存和加载参数
+
+将参数保存成文件，同时能够从文件中加载参数，使用`python`的`pickle`模块，参数以字典形式保存
+
+```
+def save_params(params, path='params.pkl'):
+    with open(path, 'wb') as f:
+        pickle.dump(params, f, -1)
+
+
+def load_params(path='params.pkl'):
+    with open(path, 'rb') as f:
+        param = pickle.load(f)
+    return param
+```
+
+完整代码：[ PyNet/nn/net_utils.py ](https://github.com/zjZSTU/PyNet/blob/master/nn/net_utils.py)
+
+## mnist数据
+
+参考：[mnist数据集](https://www.zhujian.tech/posts/ba2ca878.html#more)
+
+将`mnist`数据集下载解压后，加载过程中完成以下步骤：
+
+1. 转换成`(32,32)`大小
+2. 转换维数顺序：`[H, W, C] -> [C, H, W]`
+
+完整代码：[ PyNet/src/load_mnist.py ](https://github.com/zjZSTU/PyNet/blob/master/src/load_mnist.py)
+
+加载完成后还需要进行数据标准化，因为图像取值为`[0,255]`，参考`pytorch`使用，简易操作如下：
+
+```
+# 标准化
+x_train = x_train / 255.0 - 0.5
+x_test = x_test / 255.0 - 0.5
+```
+
+## LeNet-5训练
+
+训练参数如下：
+
+1. 学习率`lr = 1e-3`
+2. 正则化强度`reg = 1e-3`
+3. 批量大小`batch_size = 128`
+4. 迭代次数`epochs = 1000`
+
+```
+    net = LeNet5()
+    criterion = CrossEntropyLoss()
+
+    loss_list = []
+    range_list = np.arange(0, x_train.shape[0] - batch_size, step=batch_size)
+    for i in range(epochs):
+        total_loss = 0
+        num = 0
+        start = time.time()
+        for j in range_list:
+            data = x_train[j:j + batch_size]
+            labels = y_train[j:j + batch_size]
+
+            scores = net(data)
+            loss = criterion(scores, labels)
+            total_loss += loss
+            num += 1
+
+            grad_out = criterion.backward()
+            net.backward(grad_out)
+            net.update(lr=lr, reg=reg)
+        end = time.time()
+        print('one epoch need time: %.3f' % (end - start))
+        print('epoch: %d loss: %f' % (i + 1, total_loss / num))
+        loss_list.append(total_loss / num)
+        # draw(loss_list)
+        if i % 50 == 49:
+            path = 'lenet5-epochs-%d.pkl' % (i + 1)
+            params = net.get_params()
+            save_params(params, path=path)
+            test_accuracy = compute_accuracy(x_test, y_test, net, batch_size=batch_size)
+            print('epochs: %d test_accuracy: %f' % (i + 1, test_accuracy))
+            print('loss: %s' % loss_list)
+```
+
+完整代码：[ PyNet/src/lenet-5_test.py ](https://github.com/zjZSTU/PyNet/blob/master/src/lenet-5_test.py)
+
+## 训练结果
+
+训练时间
+
+|                  计算机硬件                  	| 单次迭代时间 	|
+|:--------------------------------------------:	|:------------:	|
+| 12核 Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz 	|    约166秒   	|
+
+训练结果
+
+| 训练集精度 	| 测试集精度 	|
+|:----------:	|:----------:	|
+|   99.99%   	|   99.04%   	|
+
+![](/imgs/LeNet5实现-numpy/lenet5-loss.png)
+
+
