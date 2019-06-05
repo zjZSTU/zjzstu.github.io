@@ -65,7 +65,7 @@ b'domestic_cat_s_000907.png'
 [158 159 165 ... 124 129 110]
 ```
 
-### 数据格式
+## 数据格式
 
 键`b'data'`保存了图像数据，其值类型是`numpy.ndarray`，每一行都保存了`32x32`大小图像数据
 
@@ -123,3 +123,107 @@ if __name__ == '__main__':
 ```
 
 ![](/imgs/cifar-10数据集解析/domestic_cat_s_000907.png)
+
+## 解压代码
+
+完整解压代码如下：
+
+```
+# -*- coding: utf-8 -*-
+
+# @Time    : 19-6-5 下午8:20
+# @Author  : zj
+
+import numpy as np
+import pickle
+import os
+import cv2
+
+data_list = ['data_batch_1', 'data_batch_2', 'data_batch_3', 'data_batch_4', 'data_batch_5', 'test_batch']
+
+res_data_dir = '/home/zj/data/decompress_cifar_10'
+
+
+def unpickle(file):
+    with open(file, 'rb') as fo:
+        dict = pickle.load(fo, encoding='bytes')
+    return dict
+
+
+def write_img(data, labels, filenames, isTrain=True):
+    if isTrain:
+        data_dir = os.path.join(res_data_dir, 'train')
+    else:
+        data_dir = os.path.join(res_data_dir, 'test')
+
+    if not os.path.exists(data_dir):
+        os.mkdir(data_dir)
+
+    N = len(labels)
+    for i in range(N):
+        cate_dir = os.path.join(data_dir, str(labels[i]))
+        if not os.path.exists(cate_dir):
+            os.mkdir(cate_dir)
+        img_path = os.path.join(cate_dir, str(filenames[i], encoding='utf-8'))
+
+        # r = data[i][:1024].reshape(32, 32)
+        # g = data[i][1024:2048].reshape(32, 32)
+        # b = data[i][2048:].reshape(32, 32)
+        # img = cv2.merge((b, g, r))
+
+        img = data[i].reshape(3, 32, 32)
+        img = np.transpose(img, (1, 2, 0))
+        img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
+        cv2.imwrite(img_path, img)
+
+
+if __name__ == '__main__':
+
+    for item in data_list:
+        data_dir = '/home/zj/data/cifar-10-batches-py/'
+        data_dir = os.path.join(data_dir, item)
+        di = unpickle(data_dir)
+
+        batch_label = str(di.get(b'batch_label'), encoding='utf-8')
+        filenames = di.get(b'filenames')
+        labels = di.get(b'labels')
+        data = di.get(b'data')
+
+        if 'train' in batch_label:
+            write_img(data, labels, filenames)
+        else:
+            write_img(data, labels, filenames, isTrain=False)
+```
+
+## 读取图像
+
+读取解压后的图像并显示，代码如下：
+
+```
+if __name__ == '__main__':
+    data_dir = '/home/zj/data/cifar-10-batches-py/test_batch'
+
+    di = unpickle(data_dir)
+
+    batch_label = str(di.get(b'batch_label'), encoding='utf-8')
+    filenames = di.get(b'filenames')
+    labels = di.get(b'labels')
+    data = di.get(b'data')
+
+    N = 10
+    W = 32
+    H = 32
+    ex = np.zeros((H * N, W * N, 3))
+    for i in range(N):
+        for j in range(N):
+            img = data[i * N + j].reshape(3, H, W)
+            img = np.transpose(img, (1, 2, 0))
+            img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
+
+            ex[i * H:(i + 1) * H, j * W:(j + 1) * W] = img
+    plt.imshow(ex.astype(np.uint8), cmap='gray')
+    plt.axis('off')
+    plt.show()
+```
+
+![](/imgs/cifar-10数据集解析/mix.png)
