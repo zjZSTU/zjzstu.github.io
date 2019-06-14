@@ -104,6 +104,45 @@ tensor([[[[ 6.,  8.],
 
 `pytorch`提供了一个修改后`AlexNet`实现：[ vision/torchvision/models/alexnet.py ](https://github.com/pytorch/vision/blob/master/torchvision/models/alexnet.py)
 
+```
+class AlexNet(nn.Module):
+
+    def __init__(self, num_classes=1000):
+        super(AlexNet, self).__init__()
+        self.features = nn.Sequential(
+            nn.Conv2d(3, 64, kernel_size=11, stride=4, padding=2),
+            nn.ReLU(inplace=True),
+            nn.MaxPool2d(kernel_size=3, stride=2),
+            nn.Conv2d(64, 192, kernel_size=5, padding=2),
+            nn.ReLU(inplace=True),
+            nn.MaxPool2d(kernel_size=3, stride=2),
+            nn.Conv2d(192, 384, kernel_size=3, padding=1),
+            nn.ReLU(inplace=True),
+            nn.Conv2d(384, 256, kernel_size=3, padding=1),
+            nn.ReLU(inplace=True),
+            nn.Conv2d(256, 256, kernel_size=3, padding=1),
+            nn.ReLU(inplace=True),
+            nn.MaxPool2d(kernel_size=3, stride=2),
+        )
+        self.avgpool = nn.AdaptiveAvgPool2d((6, 6))
+        self.classifier = nn.Sequential(
+            nn.Dropout(),
+            nn.Linear(256 * 6 * 6, 4096),
+            nn.ReLU(inplace=True),
+            nn.Dropout(),
+            nn.Linear(4096, 4096),
+            nn.ReLU(inplace=True),
+            nn.Linear(4096, num_classes),
+        )
+
+    def forward(self, x):
+        x = self.features(x)
+        x = self.avgpool(x)
+        x = x.view(x.size(0), 256 * 6 * 6)
+        x = self.classifier(x)
+        return x
+```
+
 原始`AlexNet`实现如下：
 
 ```
@@ -143,6 +182,17 @@ class AlexNet(nn.Module):
         return x
 ```
 
+**相比于原实现，修改后的`AlexNet`网络减少了第一层滤波器个数（`96->64`）和第四个滤波器个数（`384->256`），在最后一个卷积层和第一个全连接进行了随机失活操作**
+
+### 训练
+
+操作`AlexNet`模型以及`Pytorch`实现，调整参数，训练如下`4`个网络
+
+1. `AlexNet`(无失活)
+2. `AlexNet`
+3. `AlexNet`(最后一个卷积层+全连接层随机失活)
+4. `pytorch_AlexNet`
+
 训练参数如下：
 
 * 批量大小`batch_size=256`
@@ -177,11 +227,51 @@ lr = 1e-2
 
 
 class AlexNet(nn.Module):
-    。。。
-    。。。
+
+    def __init__(self, num_classes=1000):
+        super(AlexNet, self).__init__()
+        self.features = nn.Sequential(
+            nn.Conv2d(3, 96, kernel_size=11, stride=4, padding=0),
+            nn.ReLU(inplace=True),
+            nn.MaxPool2d(kernel_size=3, stride=2),
+            nn.Conv2d(96, 256, kernel_size=5, stride=1, padding=2),
+            nn.ReLU(inplace=True),
+            nn.MaxPool2d(kernel_size=3, stride=2),
+            nn.Conv2d(256, 384, kernel_size=3, stride=1, padding=1),
+            nn.ReLU(inplace=True),
+            nn.Conv2d(384, 384, kernel_size=3, stride=1, padding=1),
+            nn.ReLU(inplace=True),
+            nn.Conv2d(384, 256, kernel_size=3, stride=1, padding=1),
+            nn.ReLU(inplace=True),
+            nn.MaxPool2d(kernel_size=3, stride=2),
+        )
+        self.classifier = nn.Sequential(
+            nn.Dropout(),
+            nn.Linear(256 * 6 * 6, 4096),
+            nn.ReLU(inplace=True),
+            nn.Dropout(),
+
+            nn.Linear(4096, 4096),
+            nn.ReLU(inplace=True),
+            nn.Dropout(),
+
+            nn.Linear(4096, num_classes),
+        )
+
+    def forward(self, x):
+        x = self.features(x)
+        x = x.view(x.size(0), 256 * 6 * 6)
+        x = self.classifier(x)
+        return x
+
+
+class AlexNet_v2(nn.Module):
+    ...
+
 
 def load_cifar_10_data(batch_size=128, shuffle=False):
     data_dir = '/home/lab305/Documents/data/cifar_10/'
+    # data_dir = '/home/zj/zj/data/cifar_10/'
 
     transform = transforms.Compose([
         transforms.Resize((227, 227)),
@@ -217,8 +307,10 @@ if __name__ == '__main__':
     train_loader, test_loader = load_cifar_10_data(batch_size=batch_size, shuffle=True)
 
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    # device = torch.device("cpu")
 
-    net = AlexNet(num_classes=10).to(device)
+    # net = AlexNet(num_classes=10).to(device)
+    net = AlexNet_v2(num_classes=10).to(device)
     criterion = nn.CrossEntropyLoss().to(device)
     optimer = optim.SGD(net.parameters(), lr=lr, momentum=0.9, nesterov=True)
 
@@ -248,8 +340,8 @@ if __name__ == '__main__':
         end = time.time()
 
         avg_loss = total_loss / num
-        loss_list.append(float('%.4f' % avg_loss))
-        print('epoch: %d time: %.2f loss: %.4f' % (i + 1, end - start, avg_loss))
+        loss_list.append(float('%.8f' % avg_loss))
+        print('epoch: %d time: %.2f loss: %.8f' % (i + 1, end - start, avg_loss))
 
         if i % 20 == 19:
             # 计算训练数据集检测精度
@@ -269,12 +361,21 @@ if __name__ == '__main__':
             print(train_list)
 ```
 
-`300`次迭代后结果
+### 测试
 
-```
-best train accuracy: 100.00 %   best test accuracy: 86.81 %
-```
+`300`次训练完成后测试结果如下：
 
-![](/imgs/Alexnet-pytorch/alexnet_loss.png)
+|                                    	| 训练精度 	| 测试精度 	|
+|:----------------------------------:	|:--------:	|:--------:	|
+|           AlexNet(无失活)          	| 100.00 % 	|  80.24 % 	|
+|               AlexNet              	| 100.00 % 	|  84.48 % 	|
+| AlexNet (最后一个卷积层+全连接层随机失活) 	| 100.00 % 	|  87.00 % 	|
+|           pytorch_AlexNet          	| 100.00 % 	|  86.76 % 	|
 
-![](/imgs/Alexnet-pytorch/alexnet_accuracy.png)
+损失值和训练集精度如下：
+
+![](../imgs/Alexnet-pytorch/alexnet_loss.png)
+
+![](../imgs/Alexnet-pytorch/alexnet_accuracy.png)
+
+从测试结果看到，`pytorch`提供的`AlexNet`模型能够提高泛化能力，同时自定义的`AlexNet`模型（最后一个卷积层+全连接层随机失活）能够实现最好的测试精度
