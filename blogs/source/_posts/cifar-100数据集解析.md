@@ -8,7 +8,7 @@ date: 2019-04-02 20:44:57
 
 [cifar-100数据集](https://www.cs.toronto.edu/~kriz/cifar.html)解析和[cifar-10数据集解析](https://www.zhuajin.tech/posts/43d7ec86.html)类似，区别在于`cifar-100`共`20`个超类（`superclass`），`100`个子类，所以每张图像有两个标签：超类标签（`coarse label`）和子类标签（`fine label`）
 
-![](../imgs/cifar-100数据集解析/100-classes.png)
+![](/imgs/cifar-100数据集解析/100-classes.png)
 
 ## 文件解析
 
@@ -142,4 +142,4 @@ far-100-python/train'
     cv2.imwrite('cifar-100.png', ex)
 ```
 
-![](../imgs/cifar-100数据集解析/cifar-100.png)
+![](/imgs/cifar-100数据集解析/cifar-100.png)
