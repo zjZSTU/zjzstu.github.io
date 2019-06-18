@@ -1,5 +1,5 @@
 ---
-title: 跪求计算机视觉相关岗位
+title: 寻求计算机视觉相关岗位
 date: 2019-01-23 23:30:47
 tags: about
 comments: false
