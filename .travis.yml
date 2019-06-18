@@ -32,14 +32,14 @@ script:
 after_success:
 - eval "$(ssh-agent -s)"
 - ssh-add ~/.ssh/tencent_id_rsa
-- mkdir upload_git
-- cd upload_git
-- git init
-- cp -r ../public/* ./
-- git add .
-- git commit -m "Update blogs"
-- git push --force git@148.70.133.9:/data/repositories/blogs.git master
-- cd ..
+# - mkdir upload_git
+# - cd upload_git
+# - git init
+# - cp -r ../public/* ./
+# - git add .
+# - git commit -m "Update blogs"
+# - git push --force git@148.70.133.9:/data/repositories/blogs.git master
+# - cd ..
 - sed -i'' "s~https://github.com/zjZSTU/zjzstu.github.com.git~https://${GITHUB_REPO_TOKEN}@github.com/zjZSTU/zjzstu.github.com.git~"
   _config.yml
 - sed -i'' "s~git@git.dev.tencent.com:zjZSTU/zjZSTU.coding.me.git~https://zjZSTU:${CODING_REPO_TOKEN}@git.coding.net/zjZSTU/zjZSTU.coding.me.git~"
