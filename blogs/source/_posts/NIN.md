@@ -8,7 +8,7 @@ abbrlink: 359ae103
 date: 2019-06-18 14:33:02
 ---
 
-文章[Network In Network](https://arxiv.org/abs/1312.4400v3)提出一种新的深度网络结构`mlpconv`，使用微卷积网络（`micro neural network`）代替传统卷积层的线性滤波器，同时利用全局平均池化（`global average pooling`）代替全连接层作为分类器，在当时的`CIFAR-10`和`CIFAR-100`上实现了最好的检测结果
+文章[Network In Network](https://arxiv.org/abs/1312.4400v3)提出一种新的深度网络结构`mlpconv`，使用微神经网络（`micro neural network`）代替传统卷积层的线性滤波器，同时利用全局平均池化（`global average pooling`）代替全连接层作为分类器，在当时的`CIFAR-10`和`CIFAR-100`上实现了最好的检测结果
 
 ## 多层感知器池化层
 
@@ -41,7 +41,7 @@ $(i,j)$表示特征图坐标，$x_{i,j}$表示输入数据体中以$(i,j)$为中
 
 `MLPConv`结构如下
 
-![](../imgs/NIN/mlp_conv.png)
+![](/imgs/NIN/mlp_conv.png)
 
 计算公式如下：
 
@@ -55,9 +55,9 @@ $n$表示`MLP`层数，在`MLP`的每层操作完成后使用`ReLU`作为激活�
 
 从跨通道（跨特征图）的角度来看，上式等同于在卷积层中执行**级联**跨通道参数池化（`cascaded cross channel parameteric pooling`）操作，每个跨通道参数池化层对输入特征图执行权重线性重组
 
-单个`MLPConv`操作等同于级联多个跨通道参数池化层，这种级联的跨通道参数池化结构允许跨通道信息的交互学习
+**单个`MLPConv`操作等同于级联多个跨通道参数池化层**，这种级联的跨通道参数池化结构允许跨通道信息的交互学习
 
-*从实现上看，单个跨通道参数池化层等同于1x1卷积核大小的传统卷积层操作*
+**从实现上看，单个跨通道参数池化层等同于$1\times 1$卷积核大小的传统卷积层操作，其实现仅执行深度方向的降维重组，输出激活图不改变空间尺寸**
 
 ## 全局平均池化层
 
@@ -69,13 +69,15 @@ $n$表示`MLP`层数，在`MLP`的每层操作完成后使用`ReLU`作为激活�
 2. 全连接层易于过拟合，强烈依赖于正则化策略，而GAP是一个天然的正则化器（没有参数），能够避免过拟合
 3. `GAP`求和了空间信息，对于输入数据的空间转换有更好的鲁棒性
 
-`GAP`计算：最后一个`MLPConv`的特征块作为`GAP`的输入，通过空间平均特征图得到二维结果特征图，将结果特征图向量化后作为输出直接输入到`softmax`分类器
+`GAP`计算：最后一个`MLPConv`提取的特征图数据体作为`GAP`的输入，通过空间平均特征图得到二维结果特征图，将结果特征图向量化后作为输出直接输入到`softmax`分类器
+
+比如输入特征图数据体大小为$5\times 5\times 10$，对每个特征图进行空间平均得到$1\times 1\times 10$，就是最后的输出
 
 ## NIN
 
 文章提出新的网络模型`NIN`（`Network In Network`），底层使用多个`MLPConv`堆叠，顶层使用`GAP`和`softmax`分类器
 
-![](../imgs/NIN/nin.png)
+![](/imgs/NIN/nin.png)
 
 ### 模型细节
 
@@ -91,6 +93,12 @@ $n$表示`MLP`层数，在`MLP`的每层操作完成后使用`ReLU`作为激活�
 
 参考[Network-in-Network Implementation using TensorFlow](https://embedai.wordpress.com/2017/07/23/network-in-network-implementation-using-tensorflow/)的实现细节如下：
 
-![](../imgs/NIN/model_detail.png)
+![](/imgs/NIN/model_detail.png)
 
-*具体实现根据数据集进行调整*
+**注意 1：上述模型假设输入数据体空间尺寸为$32\times 32$，输出$10$类结果，具体实现根据数据集进行调整**
+
+**注意 2：经过计算，最大池化层步长为$2$更符合计算**
+
+## 小结
+
+不同于[可视化理解卷积神经网络](https://zjzstu.github.io/posts/3f18ad9b.html#more)的思路，`NIN`专注于提高单层抽象能力，同样实现了模型性能的提升
