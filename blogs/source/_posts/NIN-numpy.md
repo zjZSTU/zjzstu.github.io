@@ -10,7 +10,7 @@ date: 2019-06-20 13:59:12
 
 `numpy`实现[NIN](https://www.zhujian.tech/posts/359ae103.html#more)模型，利用`cifar-10`、`cifar-100`和`mnist`数据集进行`MLPConv`和`GAP`的测试
 
-完整实现：[]()
+完整实现：[zjZSTU/PyNet](https://github.com/zjZSTU/PyNet)
 
 ## MLPConv实现
 
