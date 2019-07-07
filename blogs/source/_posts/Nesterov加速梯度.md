@@ -1,8 +1,8 @@
 ---
 title: Nesterov加速梯度
 categories:
-  - 算法
-  - 编程
+  - [算法]
+  - [编程]
 tags:
   - 深度学习
   - 最优化

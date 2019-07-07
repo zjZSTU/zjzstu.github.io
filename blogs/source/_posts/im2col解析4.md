@@ -1,8 +1,8 @@
 ---
 title: im2col解析4
 categories:
-  - 算法
-  - 编程
+  - [算法]
+  - [编程]
 tags:
   - 深度学习
   - python

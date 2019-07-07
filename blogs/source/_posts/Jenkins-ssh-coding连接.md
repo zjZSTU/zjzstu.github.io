@@ -1,8 +1,8 @@
 ---
 title: '[Jenkins][ssh]coding连接'
 categories: 
-- 工具
-- 自动化
+- [工具]
+- [自动化]
 tags: jenkins
 abbrlink: 6185d82f
 date: 2019-03-25 10:12:53

@@ -1,8 +1,8 @@
 ---
 title: '[Jenkins][github]webhook连接'
 categories: 
-- 工具
-- 自动化
+- [工具]
+- [自动化]
 tags: jenkins
 abbrlink: 341b6b1e
 date: 2019-03-25 15:01:14

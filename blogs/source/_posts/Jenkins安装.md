@@ -1,8 +1,8 @@
 ---
 title: Jenkins安装
 categories: 
-- 工具
-- 自动化
+- [工具]
+- [自动化]
 tags: jenkins
 abbrlink: 5d15ec84
 date: 2019-03-22 13:35:53

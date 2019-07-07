@@ -1,8 +1,8 @@
 ---
 title: '[Jenkins]freestyle工程'
 categories: 
-- 工具
-- 自动化
+- [工具]
+- [自动化]
 tags: jenkins
 abbrlink: fddee3e1
 date: 2019-03-23 10:14:45

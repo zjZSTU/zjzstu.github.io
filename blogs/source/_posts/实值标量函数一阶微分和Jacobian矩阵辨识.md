@@ -2,8 +2,8 @@
 title: 实值标量函数一阶微分和Jacobian矩阵辨识
 categories: 数学
 tags:
-  - 微积分
-  - 线性代数
+  - [微积分]
+  - [线性代数]
 abbrlink: b9ab243b
 date: 2019-05-14 14:23:29
 ---
