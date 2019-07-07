@@ -1,10 +1,13 @@
 ---
 title: 从numpy到pytorch实现线性回归
 categories:
+  - 算法
   - 编程
 tags:
   - 机器学习
   - 深度学习
+  - python
+  - pytorch
 abbrlink: ca2079f0
 date: 2019-04-16 20:13:01
 ---

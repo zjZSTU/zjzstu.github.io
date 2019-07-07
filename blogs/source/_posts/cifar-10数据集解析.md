@@ -1,7 +1,7 @@
 ---
 title: cifar-10数据集解析
-categories: data
-tags: cifar-10
+categories: 数据集
+tags: cifar10
 abbrlink: 43d7ec86
 date: 2019-04-02 19:44:57
 ---

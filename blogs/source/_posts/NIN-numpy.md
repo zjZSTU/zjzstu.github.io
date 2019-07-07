@@ -1,9 +1,11 @@
 ---
 title: NIN-numpy
 categories:
+  - 算法
   - 编程
 tags:
   - 深度学习
+  - python
 abbrlink: 55877cae
 date: 2019-06-20 13:59:12
 ---

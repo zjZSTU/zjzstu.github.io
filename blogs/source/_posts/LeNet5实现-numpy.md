@@ -1,9 +1,11 @@
 ---
 title: LeNet5实现-numpy
 categories:
+  - 算法
   - 编程
 tags:
   - 深度学习
+  - python
 abbrlink: c300ea0f
 date: 2019-05-27 19:20:06
 ---

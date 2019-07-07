@@ -1,7 +1,9 @@
 ---
 title: '[Jenkins]反向代理出错'
-categories: 构建
-tags: 自动化
+categories: 
+- 工具
+- 自动化
+tags: jenkins
 abbrlink: adc5ce0c
 date: 2019-03-26 09:53:52
 ---

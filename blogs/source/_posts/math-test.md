@@ -1,7 +1,7 @@
 ---
 title: math test
-categories: 测试
-tags: 数学
+categories: 
+tags: 
 abbrlink: '931e2563'
 date: 2019-01-21 00:16:20
 ---

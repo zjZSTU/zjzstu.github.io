@@ -1,7 +1,7 @@
 ---
 title: NIN
 categories:
-  - 编程
+  - 算法
 tags:
   - 深度学习
 abbrlink: 359ae103

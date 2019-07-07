@@ -1,6 +1,6 @@
 ---
 title: jupyter-notebook远程登录
-categories: server
+categories: 工具
 tags: jupyter-notebook
 abbrlink: 5e96fc4f
 date: 2019-03-30 10:48:06

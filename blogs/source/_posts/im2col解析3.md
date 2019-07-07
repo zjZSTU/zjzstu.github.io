@@ -1,9 +1,11 @@
 ---
 title: im2col解析3
 categories:
+  - 算法
   - 编程
 tags:
   - 深度学习
+  - python
 abbrlink: b77e018f
 date: 2019-05-25 14:05:25
 ---

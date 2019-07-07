@@ -1,10 +1,13 @@
 ---
 title: 使用softmax回归进行mnist分类
 categories:
+  - 算法
   - 编程
 tags:
   - 机器学习
   - 深度学习
+  - python
+  - pytorch
 abbrlink: dd673751
 date: 2019-04-28 19:56:03
 ---

@@ -1,8 +1,7 @@
 ---
 title: '[pycharm]远程编译'
 categories:
-  - server
-  - tool
+  - 工具
 tags: pycharm
 abbrlink: a6c06fb8
 date: 2019-03-30 13:44:49

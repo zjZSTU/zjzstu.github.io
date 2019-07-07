@@ -1,7 +1,7 @@
 ---
 title: AlexNet
 categories:
-  - 编程
+  - 算法
 tags:
   - 深度学习
 abbrlink: ca9994d1

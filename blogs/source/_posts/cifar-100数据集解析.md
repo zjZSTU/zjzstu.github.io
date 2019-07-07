@@ -1,7 +1,7 @@
 ---
 title: cifar-100数据集解析
-categories: data
-tags: cifar-10
+categories: 数据集
+tags: cifar100
 abbrlink: adb6e880
 date: 2019-04-02 20:44:57
 ---

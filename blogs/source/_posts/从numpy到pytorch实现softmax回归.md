@@ -1,10 +1,13 @@
 ---
 title: 从numpy到pytorch实现softmax回归
 categories:
+  - 算法
   - 编程
 tags:
   - 机器学习
   - 深度学习
+  - python
+  - pytorch
 abbrlink: 1c195604
 date: 2019-04-28 11:13:16
 ---

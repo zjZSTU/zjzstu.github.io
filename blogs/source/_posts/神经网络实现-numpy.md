@@ -1,10 +1,12 @@
 ---
 title: 神经网络实现-numpy
 categories:
+  - 算法
   - 编程
 tags:
   - 机器学习
   - 深度学习
+  - python
 abbrlink: ba2ca878
 date: 2019-05-17 13:24:43
 ---

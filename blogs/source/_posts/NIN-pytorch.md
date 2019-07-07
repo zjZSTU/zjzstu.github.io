@@ -1,9 +1,12 @@
 ---
 title: NIN-pytorch
 categories:
+  - 算法
   - 编程
 tags:
   - 深度学习
+  - python
+  - pytorch
 abbrlink: cab4035
 date: 2019-06-21 15:10:48
 ---
