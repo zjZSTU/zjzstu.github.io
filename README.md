@@ -14,6 +14,14 @@
 
 评论系统：[Gitalk](https://hexo-guide.readthedocs.io/zh_CN/latest/third-service/[Gitalk]%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F.html)
 
-访客和阅读次数：[不蒜子](https://hexo-guide.readthedocs.io/zh_CN/latest/third-service/[%E4%B8%8D%E8%92%9C%E5%AD%90]%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E6%AC%A1%E6%95%B0.html)
+访客和阅读次数：
+
+1. [不蒜子](https://hexo-guide.readthedocs.io/zh_CN/latest/third-service/[%E4%B8%8D%E8%92%9C%E5%AD%90]%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E6%AC%A1%E6%95%B0.html)
+
+2. [百度统计](https://tongji.baidu.com/web/27249108/welcome/login)
 
 持续集成：[Travis CI](https://hexo-guide.readthedocs.io/zh_CN/latest/third-service/[Travis%20CI]%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90.html)
+
+云服务：[腾讯云](https://cloud.tencent.com/?fromSource=gwzcw.1736893.1736893.1736893&gclid=Cj0KCQjwjYHpBRC4ARIsAI-3GkHCQESLZ49VY6v9zVtEgSVlnywvjdYO6VS7QN9Ia-vCQD1mQa0J8ywaAvdCEALw_wcB)
+
+域名服务：[阿里云](https://wanwang.aliyun.com/domain/com/?spm=5176.10695662.1158081.1.59854234GbQWbo)
