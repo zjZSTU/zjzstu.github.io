@@ -71,6 +71,7 @@ category_map:
 tag_map:
   机器学习: data learning
   深度学习: deep learning
+  分类器: classifier
   最优化: optimization
   开发模型: dev-model
   测试模型: test-model
