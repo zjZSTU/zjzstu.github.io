@@ -1,13 +1,14 @@
 ---
 title: 线性SVM分类器
-date: 2019-07-14 10:24:22
-categories: 
-- [算法]
-- [编程]
+categories:
+  - - 算法
+  - - 编程
 tags:
   - 分类器
   - 机器学习
   - python
+abbrlink: ebe205e
+date: 2019-07-14 10:24:22
 ---
 
 参考：
