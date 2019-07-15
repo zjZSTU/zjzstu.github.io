@@ -320,6 +320,14 @@ if __name__ == '__main__':
     data_path = '/home/zj/data/german/german.data-numeric'
     x_train, x_test, y_train, y_test = load_german_data(data_path, shuffle=True, tsize=0.8)
 
+    x_train = x_train.astype(np.double)
+    x_test = x_test.astype(np.double)
+    mu = np.mean(x_train, axis=0)
+    var = np.var(x_train, axis=0)
+    eps = 1e-8
+    x_train = (x_train - mu) / np.sqrt(var + eps)
+    x_test = (x_test - mu) / np.sqrt(var + eps)
+
     k_choices = [1, 3, 5, 8, 10, 12, 15, 20, 30, 50, 100]
     k_to_accuracies = cross_validation(x_train, y_train, k_choices)
 
@@ -350,7 +358,7 @@ if __name__ == '__main__':
 
 ```
 最好的k值是：12
-测试集精度为：0.266667
+测试集精度为：0.933333
 ```
 
 ![](/imgs/KNN/iris.png)

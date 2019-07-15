@@ -41,7 +41,7 @@ $$
 L = \frac {1}{N} \sum_{i} L_{i} + \lambda R(W)
 $$
 
-折页损失计算表达式如下：
+折页损失（`hinge loss`）计算表达式如下：
 
 $$
 L_{i} = \sum_{j\neq y_{i}} \max(0, s_{j} - s_{y_{i}} + \triangle )
@@ -341,7 +341,7 @@ def cross_validation(x_train, y_train, x_val, y_val, lr_choices, reg_choices):
         for reg in reg_choices:
             svm = LinearSVM()
 
-            svm.train(x_train, y_train, learning_rate=lr, reg=reg, num_iters=5000, batch_size=200, verbose=True)
+            svm.train(x_train, y_train, learning_rate=lr, reg=reg, num_iters=2000, batch_size=100, verbose=True)
             y_train_pred = svm.predict(x_train)
             y_val_pred = svm.predict(x_val)
 
@@ -389,6 +389,14 @@ if __name__ == '__main__':
     # data_path = '/home/zj/data/german/german.data-numeric'
     # x_train, x_test, y_train, y_test = load_german_data(data_path, shuffle=True, tsize=0.8)
 
+    x_train = x_train.astype(np.double)
+    x_test = x_test.astype(np.double)
+    mu = np.mean(x_train, axis=0)
+    var = np.var(x_train, axis=0)
+    eps = 1e-8
+    x_train = (x_train - mu) / np.sqrt(var + eps)
+    x_test = (x_test - mu) / np.sqrt(var + eps)
+
     lr_choices = [1e-4, 5e-4, 1e-3, 5e-3, 1e-2, 5e-2]
     reg_choices = [1e-4, 5e-4, 1e-3, 5e-3, 1e-2, 5e-2]
     results, best_svm, best_val = cross_validation(x_train, y_train, x_test, y_test, lr_choices, reg_choices)
@@ -404,7 +412,7 @@ if __name__ == '__main__':
     print('最好的测试精度： %f' % best_val)
 ```
 
-测试不同学习率和正则化强度下的`SVM`分类器训练结果，批量大小为`500`，每组参数训练`5000`次
+测试不同学习率和正则化强度下的`SVM`分类器训练结果，批量大小为`100`，每组参数训练`2000`次
 
 `Iris`数据集训练结果如下：
 
@@ -418,8 +426,8 @@ if __name__ == '__main__':
 `German data`数据集训练结果如下：
 
 ```
-最好的设置是： lr = 0.000100, reg = 0.000001
-最好的测试精度： 0.735000
+最好的设置是： lr = 0.010000, reg = 0.001000
+最好的测试精度： 0.750000
 ```
 
 ![](/imgs/SVM/german_svm.png)
@@ -428,7 +436,7 @@ if __name__ == '__main__':
 
 |     |  Iris  | German data |
 |:---:|:------:|:-----------:|
-| KNN | 26.67% |    73.5%    |
-| SVM |   80%  |    73.5%    |
+| KNN | 93.33% |    73.5%    |
+| SVM |   80%  |     75%     |
 
-与KNN分类器相比，线性`SVM`分类器对于线性数据的分类性能更强；对于非线性数据，其分类结果不理想。不过可以通过核技巧，将原始特征投影到高维空间，从而能够实现非线性`SVM`分类器，进一步提高分类性能
+线性`SVM`分类器对于非线性数据的分类结果不理想。不过可以通过核技巧，将原始特征投影到高维空间，从而能够实现非线性`SVM`分类器，进一步提高分类性能
