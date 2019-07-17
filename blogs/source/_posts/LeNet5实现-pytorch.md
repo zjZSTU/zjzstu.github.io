@@ -1,10 +1,10 @@
 ---
 title: LeNet5实现-pytorch
 categories:
-  - [算法]
+  - [深度学习]
   - [编程]
 tags:
-  - 深度学习
+  - LeNet-5
   - python
   - pytorch
 abbrlink: a2db6d6b

@@ -1,11 +1,10 @@
 ---
 title: Nesterov加速梯度
 categories:
-  - [算法]
+  - [最优化]
   - [编程]
 tags:
-  - 深度学习
-  - 最优化
+  - 动量更新
   - python
 abbrlink: e51acd5
 date: 2019-05-31 14:29:45

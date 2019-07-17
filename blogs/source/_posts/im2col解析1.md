@@ -1,10 +1,10 @@
 ---
 title: im2col解析1
 categories:
-  - [算法]
+  - [深度学习]
   - [编程]
 tags:
-  - 深度学习
+  - 卷积神经网络
   - python
 abbrlink: cc37c46b
 date: 2019-05-24 09:51:33

@@ -3,9 +3,9 @@ title: AdaGrad、RMSProp和Adam
 abbrlink: 2bdd8f16
 date: 2019-07-06 15:05:22
 categories:
-  - 算法
+  - 最优化
 tags:
-  - 深度学习
+  - 逐元素自适应学习率方法
 ---
 
 参考：

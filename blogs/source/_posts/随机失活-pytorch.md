@@ -3,11 +3,10 @@ title: 随机失活-pytorch
 abbrlink: 2bee4fce
 date: 2019-06-08 10:49:36
 categories:
-  - [算法]
+  - [最优化]
   - [编程]
 tags:
-  - 最优化
-  - 深度学习
+  - 随机失活
   - python
   - pytorch
 ---

@@ -1,9 +1,9 @@
 ---
 title: NIN
 categories:
-  - 算法
-tags:
   - 深度学习
+tags:
+  - NIN
 abbrlink: 359ae103
 date: 2019-06-18 14:33:02
 ---

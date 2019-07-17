@@ -1,7 +1,7 @@
 ---
 title: AlexNet
-categories: 算法
-tags: 深度学习
+categories: 深度学习
+tags: AlexNet
 abbrlink: ca9994d1
 date: 2019-06-08 10:53:31
 ---

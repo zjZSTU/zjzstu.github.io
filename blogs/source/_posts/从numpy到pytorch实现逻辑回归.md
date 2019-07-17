@@ -1,11 +1,10 @@
 ---
 title: 从numpy到pytorch实现逻辑回归
 categories:
-  - [算法]
+  - [机器学习]
   - [编程]
 tags:
-  - 机器学习
-  - 深度学习
+  - 逻辑回归
   - python
 abbrlink: 730913b9
 date: 2019-04-22 09:27:06

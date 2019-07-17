@@ -1,12 +1,11 @@
 ---
 title: softmax回归
 categories:
-  - [算法]
+  - [机器学习]
   - [编程]
   - [数学]
 tags:
-  - 机器学习
-  - 深度学习
+  - softmax
   - 微积分
   - python
 abbrlink: 2626bec3

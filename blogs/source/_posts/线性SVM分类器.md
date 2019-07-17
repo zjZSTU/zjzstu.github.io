@@ -1,11 +1,12 @@
 ---
 title: 线性SVM分类器
 categories:
-  - - 算法
-  - - 编程
+  - [机器学习]
+  - [分类器]
+  - [编程]
 tags:
-  - 分类器
-  - 机器学习
+  - 支持向量机
+  - SVM分类器
   - python
 abbrlink: ebe205e
 date: 2019-07-14 10:24:22

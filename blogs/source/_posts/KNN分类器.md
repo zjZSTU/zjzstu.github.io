@@ -1,11 +1,12 @@
 ---
 title: KNN分类器
 categories: 
-- [算法]
+- [机器学习]
+- [分类器]
 - [编程]
 tags:
-  - 分类器
-  - 机器学习
+  - K近邻
+  - KNN分类器
   - python
 abbrlink: 1ee29eaf
 date: 2019-07-11 19:34:29

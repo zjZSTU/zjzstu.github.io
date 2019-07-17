@@ -62,17 +62,37 @@ category_map:
   随笔: essay
   文档: doc
   自动化: automation
-  算法: algorithm
   软件工程: software-engineer
   数学: math
   编程: programming
   工具: tool
   数据集: dataset
-tag_map:
   机器学习: data learning
   深度学习: deep learning
   分类器: classifier
   最优化: optimization
+tag_map:
+  神经网络: nerual network
+  卷积神经网络: convolutional neural network
+  支持向量机: support vector machine
+  逻辑回归: logistic regression
+  线性回归: linear regression
+  K近邻: k-nearest neighbor
+  主成分分析: principal component analysis
+  随机失活: dropout
+  批量归一化: batch normalization
+  学习率衰减: learning rate decay
+  权重惩罚: weight penalty
+  标准化: normalization
+  梯度下降: gradient descent
+  正则化: regularization
+  激活函数: activation
+  动量更新: momentum update
+  逐元素自适应学习率方法: per-parameter adaptive learning rate methods
+  KNN分类器: k-nearest neighbor classifier
+  逻辑回归分类器: logistic regression classifier
+  softmax分类器: softmax classifier
+  SVM分类器: SVM classifier 
   开发模型: dev-model
   测试模型: test-model
   概率论: probability-theory

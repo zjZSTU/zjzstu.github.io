@@ -1,11 +1,11 @@
 ---
 title: 神经网络实现-pytorch
 categories:
-  - [算法]
+  - [机器学习]
+  - [深度学习]
   - [编程]
 tags:
-  - 机器学习
-  - 深度学习
+  - 神经网络
   - python
   - pytorch
 abbrlink: 5a77dbca
