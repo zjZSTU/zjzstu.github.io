@@ -6,7 +6,6 @@ categories:
 - [编程]
 tags:
   - K近邻
-  - KNN分类器
   - python
 abbrlink: 1ee29eaf
 date: 2019-07-11 19:34:29

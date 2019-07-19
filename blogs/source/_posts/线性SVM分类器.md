@@ -6,7 +6,6 @@ categories:
   - [编程]
 tags:
   - 支持向量机
-  - SVM分类器
   - python
 abbrlink: ebe205e
 date: 2019-07-14 10:24:22

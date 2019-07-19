@@ -6,7 +6,6 @@ categories:
   - - 编程
 tags:
   - softmax
-  - softmax分类器
   - python
 abbrlink: e043b7fb
 date: 2019-07-17 20:07:33
