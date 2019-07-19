@@ -93,6 +93,7 @@ tag_map:
   逻辑回归分类器: logistic regression classifier
   softmax分类器: softmax classifier
   SVM分类器: SVM classifier 
+  神经网络分类器: neural network classifier
   开发模型: dev-model
   测试模型: test-model
   概率论: probability-theory
