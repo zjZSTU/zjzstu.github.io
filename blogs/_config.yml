@@ -90,6 +90,7 @@ tag_map:
   动量更新: momentum update
   逐元素自适应学习率方法: per-parameter adaptive learning rate methods
   梯度检查: gradient check
+  合理性检查: sanity check
   开发模型: dev-model
   测试模型: test-model
   开发流程: dev-process
