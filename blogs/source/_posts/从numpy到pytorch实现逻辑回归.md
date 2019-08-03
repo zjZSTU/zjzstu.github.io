@@ -441,4 +441,4 @@ test accuracy: 0.720
 
 `pytorch`使用到的类库如下所示
 
-![](/imgs/从numpy到pytorch实现逻辑回归/pytorch-class.png)
+![](/imgs/从numpy到pytorch实现逻辑回归/torch-class.png)
