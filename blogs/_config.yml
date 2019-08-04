@@ -93,6 +93,7 @@ tag_map:
   合理性检查: sanity check
   权重初始化: weight initialization
   超参数优化: hyperparameter optimization
+  模型集成: model ensemble
   开发模型: dev-model
   测试模型: test-model
   开发流程: dev-process
