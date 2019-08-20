@@ -73,6 +73,7 @@ category_map:
   分类器: classifier
   最优化: optimization
   图像处理: image process
+  数据结构: data structure
 tag_map:
   神经网络: nerual network
   卷积神经网络: convolutional neural network
@@ -107,6 +108,7 @@ tag_map:
   线性代数: linear-albegra
   函数式: functional-formula
   高斯滤波: gaussian filter
+  图: graph
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
