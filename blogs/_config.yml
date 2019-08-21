@@ -109,6 +109,9 @@ tag_map:
   函数式: functional-formula
   高斯滤波: gaussian filter
   图: graph
+  深度优先搜索: depth-first search
+  广度优先搜索: breadth-first search
+  最小生成树: minimum spanning tree
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
