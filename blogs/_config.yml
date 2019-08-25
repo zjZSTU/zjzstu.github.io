@@ -74,6 +74,8 @@ category_map:
   最优化: optimization
   图像处理: image process
   数据结构: data structure
+  翻译: translation
+
 tag_map:
   神经网络: nerual network
   卷积神经网络: convolutional neural network
