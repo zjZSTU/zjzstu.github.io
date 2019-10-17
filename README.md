@@ -1,11 +1,11 @@
 
-# zjzstu.github.com
+# zjzstu.github.io
 
 [![Build Status](https://travis-ci.org/zjZSTU/zjzstu.github.com.svg?branch=dev)](https://travis-ci.org/zjZSTU/zjzstu.github.com) [![Documentation Status](https://readthedocs.org/projects/hexo-guide/badge/?version=latest)](https://hexo-guide.readthedocs.io/zh_CN/latest/?badge=latest) [![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org) [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
-> 基于`Hexo`实现的个人网站
+> 基于`Hexo`实现的个人博客网站
 
-利用`Hexo`框架实现的个人网站 - https://www.zhujian.tech
+利用`Hexo`框架实现的个人博客网站 - https://www.zhujian.tech
 
 ## 内容列表
 
@@ -27,7 +27,7 @@
 
 ## 安装
 
-需要预先安装以下工具：
+`html`文件编译需要预先安装以下工具：
 
 ```
 $ npm install -g hexo-cli
