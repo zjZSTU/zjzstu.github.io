@@ -12,9 +12,11 @@ date: 2019-03-22 13:35:53
 
 [Jenkins User Documentation](https://jenkins.io/doc/#about-this-documentation)
 
+[安装Jenkins ](https://jenkins.io/zh/doc/book/installing/)
+
 ## 什么是`Jenkins`？
 
-[Jenkins]()是一个独立开源的自动化服务器，支持几乎所有语言，支持所有自动化任务，包括构建、测试、交付和部署
+[Jenkins](https://jenkins.io/zh/)是一个独立开源的自动化服务器，支持几乎所有语言，支持所有自动化任务，包括构建、测试、交付和部署
 
 ### 先决条件
 
@@ -28,9 +30,32 @@ date: 2019-03-22 13:35:53
 1. `Java 8`，参考：[[Ubuntu 16.04]Java安装](https://zj-linux-guide.readthedocs.io/zh_CN/latest/tools/[Ubuntu%2016.04]Java%E5%AE%89%E8%A3%85.html)
 2. `Docker`，参考：[[Ubuntu 16.04]安装](https://docker-guide.readthedocs.io/zh_CN/latest/basic/[Ubuntu%2016.04]%E5%AE%89%E8%A3%85.html)
 
-## 安装
+## 下载
+
+有两种下载方式
+
+1. 直接下载安装包
+2. 通过`apt-get`安装
+
+### 直接下载
 
 下载`Jetkins`: http://mirrors.jenkins.io/war-stable/latest/jenkins.war
+
+### apt-get下载
+
+参考[Jenkins Debian packages](https://pkg.jenkins.io/debian-stable/)
+
+```
+# 添加键
+$ wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+# 添加源路径
+$ deb https://pkg.jenkins.io/debian-stable binary/
+# 下载或更新
+$ sudo apt-get update
+$ sudo apt-get install jenkins
+```
+
+## 安装
 
 运行 
 
