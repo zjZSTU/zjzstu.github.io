@@ -5,14 +5,14 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                pwd
-                ls -alh
+                sh 'pwd'
+                sh 'ls -alh'
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing..'
-                git branch -vv
+                sh 'git branch -vv'
             }
         }
         stage('Deploy') {
