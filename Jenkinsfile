@@ -2,22 +2,22 @@ pipeline {
     agent any
 
     stages {
+        stage('Install') {
+            steps {
+                echo 'Installing..'
+                sh 'scripts/install.sh'
+            }
+        }
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh 'pwd'
-                sh 'ls -alh'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-                sh 'git branch -vv'
+                sh 'scripts/build.sh'
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
+                sh 'scripts/deploy.sh'
             }
         }
     }
