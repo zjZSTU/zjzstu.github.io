@@ -1,5 +1,6 @@
 #!/bin/bash
 
+cd ./blogs/
 pwd
 mkdir upload_git
 cd upload_git
