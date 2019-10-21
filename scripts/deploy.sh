@@ -1,9 +1,18 @@
 #!/bin/bash
 
+set -eux
+
+GIT_DIR="upload_git"
+
 cd ./blogs/
-pwd
-mkdir upload_git
-cd upload_git
+
+if [ -e ${GIT_DIR}} ]
+then
+    rm -rf ${GIT_DIR}
+fi
+mkdir ${GIT_DIR}
+cd ${GIT_DIR}
+
 git init
 cp -r ../public/* ./
 git add .
