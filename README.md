@@ -65,21 +65,6 @@ $ sudo apt-get install make
 
 ## 用法
 
-### 文档编译
-
-浏览网站制作文档有两种方式
-
-1. 在线浏览文档：[hexo指南](https://hexo-guide.readthedocs.io/zh_CN/latest/)
-
-2. 本地生成文档，实现如下：
-
-    ```
-    $ git clone https://github.com/zjZSTU/hexo-guide.git
-    $ cd hexo-guide/docs
-    $ make html
-    ```
-    编译完成后进入`docs/build/html`目录，打开`index.html`文件
-
 ### 博客编译
 
 本地编译当前网站：
@@ -108,6 +93,20 @@ $ npm run gg
 ```
 
 完成后进入`blogs/public`目录，打开`index.html`文件
+
+### 文档编译
+
+浏览网站制作文档有两种方式
+
+1. 在线浏览文档：[hexo指南](https://hexo-guide.readthedocs.io/zh_CN/latest/)
+2. 本地生成文档，实现如下：
+
+    ```
+    $ cd zjzstu.github.io/docs
+    $ make html
+    ```
+    编译完成后进入`docs/build/html`目录，打开`index.html`文件
+
 
 ## 主要维护人员
 
