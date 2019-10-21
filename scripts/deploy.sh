@@ -6,12 +6,11 @@ GIT_DIR="upload_git"
 
 cd ./blogs/
 
-if [ -e ${GIT_DIR}} ]
+if [ -e ${GIT_DIR} ]
 then
     rm -rf ${GIT_DIR}
-else
-    mkdir ${GIT_DIR}
 fi
+mkdir ${GIT_DIR}
 cd ${GIT_DIR}
 
 git init
