@@ -24,9 +24,9 @@ function clone()
     git clone ${GIT} ${DIR}
 }
 
-clone NEXT_DIR NEXT_GIT
-clone CANVAS_DIR CANVAS_GIT
-clone ALGOLIA_DIR ALGOLIA_GIT
-clone FANCYBOX_DIR FANCYBOX_GIT
+clone ${NEXT_DIR} ${NEXT_GIT}
+clone ${CANVAS_DIR} ${CANVAS_GIT}
+clone ${ALGOLIA_DIR} ${ALGOLIA_GIT}
+clone ${FANCYBOX_DIR} ${FANCYBOX_GIT}
 
 npm install
