@@ -93,5 +93,7 @@ $ sudo apt-get install jenkins
 忘记密码，进入用户文件夹，修改`config.xml`文件，修改`<passwordHash>`属性为
 
     #jbcrypt:$2a$10$MiIVR0rr/UhQBqT.bBq0QehTiQVqgNpUGyWW2nJObaVAM/2xSQdSq
+    或者
+    #jbcrypt:$2a$10$3UUvN926tlDQAc4Yo6WnbOOBPvPw8/sqgJoKahwHSACJ.Im4oWZLS
 
 上面这个是密码`123456`的加密版本，重新启动`jenkins`即可
