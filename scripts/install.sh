@@ -8,10 +8,10 @@ CANVAS_DIR="${NEXT_DIR}/source/lib/canvas-nest"
 ALGOLIA_DIR="${NEXT_DIR}/source/lib/algolia-instant-search"
 FANCYBOX_DIR="${NEXT_DIR}/source/lib/fancybox"
 
-NEXT_GIT="http://localhost:8800/zjzstu/hexo-theme-next.git"
-CANVAS_GIT="http://localhost:8800/zjzstu/theme-next-canvas-nest.git"
-ALGOLIA_GIT="http://localhost:8800/zjzstu/theme-next-algolia-instant-search.git"
-FANCYBOX_GIT="http://localhost:8800/zjzstu/theme-next-fancybox3.git"
+NEXT_GIT="http://localhost/gitlabs/zjzstu/hexo-theme-next.git"
+CANVAS_GIT="http://localhost/gitlabs/zjzstu/theme-next-canvas-nest.git"
+ALGOLIA_GIT="http://localhost/gitlabs/zjzstu/theme-next-algolia-instant-search.git"
+FANCYBOX_GIT="http://localhost/gitlabs/zjzstu/theme-next-fancybox3.git"
 
 function clone()
 {
