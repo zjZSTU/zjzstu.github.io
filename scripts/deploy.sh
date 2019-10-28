@@ -3,6 +3,8 @@
 set -eux
 
 GIT_DIR="upload_git"
+USER_NAME="zhujian"
+USER_EMAIL="505169307@qq.com"
 
 cd ./blogs/
 
@@ -12,6 +14,9 @@ then
 fi
 mkdir ${GIT_DIR}
 cd ${GIT_DIR}
+
+git config --global user.name ${USER_NAME}
+git config --global user.email ${USER_EMAIL}
 
 git init
 cp -r ../public/* ./
