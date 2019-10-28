@@ -68,3 +68,12 @@ $ chown tomcat:tomcat setenv.sh
 
 ![](/imgs/jenkins-tomcat/jenkins-home-dir.png)
 
+## 环境变量设置
+
+由于`Tomcat`运行在其他普通用户下，所以还需要进一步将当前用户环境变量添加到`Jenkins`中，保证程序的执行（比如`node`）
+
+参考：[jenkins执行脚本npm: command not found解决](https://blog.csdn.net/u011296165/article/details/96110294)
+
+进入`Manage Jenkins -> Configure System`，在`Global properties`中选中`Environment variables`
+
+![](/imgs/jenkins-tomcat/global-properties.png)
