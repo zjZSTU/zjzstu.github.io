@@ -22,6 +22,7 @@ fi
 if [[ ! -s ~/.ssh/config ]]
 then
     touch ~/.ssh/config
+    echo -e "Host ${HEXO_SERVER_ADDRESS}\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 fi
 
 SSH_CONFIG=`cat ~/.ssh/config | grep ${HEXO_SERVER_ADDRESS}`
