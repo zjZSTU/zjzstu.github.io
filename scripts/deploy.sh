@@ -19,7 +19,7 @@ fi
 
 ## SSH环境
 
-if [[ -s ~/.ssh/config ]]
+if [[ ! -s ~/.ssh/config ]]
 then
     touch ~/.ssh/config
 fi
