@@ -2,6 +2,13 @@
 
 set -eux
 
+function set_config
+{
+    echo -e "Host ${HEXO_SERVER_ADDRESS}\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+    echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+    echo -e "Host git.dev.tencent.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+}
+
 # GIT环境
 
 USER_NAME=`git config --global user.name`
@@ -18,18 +25,18 @@ then
 fi
 
 ## SSH环境
-
+git.dev.tencent.com
 if [[ ! -s ~/.ssh/config ]]
 then
     touch ~/.ssh/config
-    echo -e "Host ${HEXO_SERVER_ADDRESS}\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+    set_config
 fi
 
 SSH_CONFIG=`cat ~/.ssh/config | grep ${HEXO_SERVER_ADDRESS}`
 
 if [[ -z ${SSH_CONFIG} ]]
 then
-    echo -e "Host ${HEXO_SERVER_ADDRESS}\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+    set_config
 fi
 
 ## GIT操作
