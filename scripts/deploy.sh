@@ -25,7 +25,7 @@ then
 fi
 
 ## SSH环境
-git.dev.tencent.com
+
 if [[ ! -s ~/.ssh/config ]]
 then
     touch ~/.ssh/config
@@ -33,7 +33,6 @@ then
 fi
 
 SSH_CONFIG=`cat ~/.ssh/config | grep ${HEXO_SERVER_ADDRESS}`
-
 if [[ -z ${SSH_CONFIG} ]]
 then
     set_config
