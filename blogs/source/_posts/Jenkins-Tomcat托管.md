@@ -14,11 +14,16 @@ date: 2019-10-22 11:34:20
 
 [[Ubuntu 16.02]Tomcat9安装](https://zj-linux-guide.readthedocs.io/zh_CN/latest/tools/[Ubuntu%2016.02]Tomcat9%E5%AE%89%E8%A3%85.html)
 
-通过`Tomcat`托管`Jenkins`
+通过`Tomcat`托管`Jenkins`，具体`Tomcat`操作参考
+
+* [[Ubuntu 16.02]Tomcat9安装](https://zj-network-guide.readthedocs.io/zh_CN/latest/tomcat/[Ubuntu%2016.02]Tomcat9安装.html)
+* [非root用户运行](https://zj-network-guide.readthedocs.io/zh_CN/latest/tomcat/[Ubuntu%2016.02]非root用户运行.html)
+
+*当前`Tomcat`以普通用户`tomcat`身份运行*
 
 ## 实现
 
-将`Jenkins.war`文件放置于`Tomcat webapps`目录下
+将`Jenkins.war`文件放置于`Tomcat webapps`目录下（*注意：设置`.war`文件的属主为`tomcat`*）
 
 ```
 /opt/apache-tomcat-9.0.27/webapps
@@ -28,23 +33,38 @@ date: 2019-10-22 11:34:20
 
 *`Tomcat`会在`webapps`目录下自动解压`Jenkins.war`，生成一个`jenkins`文件夹*
 
-进入`Jenkins`页面后，修改`Manage Jenkins -> Configure System -> Jenkins Location`，修改`Jenkins URL`为相应的地址，同时修改`GitLab`中`WebHook`地址
+进入`Jenkins`页面后，修改`Manage Jenkins -> Configure System -> Jenkins Location`，修改`Jenkins URL`为相应的地址（*登录地址*），同时修改`GitLab`中`WebHook`地址
 
 ## Jenkins升级
 
 下载新版本的`Jenkins.war`文件后，放置于`webapps`目录下，并删除`webapps/jenkins`文件夹，重新浏览器登录即可
 
-## 复用/home/zj/.jenkins配置
+## 修改主目录
 
-如果`tomcat`以`root`用户运行，那么其相应的配置文件在`/root/.jenkins`目录下
+如果`tomcat`以`root`用户运行，那么其相应的配置文件在`/root/.jenkins`目录下。修改`Jenkins`主目录在当前用户下 - `/home/zj/.jenkins`
 
-之前已经通过手动命令进行`Jenkins`操作，相应的配置保存在`~/.jenkins`目录下
+### Tomcat配置
 
-先清空`/root/jenkins`文件夹，然后将`~/.jenkins`文件复制过来
+进入`apache tomcat`安装地址，新建`/bin/setenv.sh`，设置环境变量`JENKINS_HOME`
 
 ```
-# rm -rf /root/jenkins
-# cp -r /home/zj/jenkins .
+$ cat setenv.sh 
+#!/bin/bash
+
+export JENKINS_HOME=/home/zj/.jenkins
 ```
 
-最后还需要删除`Tomcat webapps`目录下的`jenkins`文件夹。重新进行浏览器登录，之前的用户与以及相关的配置依旧存在
+**注意`setenv.sh`的文件属性**
+
+```
+$ chown tomcat:tomcat setenv.sh
+```
+
+删除`Tomcat webapps`目录下的`jenkins`文件夹，重启`Tomcat`
+
+### 查询
+
+重新进行浏览器登录，在`Manage Jenkins -> Configure System`中查找`Home directory`
+
+![](/imgs/jenkins-tomcat/jenkins-home-dir.png)
+
