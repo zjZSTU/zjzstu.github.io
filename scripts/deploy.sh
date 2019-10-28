@@ -2,12 +2,10 @@
 
 set -eux
 
-GIT_DIR="upload_git"
+# GIT环境
+
 USER_NAME=`git config --global user.name`
 USER_EMAIL=`git config --global user.email`
-SSH_CONFIG=`cat ~/.ssh/config | grep ${HEXO_SERVER_ADDRESS}`
-
-# GIT环境
 
 if [[ -z ${GIT_USER_NAME} ]]
 then
@@ -21,12 +19,21 @@ fi
 
 ## SSH环境
 
+if [[ -s ~/.ssh/config ]]
+then
+    touch ~/.ssh/config
+fi
+
+SSH_CONFIG=`cat ~/.ssh/config | grep ${HEXO_SERVER_ADDRESS}`
+
 if [[ -z ${SSH_CONFIG} ]]
 then
     echo -e "Host ${HEXO_SERVER_ADDRESS}\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 fi
 
 ## GIT操作
+
+GIT_DIR="upload_git"
 
 cd ./blogs/
 
