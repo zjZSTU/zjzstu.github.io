@@ -115,6 +115,7 @@ tag_map:
   深度优先搜索: depth-first search
   广度优先搜索: breadth-first search
   最小生成树: minimum spanning tree
+  并查集: disjoint set
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
