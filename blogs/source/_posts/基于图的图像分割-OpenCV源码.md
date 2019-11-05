@@ -11,6 +11,7 @@ tags:
   - 图
   - 并查集
   - 最小生成树
+  - opencv
   - Kruskal
 abbrlink: '18052054'
 date: 2019-11-05 14:59:00
@@ -24,6 +25,8 @@ date: 2019-11-05 14:59:00
 * 头文件`segmentation.hpp - /path/to/include/opencv4/opencv2/ximgproc/segmentation.hpp`
 * 源文件`graphsegmentation.cpp - /path/to/opencv_contrib/modules/ximgproc/src/graphsegmentation.cpp`
 * 实现示例`graphsegmentation_demo.cpp - /path/to/opencv_contrib/modules/ximgproc/samples/graphsegmentation_demo.cpp`
+
+`OpenCV`源码比较复杂，抽取相应实现到[GraphLib/cplusplus/samples/graphsegmentation](https://github.com/zjZSTU/GraphLib/tree/master/cplusplus/samples/graphsegmentation)
 
 ## 命令空间
 
@@ -130,7 +133,7 @@ void PointSet::joinPoints(int p_a, int p_b) {
 
 * 在构造函数中，通过输入的参数`nb_elements_`创建指针空间，初始化每个点集元素的父指针指向自身
 * 函数`getBasePoint`查询根节点，使用了路径压缩进行优化
-* 函数`joinPoints`合并两个分量，累加两个分量个数到根节点
+* 函数`joinPoints`合并两个分量，累加两个分量个数到根节点。与工程实现不同的是，这里比较`size`大小进行合并
 
 ## 边
 
