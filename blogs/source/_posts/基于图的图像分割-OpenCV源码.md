@@ -13,6 +13,7 @@ tags:
   - 最小生成树
   - opencv
   - Kruskal
+  - 基于图的图像分割
 abbrlink: '18052054'
 date: 2019-11-05 14:59:00
 ---
