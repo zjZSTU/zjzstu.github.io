@@ -119,6 +119,7 @@ tag_map:
   基于图的图像分割: Graph-Based Image Segmentation
   目标识别: object recognition
   目标检测: object detection
+  直方图: histogram
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
