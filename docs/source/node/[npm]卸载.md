@@ -5,11 +5,11 @@
 
 ## 本地卸载
 
-卸载并删除dependencies
+卸载并删除`dependencies`
 
     npm uninstall xxx --save
 
-卸载并删除devDependencies.
+卸载并删除`devDependencies`
 
     npm uninstall xxx --save-dev
 

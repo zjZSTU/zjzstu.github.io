@@ -3,13 +3,13 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-hexo指南
+博客网站搭建指南
 ===================================
 
-利用`Hexo`搭建博客网站，
+利用Hexo搭建博客网站，通过NexT配置网站主题
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    node
    base
