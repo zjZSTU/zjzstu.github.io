@@ -43,7 +43,7 @@
     "hexo-symbols-count-time": "^0.4.4",
     "inherits": "^2.0.3",
     "is-fullwidth-code-point": "^2.0.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.13",
     "minimatch": "^3.0.4",
     "minimist": "^1.2.0",
     "minipass": "^2.3.5",
