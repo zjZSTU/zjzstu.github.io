@@ -3,22 +3,22 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 朱健的个人网站
-subtitle: 一个人的世界
-description: 哈哈哈，我来了
+title: 古老的东方有...
+subtitle: 大家好，我叫朱健
+description: ''
 keywords:
 author: zhujian
 language: zh-CN
-timezone:
+timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://www.zhujian.tech
-# url: https://zjzstu.github.io/
 root: /
 permalink: posts/:abbrlink.html
 permalink_defaults:
-  lang: en
+pretty_urls:
+  trailing_index: true # Set to false to remove trailing index.html from permalinks
 
 # Directory
 source_dir: source
@@ -34,18 +34,21 @@ skip_render:
 new_post_name: :title.md # File name of new posts
 default_layout: post
 titlecase: false # Transform title into titlecase
-external_link: true # Open external links in new tab
+external_link:
+  enable: true # Open external links in new tab
+  field: site # Apply to the whole site
+  exclude: ''
 filename_case: 0
 render_drafts: false
-post_asset_folder: true
+post_asset_folder: false
 relative_link: false
 future: true
 highlight:
   enable: true
   line_number: true
-  auto_detect: true
-  tab_replace:
-  
+  auto_detect: false
+  tab_replace: ''
+
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
@@ -54,72 +57,15 @@ index_generator:
   path: ''
   per_page: 10
   order_by: -date
-  
+
 # Category & Tag
 default_category: uncategorized
 category_map:
-  测试: test
-  随笔: essay
-  文档: doc
-  自动化: automation
-  软件工程: software-engineer
-  数学: math
-  编程: programming
-  工具: tool
-  数据集: dataset
-  数据格式: data format
-  机器学习: data learning
-  深度学习: deep learning
-  分类器: classifier
-  最优化: optimization
-  图像处理: image process
-  数据结构: data structure
-  翻译: translation
-  版本管理: version management
-
 tag_map:
-  神经网络: nerual network
-  卷积神经网络: convolutional neural network
-  支持向量机: support vector machine
-  逻辑回归: logistic regression
-  线性回归: linear regression
-  K近邻: k-nearest neighbor
-  主成分分析: principal component analysis
-  选择性搜索: selective search
-  图像分割: image segmentation
-  随机失活: dropout
-  批量归一化: batch normalization
-  学习率衰减: learning rate decay
-  权重惩罚: weight penalty
-  标准化: normalization
-  梯度下降: gradient descent
-  正则化: regularization
-  激活函数: activation
-  动量更新: momentum update
-  逐元素自适应学习率方法: per-parameter adaptive learning rate methods
-  梯度检查: gradient check
-  合理性检查: sanity check
-  权重初始化: weight initialization
-  超参数优化: hyperparameter optimization
-  模型集成: model ensemble
-  开发模型: dev-model
-  测试模型: test-model
-  开发流程: dev-process
-  概率论: probability-theory
-  统计学: statistics
-  微积分: calculus
-  线性代数: linear-albegra
-  函数式: functional-formula
-  高斯滤波: gaussian filter
-  图: graph
-  深度优先搜索: depth-first search
-  广度优先搜索: breadth-first search
-  最小生成树: minimum spanning tree
-  并查集: disjoint set
-  基于图的图像分割: Graph-Based Image Segmentation
-  目标识别: object recognition
-  目标检测: object detection
-  直方图: histogram
+
+# Metadata elements
+## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
+meta_generator: true
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
@@ -127,62 +73,35 @@ tag_map:
 ## http://momentjs.com/docs/#/displaying/format/
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
+## Use post's date for updated date unless set in front-matter
+use_date_for_updated: false
 
 # Pagination
 ## Set per_page to 0 to disable pagination
 per_page: 10
 pagination_dir: page
 
+# Include / Exclude file(s)
+## include:/exclude: options only apply to the 'source/' folder
+include:
+exclude:
+ignore:
+
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
+# theme: landscape
 theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  - type: git
-    repo: 
-      github: https://github.com/zjZSTU/zjzstu.github.com.git,master
-      coding: git@git.dev.tencent.com:zjZSTU/zjZSTU.coding.me.git,master
-      # zhujian: ubuntu@132.232.142.219:/home/ubuntu/git/zhujian.tech.git,master
-    # branch: master
-  # - type: leancloud_counter_security_sync
-  - type: baidu_url_submitter
+  type: ''
+
+###############################################################
+# Customize
 
 # abbrlink config
 abbrlink:
   alg: crc32
   rep: hex
-
-# Algolia Search API Key
-algolia:
-  applicationID: HK9KZUTNL7
-  apiKey: 769ae75c9b13043e7ddf37a0dd152aab
-  indexName: 'hexo-search'
-  chunkSize: 5000
-
-# word count
-symbols_count_time:
-  symbols: true
-  time: true
-  total_symbols: true
-  total_time: true
-
-# leancloud_counter_security:
-#   enable_sync: true
-#   app_id: 7710vwEq3TDMc7fW09CR4mxa-gzGzoHsz
-#   app_key: EdjEcmyWJrk4M8q4OhRuvbBP
-#   username: zhujian
-#   password: zhujian123456
-
-sitemap: 
-  path: sitemap.xml
-baidusitemap:
-  path: baidusitemap.xml
-
-baidu_url_submit:
-  count: 1 ## 提交最新的一个链接
-  host: www.zhujian.tech ## 在百度站长平台中注册的域名
-  token: zpmDNFc2outXsNkC ## 请注意这是您的秘钥， 所以请不要把博客源代码发布在公众仓库里!
-  path: baidu_urls.txt ## 文本文档的地址， 新链接会保存在此文本文档里
