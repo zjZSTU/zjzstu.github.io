@@ -105,3 +105,10 @@ deploy:
 abbrlink:
   alg: crc32
   rep: hex
+
+symbols_count_time:
+  symbols: true
+  time: true
+  total_symbols: true
+  total_time: true
+  exclude_codeblock: false
