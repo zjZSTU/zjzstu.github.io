@@ -61,7 +61,68 @@ index_generator:
 # Category & Tag
 default_category: uncategorized
 category_map:
+  测试: test
+  随笔: essay
+  文档: doc
+  自动化: automation
+  软件工程: software-engineer
+  数学: math
+  编程: programming
+  工具: tool
+  数据集: dataset
+  数据格式: data format
+  机器学习: data learning
+  深度学习: deep learning
+  分类器: classifier
+  最优化: optimization
+  图像处理: image process
+  数据结构: data structure
+  翻译: translation
+  版本管理: version management
+
 tag_map:
+  神经网络: nerual network
+  卷积神经网络: convolutional neural network
+  支持向量机: support vector machine
+  逻辑回归: logistic regression
+  线性回归: linear regression
+  K近邻: k-nearest neighbor
+  主成分分析: principal component analysis
+  选择性搜索: selective search
+  图像分割: image segmentation
+  随机失活: dropout
+  批量归一化: batch normalization
+  学习率衰减: learning rate decay
+  权重惩罚: weight penalty
+  标准化: normalization
+  梯度下降: gradient descent
+  正则化: regularization
+  激活函数: activation
+  动量更新: momentum update
+  逐元素自适应学习率方法: per-parameter adaptive learning rate methods
+  梯度检查: gradient check
+  合理性检查: sanity check
+  权重初始化: weight initialization
+  超参数优化: hyperparameter optimization
+  模型集成: model ensemble
+  开发模型: dev-model
+  测试模型: test-model
+  开发流程: dev-process
+  概率论: probability-theory
+  统计学: statistics
+  微积分: calculus
+  线性代数: linear-albegra
+  函数式: functional-formula
+  高斯滤波: gaussian filter
+  图: graph
+  深度优先搜索: depth-first search
+  广度优先搜索: breadth-first search
+  最小生成树: minimum spanning tree
+  并查集: disjoint set
+  基于图的图像分割: Graph-Based Image Segmentation
+  目标识别: object recognition
+  目标检测: object detection
+  直方图: histogram
 
 # Metadata elements
 ## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
