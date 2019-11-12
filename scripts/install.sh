@@ -1,7 +1,13 @@
 #!/bin/bash
 
 set -eux
+
+pwd
+
 cd ./blogs/
+
+node -v
+npm -v
 
 git branch -vv
 git branch -a
