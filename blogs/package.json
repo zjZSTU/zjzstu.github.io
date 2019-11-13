@@ -7,7 +7,8 @@
     "clean": "hexo clean",
     "deploy": "hexo deploy",
     "server": "hexo server",
-    "cgs": "hexo clean && hexo generate && hexo server"
+    "cgs": "hexo clean && hexo generate && gulp && hexo server",
+    "cg": "hexo clean && hexo generate && gulp"
   },
   "hexo": {
     "version": "4.0.0"
