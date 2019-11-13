@@ -6,6 +6,10 @@ echo $PATH
 echo $ZJ_PATH
 echo $NODEJS_HOME
 
+export PATH=$PATH:$NODEJS_HOME
+
+echo $PATH
+
 cd ./blogs/
 
 npm install
