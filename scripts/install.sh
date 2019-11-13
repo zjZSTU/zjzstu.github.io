@@ -2,15 +2,9 @@
 
 set -eux
 
-pwd
-
 cd ./blogs/
 
-node -v
-npm -v
-
-git branch -vv
-git branch -a
+npm install
 
 NEXT_DIR="themes/next"
 CANVAS_DIR="${NEXT_DIR}/source/lib/canvas-nest"
@@ -50,9 +44,7 @@ function next()
     git remote add origin ${GIT}
     git fetch origin dev
     git checkout -b dev origin/dev
-    
-    git branch -vv
-    git branch -a
+
     cd ../..
 }
 
@@ -61,5 +53,3 @@ clone ${CANVAS_DIR} ${CANVAS_GIT}
 clone ${ALGOLIA_DIR} ${ALGOLIA_GIT}
 clone ${FANCYBOX_DIR} ${FANCYBOX_GIT}
 clone ${PACE_DIR} ${PACE_GIT}
-
-npm install
