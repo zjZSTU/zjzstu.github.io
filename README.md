@@ -1,33 +1,15 @@
 
 # zjzstu.github.io
 
-[![Documentation Status](https://readthedocs.org/projects/zjzstugithubio/badge/?version=latest)](https://zjzstugithubio.readthedocs.io/zh_CN/latest/?badge=latest) [![Documentation Status](https://readthedocs.org/projects/hexo-guide/badge/?version=latest)](https://hexo-guide.readthedocs.io/zh_CN/latest/?badge=latest) [![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org) [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![Documentation Status](https://readthedocs.org/projects/blog-website-building-guide/badge/?version=latest)](https://blog-website-building-guide.readthedocs.io/zh_CN/latest/?badge=latest) [![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org) [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
 > 基于`Hexo`实现的个人博客网站
 
-利用`Hexo`框架实现的个人博客网站 - https://www.zhujian.tech
+利用`Hexo v4.0.0 + NexT v7.5.0`实现的个人博客网站 - https://www.zhujian.tech
 
-网站制作包含以下服务：
+通过`Jenkins + Gitlab + 腾讯云`进行`CI&CD`
 
-* 网站框架：[Hexo](https://hexo.io)
-
-* 主题：[NexT](https://github.com/zjZSTU/hexo-theme-next)
-
-* 搜索：[Algolia](https://hexo-guide.readthedocs.io/zh_CN/latest/third-service/[Algolia]%E7%BD%91%E7%AB%99%E6%90%9C%E7%B4%A2.html)
-
-* 评论系统：[Gitalk](https://hexo-guide.readthedocs.io/zh_CN/latest/third-service/[Gitalk]%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F.html)
-
-* 访客和阅读次数统计：
-    * [不蒜子](https://hexo-guide.readthedocs.io/zh_CN/latest/third-service/[%E4%B8%8D%E8%92%9C%E5%AD%90]%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E6%AC%A1%E6%95%B0.html)
-    * [百度统计](https://tongji.baidu.com/web/27249108/welcome/login)
-
-* 持续集成：
-    * [Travis CI](https://hexo-guide.readthedocs.io/zh_CN/latest/third-service/[Travis%20CI]%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90.html)
-    * [Jenkins](https://www.zhujian.tech/posts/446d640.html)
-
-* 云服务：[腾讯云](https://cloud.tencent.com/?fromSource=gwzcw.1736893.1736893.1736893&gclid=Cj0KCQjwjYHpBRC4ARIsAI-3GkHCQESLZ49VY6v9zVtEgSVlnywvjdYO6VS7QN9Ia-vCQD1mQa0J8ywaAvdCEALw_wcB)
-
-* 域名服务：[阿里云](https://wanwang.aliyun.com/domain/com/?spm=5176.10695662.1158081.1.59854234GbQWbo)
+网站制作参考：[博客网站搭建指南](https://blog-website-building-guide.readthedocs.io/zh_CN/latest/?badge=latest)
 
 ## 内容列表
 
@@ -56,16 +38,7 @@ $ npm install -g hexo-cli
 $ sudo apt-get install git
 ```
 
-文档文件编译需要预先安装以下工具：
-
-```
-$ pip install -U Sphinx
-$ sudo apt-get install make
-```
-
 ## 用法
-
-### 博客编译
 
 本地编译当前网站：
 
@@ -84,29 +57,18 @@ $ git clone https://github.com/zjZSTU/hexo-theme-next.git themes/next
 $ git clone https://github.com/zjZSTU/theme-next-canvas-nest themes/next/source/lib/canvas-nest
 $ git clone https://github.com/zjZSTU/theme-next-algolia-instant-search themes/next/source/lib/algolia-instant-search
 $ git clone https://github.com/zjZSTU/theme-next-fancybox3 themes/next/source/lib/fancybox
+$ git clone https://github.com/zjZSTU/theme-next-pace.git themes/next/source/lib/pace
 
 # 安装npm包
 $ npm install
+# 全局安装
+$ npm install -g hexo-cli gulp
 
 # 编译
-$ npm run gg
+$ npm run cg
 ```
 
 完成后进入`blogs/public`目录，打开`index.html`文件
-
-### 文档编译
-
-浏览网站制作文档有两种方式
-
-1. 在线浏览文档：[hexo指南](https://hexo-guide.readthedocs.io/zh_CN/latest/)
-2. 本地生成文档，实现如下：
-
-    ```
-    $ cd zjzstu.github.io/docs
-    $ make html
-    ```
-    编译完成后进入`docs/build/html`目录，打开`index.html`文件
-
 
 ## 主要维护人员
 
