@@ -191,3 +191,15 @@ baidu_url_submit:
   host: www.zhujian.tech ## 在百度站长平台中注册的域名
   token: zpmDNFc2outXsNkC ## 请注意这是您的秘钥， 所以请不要把博客源代码发布在公众仓库里!
   path: baidu_urls.txt ## 文本文档的地址， 新链接会保存在此文本文档里
+
+feed:
+  type: atom
+  path: atom.xml
+  limit: 0
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+  icon:
+  autodiscovery: true
