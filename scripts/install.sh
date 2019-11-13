@@ -2,6 +2,10 @@
 
 set -eux
 
+echo $PATH
+echo $ZJ_PATH
+echo $NODEJS_HOME
+
 cd ./blogs/
 
 npm install
