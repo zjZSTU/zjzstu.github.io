@@ -2,11 +2,7 @@
 
 set -eux
 
-echo $PATH
-export PATH=$PATH:$NODEJS_HOME
 cd ./blogs/
-
-npm install
 
 NEXT_DIR="themes/next"
 CANVAS_DIR="${NEXT_DIR}/source/lib/canvas-nest"
@@ -55,3 +51,5 @@ clone ${CANVAS_DIR} ${CANVAS_GIT}
 clone ${ALGOLIA_DIR} ${ALGOLIA_GIT}
 clone ${FANCYBOX_DIR} ${FANCYBOX_GIT}
 clone ${PACE_DIR} ${PACE_GIT}
+
+npm install
