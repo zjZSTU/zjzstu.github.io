@@ -147,7 +147,7 @@ date: 2019-11-07 19:38:00
 >2. Group adjacent segments based on similarity
 >3. Go to step 1
 
-选择性搜索算法将这些过段作为初始输入，并执行以下步骤:
+选择性搜索算法将这些分段作为初始输入，并执行以下步骤:
 
 1. 将与分段部分相对应的所有边界框添加到区域方案列表中
 2. 基于相似度组合相邻分段
@@ -181,7 +181,7 @@ date: 2019-11-07 19:38:00
 
 >A color histogram of 25 bins is calculated for each channel of the image and histograms for all channels are concatenated to obtain a color descriptor resulting into a 25×3 = 75-dimensional color descriptor.
 
-为图像的每个通道计算25个像素的颜色直方图，并将所有通道的直方图连接起来，以获得25×3＝75维的颜色描述符
+为图像的每个通道计算25个bin的颜色直方图，并将所有通道的直方图连接起来，以获得25×3＝75维的颜色描述符
 
 >Color similarity of two regions is based on histogram intersection and can be calculated as:
 
