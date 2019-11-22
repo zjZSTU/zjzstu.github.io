@@ -123,6 +123,7 @@ tag_map:
   目标识别: object recognition
   目标检测: object detection
   直方图: histogram
+  方向梯度直方图: histogram of oriented gradients
 
 # Metadata elements
 ## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
