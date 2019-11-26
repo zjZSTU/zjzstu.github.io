@@ -126,6 +126,7 @@ tag_map:
   方向梯度直方图: histogram of oriented gradients
   卷积: convolution
   相关: correlation
+  纹理特征: texture feature
 
 # Metadata elements
 ## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
