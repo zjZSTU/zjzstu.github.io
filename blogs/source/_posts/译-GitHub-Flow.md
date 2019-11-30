@@ -103,6 +103,8 @@ master分支是稳定的，从master分支部署或从master分支创建新分�
 
 这很好，因为当我们转到GitHub分支列表页面时，我们可以很容易地看到哪些分支最近被处理过，以及它们在这些分支上有多少工作
 
+![](/imgs/github-flow/7988902c-d0a8-11e4-94c9-dc132461ffe4.png)
+
 >It’s almost like a list of upcoming features with current rough status. This page is awesome if you’re not using it - it only shows you branches that have unique work on them relative to your currently selected branch and it sorts them so that the ones most recently worked on are at the top. If I get really curious, I can click on the 'Compare' button to see what the actual unified diff and commit list is that is unique to that branch.
 
 这几乎就像是一个当前粗略状态的即将推出的功能列表。如果你不使用它，这个页面会很棒 - 它只显示相对于你当前选择的分支在它们上面有独特工作的分支，它会对它们进行排序，使得最近工作的分支在顶部。如果我真的很好奇，我可以点击“比较”按钮，看看真正的统一差异和提交列表是哪个分支独有的
@@ -156,9 +158,13 @@ GitHub有一个惊人的代码审查系统，叫做Pull Requests(PRs)，恐怕�
 
 实际上，我们更多地将其用作分支对话视图，而不是录取请求。您可以在GitHub中的单个项目(公共或私有)中将请求从一个分支发送到另一个分支，这样除了“请求合并”之外，您还可以使用它们来说“我需要帮助或审阅”
 
+![](/imgs/github-flow/61a2dcba-d0a8-11e4-9924-3576232053ee.png)
+
 >Here you can see Josh cc’ing Brian for review and Brian coming in with some advice on one of the lines of code. Further down we can see Josh acknowledging Brian’s concerns and pushing more code to address them.
 
 在这里，你可以看到乔什给布莱恩发了评论，布莱恩进来了，并对其中一行代码提出了一些建议。在更远的地方，我们可以看到乔希承认布赖恩的担忧，并推动更多的代码来解决它们
+
+![](/imgs/github-flow/5054b4ba-d0a8-11e4-8d38-548ecf157018.png)
 
 >Finally you can see that we’re still in the trial phase - this is not a deployment ready branch yet, we use the Pull Requests to review the code long before we actually want to merge it into master for deployment.
 
@@ -176,6 +182,8 @@ GitHub有一个惊人的代码审查系统，叫做Pull Requests(PRs)，恐怕�
 
 如果分支已经打开太久，并且您觉得它与主分支不同步，您可以将主分支合并到您的主题分支中，然后继续。您可以很容易地在PR讨论或提交列表中看到分支最后一次更新为“master”时的情况
 
+![](/imgs/github-flow/2162f69e-d0a8-11e4-8c98-d2bb581f7152.png)
+
 >When everything is really and truly done on the branch and you feel it’s ready to deploy, you can move on to the next step.
 
 当分支上的所有工作都真正完成，并且您觉得已经准备好部署时，您可以继续下一步
@@ -185,6 +193,8 @@ GitHub有一个惊人的代码审查系统，叫做Pull Requests(PRs)，恐怕�
 >We don’t simply do work directly on master or work on a topic branch and merge it in when we think it’s done - we try to get signoff from someone else in the company. This is generally a +1 or emoji or ":shipit:" comment, but we try to get someone else to look at it.
 
 我们不只是直接在master上工作或者在主题分支上工作，当我们认为已经完成的时候，我们会把它合并进来 - 我们会试着从公司的其他人那里获得签名。这通常是+1或表情符号或“:shipit:”注释，但我们试图让其他人看它
+
+![](/imgs/github-flow/0ea37c4a-d0a8-11e4-8b61-7aa73b7e3b03.png)
 
 >Once we get that, and the branch passes CI, we can merge it into master for deployment, which will automatically close the Pull Request when we push it.
 
