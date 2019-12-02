@@ -3,9 +3,11 @@ title: '[译]GitHub Flow'
 categories:
   - - 翻译
   - - 版本管理
+    - workflow
 tags:
   - git
   - github
+  - github-flow
 abbrlink: a20843e9
 date: 2019-11-30 17:23:50
 ---

@@ -3,8 +3,10 @@ title: '[译]A successful Git branching model'
 categories:
   - - 翻译
   - - 版本管理
+    - workflow
 tags:
   - git
+  - git-flow
 abbrlink: aae96086
 date: 2019-11-29 19:59:30
 ---
