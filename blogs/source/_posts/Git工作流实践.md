@@ -2,7 +2,7 @@
 title: Git工作流实践
 categories:
   - - 版本管理
-  - workflow
+    - workflow
 tags:
   - git
   - git-flow
