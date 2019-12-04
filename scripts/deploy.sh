@@ -10,13 +10,8 @@ function set_config
 }
 
 # algolia环境
-
-HEXO_ALGOLIA =`echo ${HEXO_ALGOLIA_INDEXING_KEY}`
-
-if [[ -z ${HEXO_ALGOLIA} ]]
-then
-    export HEXO_ALGOLIA_INDEXING_KEY=${HEXO_ALGOLIA_KEY}
-fi
+export HEXO_ALGOLIA_INDEXING_KEY=${HEXO_ALGOLIA_KEY}
+echo $HEXO_ALGOLIA_INDEXING_KEY
 
 # GIT环境
 
