@@ -52,4 +52,15 @@ clone ${ALGOLIA_DIR} ${ALGOLIA_GIT}
 clone ${FANCYBOX_DIR} ${FANCYBOX_GIT}
 clone ${PACE_DIR} ${PACE_GIT}
 
+# 调用缓存包
+
+Node_DIR="node_modules"
+Node_GIT="http://192.168.0.184:7010/zjZSTU/node_modules.git"
+
+if [ -e ${Node_DIR} ]
+then
+    rm -rf ${Node_DIR}
+fi
+
+git clone ${Node_GIT}
 npm install
