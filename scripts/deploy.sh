@@ -9,6 +9,15 @@ function set_config
     echo -e "Host git.dev.tencent.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 }
 
+# algolia环境
+
+HEXO_ALGOLIA =`echo ${HEXO_ALGOLIA_INDEXING_KEY}`
+
+if [[ -z ${HEXO_ALGOLIA} ]]
+then
+    export HEXO_ALGOLIA_INDEXING_KEY=${HEXO_ALGOLIA_KEY}
+fi
+
 # GIT环境
 
 USER_NAME=`git config --global user.name`
