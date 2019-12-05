@@ -35,10 +35,10 @@ then
     set_config
 fi
 
-if [[ ! -s ~/.ssh/zh_id_rsa ]]
+if [[ ! -s ~/.ssh/id_rsa ]]
 then
-    cat ${ID_RSA} > ~/.ssh/zj_id_rsa
-    chmod 600 ~/.ssh/zj_id_rsa
+    cat ${ID_RSA} > ~/.ssh/id_rsa
+    chmod 600 ~/.ssh/id_rsa
 fi
 
 ## GIT操作
