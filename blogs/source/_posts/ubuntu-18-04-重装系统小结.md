@@ -72,7 +72,7 @@ $ sudo apt-get install gcc g++ build_essential cmake git vim
 
 * `Chrome`：虽然系统自带了`FireFox`，不过更常用的还是`Chrome`
 * `VSCode`：最方便的编辑工具
-* `XMind`：思维导图。官网：[XMind](https://www.xmind.cn/)
+* `MindMaster`：思维导图。官网：[MindMaster](https://www.edrawsoft.cn/mindmaster/)
 * `EDraw`：国产绘图神器，没想到还有`Linux`版本。官网：[亿图图示](https://www.edrawsoft.cn/lp/edraw.html)
 
 ## 虚拟机和容器
