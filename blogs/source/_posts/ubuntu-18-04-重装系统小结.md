@@ -89,7 +89,7 @@ $ sudo apt-get install gcc g++ build_essential cmake git vim
 
 * `Docker`安装：[[Ubuntu 16.04]安装](https://container-automation.readthedocs.io/zh_CN/latest/docker/basic/[Ubuntu%2016.04]%E5%AE%89%E8%A3%85.html)
 * 阿里云加速：[[Aliyun]镜像加速](https://container-automation.readthedocs.io/zh_CN/latest/docker/basic/[Aliyun]%E9%95%9C%E5%83%8F%E5%8A%A0%E9%80%9F.html)
-* 非`root`登录/开机子启动：[[Ubuntu 16.04]可选设置](https://container-automation.readthedocs.io/zh_CN/latest/docker/basic/[Ubuntu%2016.04]%E5%8F%AF%E9%80%89%E8%AE%BE%E7%BD%AE.html)
+* 非`root`登录/开机自启动：[[Ubuntu 16.04]可选设置](https://container-automation.readthedocs.io/zh_CN/latest/docker/basic/[Ubuntu%2016.04]%E5%8F%AF%E9%80%89%E8%AE%BE%E7%BD%AE.html)
 
 之前也学习了通过`Docker`配置软件，当前使用的有：
   
