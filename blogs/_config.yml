@@ -179,11 +179,17 @@ symbols_count_time:
   exclude_codeblock: false
 
 # Algolia Search API Key
-algolia:
-  applicationID: HK9KZUTNL7
-  apiKey: 769ae75c9b13043e7ddf37a0dd152aab
-  indexName: 'hexo-search'
-  chunkSize: 5000
+# algolia:
+#   applicationID: HK9KZUTNL7
+#   apiKey: 769ae75c9b13043e7ddf37a0dd152aab
+#   indexName: 'hexo-search'
+#   chunkSize: 5000
+
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
 
 sitemap: 
   path: sitemap.xml
