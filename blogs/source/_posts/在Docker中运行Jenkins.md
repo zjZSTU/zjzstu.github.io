@@ -12,6 +12,20 @@ date: 2019-11-08 19:04:40
 
 打算在远程服务器上运行`Jenkins`，忽然发现`git`没有安装，搞了半天没有成功（*各种依赖问题，条件限制不能重启机器*），所以尝试通过`Docker`运行`Jenkins`
 
+## 完整命令
+
+下面首先提供完整执行命令，再依次介绍其中`Jenkins`配置
+
+```
+$ docker run -d \
+  --restart=always \
+  -p 7070:8080 \
+  -p 50000:50000 \
+  -v jenkins_home:/var/jenkins_home \
+  --name jenkins \
+  jenkins/jenkins
+```
+
 ## 镜像
 
 `Jenkins`提供了官方镜像 - [jenkins/jenkins](https://hub.docker.com/r/jenkins/jenkins/)
