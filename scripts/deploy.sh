@@ -11,14 +11,12 @@ function set_config
 
 # GIT环境
 
-USER_EMAIL=`git config --global user.email`
-
 if [[ -z `git config --global user.name` ]]
 then
 	git config --global user.name ${GIT_USER_NAME}
 fi
 
-if [[ -z ${USER_EMAIL} ]]
+if [[ -z `git config --global user.email` ]]
 then
     git config --global user.email ${GIT_USER_EMAIL}
 fi
