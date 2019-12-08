@@ -2,6 +2,7 @@
 title: '[译]Writing Custom Datasets, DataLoaders and Transforms'
 categories:
   - - 编程
+  - - 翻译
 tags:
   - python
   - pytorch
