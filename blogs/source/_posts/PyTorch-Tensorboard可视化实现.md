@@ -253,13 +253,15 @@ writer.close()
 
 ## add_scalar
 
-调用函数[add_scalar](https://pytorch.org/docs/stable/tensorboard.html#torch.utils.tensorboard.writer.SummaryWriter.add_scalars)实现训练数据实时写入
+调用函数[add_scalar](https://pytorch.org/docs/stable/tensorboard.html#torch.utils.tensorboard.writer.SummaryWriter.add_scalar)或者[add_scalars](https://pytorch.org/docs/stable/tensorboard.html#torch.utils.tensorboard.writer.SummaryWriter.add_scalars)实现训练数据实时写入
 
 ```
+def add_scalar(self, tag, scalar_value, global_step=None, walltime=None):
 def add_scalars(self, main_tag, tag_scalar_dict, global_step=None, walltime=None):
 ```
 
 * `main_tag`：标识符
+* `scalar_value`：浮点值（`float`）或者字符串（`str`）
 * `tag_scalar_dict：dict`，以键值对的方式保存子标签和相应的值
 * `global_step`：步长
 
