@@ -1,7 +1,11 @@
 ---
 title: 如何编写好的README
-categories: 文档
-tags: README
+categories: 
+- [随笔]
+- [版本管理]
+tags: 
+- readme
+- git
 abbrlink: 79f69ebe
 date: 2019-09-10 19:06:02
 ---
