@@ -9,7 +9,7 @@ tags:
 
 原先笔记本自带的是`Win10`系统，想着日常开发中更常用的是`Linux`环境，所以重装了`Ubuntu`。之前用的是`16.04`版本，用了也快一年了，电脑里面的东西攒的挺多的，而且现在也都快`2020`了，所以打算重装`Ubuntu 18.04`版本，小结重装`Ubuntu`系统后相关环境配置
 
-![](../imgs/重装系统小结/Ubuntu&#32;18.04.png)
+![](/imgs/重装系统小结/screen.png)
 
 ## 系统配置
 
@@ -100,3 +100,7 @@ $ sudo apt-get install gcc g++ build_essential cmake git vim
 5. `Jenkins`：[在Docker中运行Jenkins](https://www.zhujian.tech/posts/202ee452.html)
 6. `GitLab`：[[Docker]GitLab使用](https://zj-git-guide.readthedocs.io/zh_CN/latest/gitlab/[Docker]GitLab%E4%BD%BF%E7%94%A8.html)
 7. `Nginx`：[[Ubuntu 16.04]docker安装nginx](https://zj-network-guide.readthedocs.io/zh_CN/latest/nginx/[Ubuntu%2016.04]docker%E5%AE%89%E8%A3%85nginx.html)
+
+## 小结
+
+![](/imgs/重装系统小结/Ubuntu&#32;18.04.png)
