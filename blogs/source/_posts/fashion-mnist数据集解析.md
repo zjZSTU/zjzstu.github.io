@@ -10,6 +10,7 @@ tags:
 - python
 - torchvision
 - matplotlib
+- numpy
 abbrlink: 631c599a
 date: 2019-12-10 19:08:55
 ---
