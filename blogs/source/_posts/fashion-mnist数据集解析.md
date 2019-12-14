@@ -1,14 +1,22 @@
 ---
 title: Fashion-MNIST数据集解析
-categories: 数据集
-tags: fashion-mnist
+categories: 
+- [数据集]
+- [编程]
+- [代码库]
+tags: 
+- fashion-mnist
+- pytorch
+- python
+- torchvision
+- matplotlib
 abbrlink: 631c599a
 date: 2019-12-10 19:08:55
 ---
 
 之前识别测试最常用的是手写数字数据集[MNIST](http://yann.lecun.com/exdb/mnist/)，今天遇到一个新的基准数据集 - [Fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist)
 
-![](./imgs/..//imgs/fashion-mnist/fashion-mnist-sprite.png)
+![](/imgs/..//imgs/fashion-mnist/fashion-mnist-sprite.png)
 
 ## 简介
 
@@ -315,10 +323,10 @@ draw(mnist_train_accu_list, fashion_train_accu_list, 'epoch','accurancy','train 
 draw(mnist_test_accu_list, fashion_test_accu_list, 'epoch','accurancy','test accurancy')
 ```
 
-![](./imgs/..//imgs/fashion-mnist/mnist_fashion_loss.png)
+![](/imgs/..//imgs/fashion-mnist/mnist_fashion_loss.png)
 
-![](./imgs/..//imgs/fashion-mnist/mnist_fashion_train.png)
+![](/imgs/..//imgs/fashion-mnist/mnist_fashion_train.png)
 
-![](./imgs/..//imgs/fashion-mnist/mnist_fashion_test.png)
+![](/imgs/..//imgs/fashion-mnist/mnist_fashion_test.png)
 
 从训练结果可以发现，相比较于`MNIST`，数据集`Fashion-MNIST`更具挑战性
