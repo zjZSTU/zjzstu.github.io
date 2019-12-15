@@ -80,6 +80,7 @@ category_map:
   翻译: translation
   版本管理: version management
   代码库: codebase
+  评判标准: criterion
 
 tag_map:
   神经网络: nerual network
