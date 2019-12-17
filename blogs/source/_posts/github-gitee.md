@@ -2,9 +2,8 @@
 title: github+gitee
 categories:
   - - 随笔
-  - - 版本管理
+  - [版本控制, 托管平台]
 tags:
-  - git
   - github
   - coding
   - gitee

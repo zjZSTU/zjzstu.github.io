@@ -1,10 +1,8 @@
 ---
 title: Git工作流实践
 categories:
-  - - 版本管理
-    - workflow
+  - [版本控制, 规范, workflow]
 tags:
-  - git
   - git-flow
   - gitlab-flow
   - github-flow

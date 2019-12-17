@@ -1,9 +1,10 @@
 ---
 title: '[译]GitHub Flow'
 categories:
-  - - 翻译
-  - - 版本管理
-    - workflow
+  - [翻译]
+  - [版本控制, 规范, workflow]
+  - [版本控制, 托管平台]
+  - [工具]
 tags:
   - git
   - github

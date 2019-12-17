@@ -2,10 +2,9 @@
 title: '[译]Introduction to GitLab Flow'
 categories:
   - - 翻译
-  - - 版本管理
-    - workflow
+  - [版本控制, 规范, workflow]
+  - [版本控制, 托管平台]
 tags:
-  - git
   - gitlab
   - gitlab-flow
 abbrlink: b35b83bc

@@ -1,9 +1,9 @@
 ---
 title: '[译]A successful Git branching model'
 categories:
-  - - 翻译
-  - - 版本管理
-    - workflow
+  - [翻译]
+  - [版本控制, 规范,  workflow]
+  - [工具]
 tags:
   - git
   - git-flow

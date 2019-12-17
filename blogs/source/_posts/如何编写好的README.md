@@ -2,10 +2,9 @@
 title: 如何编写好的README
 categories: 
 - [随笔]
-- [版本管理]
+- [版本控制, 规范]
 tags: 
 - readme
-- git
 abbrlink: 79f69ebe
 date: 2019-09-10 19:06:02
 ---
