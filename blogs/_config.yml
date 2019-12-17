@@ -68,8 +68,6 @@ category_map:
   软件工程: software-engineer
   数学: math
   工具: tool
-  数据集: dataset
-  数据格式: data format
   翻译: translation
   版本管理: version management
   
@@ -101,6 +99,10 @@ category_map:
   目标检测: object detection
   目标分割: object segmentation
   特征: feature
+
+  数据: data
+  数据集: dataset
+  数据格式: data format
 
 tag_map:
   函数式编程: functional programming
