@@ -2,10 +2,16 @@
 title: 从numpy到pytorch实现逻辑回归
 categories:
   - [机器学习]
-  - [编程]
+  - [编程, 代码库]
+  - [编程, 编程语言]
 tags:
   - 逻辑回归
   - python
+  - matplotlib
+  - numpy
+  - pandas
+  - sklearn
+  - pytorch
 abbrlink: 730913b9
 date: 2019-04-22 09:27:06
 ---
