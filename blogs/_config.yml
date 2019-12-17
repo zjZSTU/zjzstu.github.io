@@ -70,9 +70,15 @@ category_map:
   工具: tool
   数据集: dataset
   数据格式: data format
-  数据结构: data structure
   翻译: translation
   版本管理: version management
+  
+  数据结构: data structure
+  图: graph
+  树: tree
+  遍历: traverse
+  最小生成树: minimum spanning tree
+  存储结构: storage structure
 
   编程: programming
   编程语言: programming language
@@ -145,11 +151,11 @@ tag_map:
   微积分: calculus
   线性代数: linear-albegra
   
-  图: graph
   深度优先搜索: depth-first search
   广度优先搜索: breadth-first search
-  最小生成树: minimum spanning tree
   并查集: disjoint set
+  邻接矩阵: adjacency list
+  邻接表: adjacency matrix
 
 # Metadata elements
 ## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
