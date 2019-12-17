@@ -1,13 +1,15 @@
 ---
 title: '[译]Histogram of Oriented Gradients'
 categories:
-  - - 图像处理
+  - [算法, 图像处理, 直方图]
+  - [算法, 图像处理, 特征]
   - [编程, 编程语言]
   - [编程, 代码库]
   - - 翻译
 tags:
   - HOG
   - 方向梯度直方图
+  - 纹理特征
   - opencv
   - c++
   - python

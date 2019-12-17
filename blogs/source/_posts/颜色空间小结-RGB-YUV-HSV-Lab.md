@@ -1,7 +1,7 @@
 ---
 title: '颜色空间小结(RGB/YUV/HSV/Lab/...)'
 categories:
-  - 图像处理
+  - [算法, 图像处理, 颜色空间]
 tags:
   - rgb
   - hsv

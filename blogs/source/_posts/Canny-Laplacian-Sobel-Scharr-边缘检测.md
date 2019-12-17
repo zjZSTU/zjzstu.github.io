@@ -1,7 +1,7 @@
 ---
 title: '[Canny][Laplacian][Sobel][Scharr]边缘检测'
 categories:
-  - - 图像处理
+  - [算法, 图像处理, 边缘检测]
   - [编程, 编程语言]
   - [编程, 代码库]
 tags:

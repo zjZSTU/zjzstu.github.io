@@ -2,7 +2,8 @@
 title: '[译]Selective Search for Object Detection (C++/Python)'
 categories:
   - [算法, 机器学习]
-  - - 图像处理
+  - [算法, 图像处理, 目标检测]
+  - [算法, 图像处理, 目标识别]
   - [编程, 编程语言]
   - [编程, 代码库]
   - - 翻译

@@ -1,7 +1,7 @@
 ---
 title: '[Convolvution][Correlation]卷积和相关的异同'
 categories:
-  - 图像处理
+  - [算法, 图像处理, 图像滤波]
 tags:
   - 卷积
   - 相关
