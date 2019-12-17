@@ -67,24 +67,29 @@ category_map:
   自动化: automation
   软件工程: software-engineer
   数学: math
-  编程: programming
   工具: tool
   数据集: dataset
   数据格式: data format
-  机器学习: data learning
-  深度学习: deep learning
-  分类器: classifier
-  最优化: optimization
   图像处理: image process
   数据结构: data structure
   翻译: translation
   版本管理: version management
-  代码库: codebase
-  评判标准: criterion
+
+  编程: programming
   编程语言: programming language
   编程范式: programming paradigm
+  代码库: codebase
+
+  算法: algorithm
+  最优化: optimization
+  评判标准: criterion
+  机器学习: data learning
+  深度学习: deep learning
+  分类器: classifier
 
 tag_map:
+  函数式编程: functional programming
+
   神经网络: nerual network
   卷积神经网络: convolutional neural network
   支持向量机: support vector machine
@@ -93,7 +98,8 @@ tag_map:
   K近邻: k-nearest neighbor
   主成分分析: principal component analysis
   选择性搜索: selective search
-  图像分割: image segmentation
+  基于图的图像分割: Graph-Based Image Segmentation
+
   随机失活: dropout
   批量归一化: batch normalization
   学习率衰减: learning rate decay
@@ -109,21 +115,27 @@ tag_map:
   权重初始化: weight initialization
   超参数优化: hyperparameter optimization
   模型集成: model ensemble
+  
+  图像分割: image segmentation
+
+  接受者操作特征曲线: receiver operating characteristic curve
+  曲线下面积: area under the curve
+
   开发模型: dev-model
   测试模型: test-model
   开发流程: dev-process
+
   概率论: probability-theory
   统计学: statistics
   微积分: calculus
   线性代数: linear-albegra
-  函数式编程: functional programming
+  
   高斯滤波: gaussian filter
   图: graph
   深度优先搜索: depth-first search
   广度优先搜索: breadth-first search
   最小生成树: minimum spanning tree
   并查集: disjoint set
-  基于图的图像分割: Graph-Based Image Segmentation
   目标识别: object recognition
   目标检测: object detection
   直方图: histogram
