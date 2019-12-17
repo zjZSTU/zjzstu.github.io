@@ -81,6 +81,8 @@ category_map:
   版本管理: version management
   代码库: codebase
   评判标准: criterion
+  编程语言: programming language
+  编程范式: programming paradigm
 
 tag_map:
   神经网络: nerual network
@@ -114,7 +116,7 @@ tag_map:
   统计学: statistics
   微积分: calculus
   线性代数: linear-albegra
-  函数式: functional-formula
+  函数式编程: functional programming
   高斯滤波: gaussian filter
   图: graph
   深度优先搜索: depth-first search
