@@ -1,6 +1,7 @@
 ---
 title: PASCAL-VOC数据集解析
-categories: 数据集
+categories: 
+- [数据, 数据集]
 tags: pascal voc
 abbrlink: 28b6703d
 date: 2019-08-05 19:54:41
