@@ -69,8 +69,11 @@ category_map:
   数学: math
   工具: tool
   翻译: translation
-  版本管理: version management
-  
+
+  版本控制: version control
+  托管平台: hosting platform
+  规范: specification
+
   数据结构: data structure
   图: graph
   树: tree
