@@ -2,11 +2,14 @@
 title: 从numpy到pytorch实现线性回归
 categories:
   - [机器学习]
-  - [编程]
+  - [编程, 代码库]
+  - [编程, 编程语言]
 tags:
   - 线性回归
   - python
   - pytorch
+  - matplotlib
+  - numpy
 abbrlink: ca2079f0
 date: 2019-04-16 20:13:01
 ---

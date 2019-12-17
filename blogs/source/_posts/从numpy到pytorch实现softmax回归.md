@@ -2,11 +2,16 @@
 title: 从numpy到pytorch实现softmax回归
 categories:
   - [机器学习]
-  - [编程]
+  - [编程, 代码库]
+  - [编程, 编程语言]
 tags:
   - softmax
   - python
   - pytorch
+  - sklearn
+  - numpy
+  - matplotlib
+  - pandas
 abbrlink: 1c195604
 date: 2019-04-28 11:13:16
 ---
