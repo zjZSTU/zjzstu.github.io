@@ -1,7 +1,7 @@
 ---
 title: 使用softmax回归进行mnist分类
 categories:
-  - [机器学习]
+  - [算法, 机器学习]
   - [编程, 编程语言]
   - [编程, 代码库]
 tags:

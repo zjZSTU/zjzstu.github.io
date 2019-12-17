@@ -3,7 +3,7 @@ title: 随机失活-pytorch
 abbrlink: 2bee4fce
 date: 2019-06-08 10:49:36
 categories:
-  - [最优化]
+  - [算法, 最优化]
   - [编程, 编程语言]
   - [编程, 代码库]
 tags:

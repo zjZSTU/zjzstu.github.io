@@ -3,8 +3,8 @@ title: >-
   [译]Rich feature hierarchies for accurate object detection and semantic
   segmentation
 categories:
-  - - 深度学习
-  - - 机器学习
+  - [算法, 深度学习]
+  - [算法, 机器学习]
   - - 图像处理
   - - 翻译
 tags:

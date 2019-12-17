@@ -1,7 +1,7 @@
 ---
 title: Nesterov加速梯度
 categories:
-  - [最优化]
+  - [算法, 最优化]
   - [编程, 编程语言]
   - [编程, 代码库]
 tags:

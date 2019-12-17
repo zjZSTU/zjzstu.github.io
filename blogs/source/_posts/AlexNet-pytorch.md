@@ -3,7 +3,7 @@ title: AlexNet-pytorch
 abbrlink: ba337bfa
 date: 2019-06-08 10:53:43
 categories:
-  - [深度学习]
+  - [算法, 深度学习]
   - [编程, 编程语言]
   - [编程, 代码库]
 tags:
