@@ -2,12 +2,11 @@
 title: '[译]The Boost Graph Library(BGL)'
 categories:
   - - 翻译
-  - - 数据结构
+  - [数据结构, 图]
   - [编程, 编程语言]
   - [编程, 代码库]
 tags:
   - c++
-  - 图
   - stl
 abbrlink: af977180
 date: 2019-10-25 14:57:23
