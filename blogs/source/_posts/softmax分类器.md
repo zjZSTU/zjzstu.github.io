@@ -3,10 +3,15 @@ title: softmax分类器
 categories:
   - - 机器学习
   - - 分类器
-  - - 编程
+  - [编程, 编程语言]
+  - [编程, 代码库]
 tags:
   - softmax
   - python
+  - numpy
+  - pandas
+  - sklearn
+  - matplotlib
 abbrlink: e043b7fb
 date: 2019-07-17 20:07:33
 ---

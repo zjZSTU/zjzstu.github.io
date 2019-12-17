@@ -2,12 +2,17 @@
 title: softmax回归
 categories:
   - [机器学习]
-  - [编程]
+  - [编程, 编程语言]
+  - [编程, 代码库]
   - [数学]
 tags:
   - softmax
   - 微积分
   - python
+  - numpy
+  - pandas
+  - sklearn
+  - matplotlib
 abbrlink: 2626bec3
 date: 2019-04-23 14:23:20
 ---

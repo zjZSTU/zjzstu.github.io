@@ -2,11 +2,15 @@
 title: 使用softmax回归进行mnist分类
 categories:
   - [机器学习]
-  - [编程]
+  - [编程, 编程语言]
+  - [编程, 代码库]
 tags:
   - softmax
   - python
   - pytorch
+  - numpy
+  - pandas
+  - matplotlib
 abbrlink: dd673751
 date: 2019-04-28 19:56:03
 ---

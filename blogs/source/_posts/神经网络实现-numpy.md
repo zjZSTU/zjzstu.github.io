@@ -3,10 +3,15 @@ title: 神经网络实现-numpy
 categories:
   - [机器学习]
   - [深度学习]
-  - [编程]
+  - [编程, 编程语言]
+  - [编程, 代码库]
 tags:
   - 神经网络
   - python
+  - pandas
+  - numpy
+  - sklearn
+  - matplotlib
 abbrlink: ba2ca878
 date: 2019-05-17 13:24:43
 ---

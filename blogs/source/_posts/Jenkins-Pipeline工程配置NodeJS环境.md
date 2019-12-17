@@ -3,10 +3,11 @@ title: '[Jenkins]Pipeline工程配置NodeJS环境'
 categories:
   - - 工具
   - - 自动化
-  - - 编程
+  - [编程, 编程语言]
 tags:
   - jenkins
   - nodeJS
+  - shell
 abbrlink: d521b4ea
 date: 2019-11-13 16:14:03
 ---

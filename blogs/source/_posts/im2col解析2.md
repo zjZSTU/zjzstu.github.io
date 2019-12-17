@@ -2,10 +2,12 @@
 title: im2col解析2
 categories:
   - [深度学习]
-  - [编程]
+  - [编程, 编程语言]
+  - [编程, 代码库]
 tags:
   - 卷积神经网络
   - python
+  - numpy
 abbrlink: 597060a3
 date: 2019-05-25 12:39:38
 ---

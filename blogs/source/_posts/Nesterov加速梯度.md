@@ -2,10 +2,12 @@
 title: Nesterov加速梯度
 categories:
   - [最优化]
-  - [编程]
+  - [编程, 编程语言]
+  - [编程, 代码库]
 tags:
   - 动量更新
   - python
+  - numpy
 abbrlink: e51acd5
 date: 2019-05-31 14:29:45
 ---

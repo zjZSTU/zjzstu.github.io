@@ -2,10 +2,14 @@
 title: PPM文件解析
 categories:
   - - 数据格式
-  - - 编程
+  - [编程, 编程语言]
+  - [编程, 代码库]
 tags:
   - ppm
   - python
+  - argparse
+  - numpy
+  - opencv
 abbrlink: 6cbcc636
 date: 2019-08-10 13:53:08
 ---

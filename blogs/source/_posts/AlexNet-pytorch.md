@@ -4,10 +4,13 @@ abbrlink: ba337bfa
 date: 2019-06-08 10:53:43
 categories:
   - [深度学习]
-  - [编程]
+  - [编程, 编程语言]
+  - [编程, 代码库]
 tags:
   - AlexNet
   - python
+  - pytorch
+  - torchvision 
 ---
 
 使用`pytorch`实现`AlexNet`，并进行`cifar-10`训练和测试

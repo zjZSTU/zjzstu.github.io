@@ -2,10 +2,13 @@
 title: PASCAL VOC 2007数据集解析
 categories: 
 - [数据集]
-- [编程]
+- [编程, 编程语言]
+- [编程, 代码库]
 tags: 
 - pascal voc
 - python
+- xml
+- opencv
 abbrlink: 5a56cd45
 date: 2019-12-06 16:42:02
 ---

@@ -1,7 +1,15 @@
 ---
 title: cifar-100数据集解析
-categories: 数据集
-tags: cifar100
+categories: 
+- [数据集]
+- [编程, 编程语言]
+- [编程, 代码库]
+tags: 
+- cifar100
+- python
+- pickle
+- numpy
+- opencv
 abbrlink: adb6e880
 date: 2019-04-02 20:44:57
 ---

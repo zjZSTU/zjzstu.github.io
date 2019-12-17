@@ -1,11 +1,13 @@
 ---
 title: '[PyTorch]Tensorboard使用实践'
 categories:
-  - - 编程
+  - [编程, 编程语言]
+  - [编程, 代码库]
   - - 工具
 tags:
   - python
   - pytorch
+  - torchvision
   - tensorboard
 abbrlink: f793688d
 date: 2019-12-11 19:29:58

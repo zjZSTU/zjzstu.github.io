@@ -2,10 +2,12 @@
 title: LeNet5实现-numpy
 categories:
   - [深度学习]
-  - [编程]
+  - [编程, 编程语言]
+  - [编程, 代码库]
 tags:
   - LeNet-5
   - python
+  - numpy
 abbrlink: c300ea0f
 date: 2019-05-27 19:20:06
 ---

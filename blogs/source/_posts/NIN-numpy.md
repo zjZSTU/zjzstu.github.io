@@ -2,10 +2,12 @@
 title: NIN-numpy
 categories:
   - [深度学习]
-  - [编程]
+  - [编程, 编程语言]
+  - [编程, 代码库]
 tags:
   - NIN
   - python
+  - numpy
 abbrlink: 55877cae
 date: 2019-06-20 13:59:12
 ---

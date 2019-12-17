@@ -1,12 +1,17 @@
 ---
 title: '[译]Writing Custom Datasets, DataLoaders and Transforms'
 categories:
-  - - 编程
+  - [编程, 编程语言]
+  - [编程, 代码库]
   - - 翻译
 tags:
   - python
   - pytorch
   - torchvision
+  - numpy
+  - matplotlib
+  - skimage
+  - pandas
 abbrlink: aa0415d3
 date: 2019-12-08 14:52:55
 ---

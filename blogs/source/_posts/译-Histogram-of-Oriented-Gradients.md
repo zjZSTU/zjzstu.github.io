@@ -2,7 +2,8 @@
 title: '[译]Histogram of Oriented Gradients'
 categories:
   - - 图像处理
-  - - 编程
+  - [编程, 编程语言]
+  - [编程, 代码库]
   - - 翻译
 tags:
   - HOG

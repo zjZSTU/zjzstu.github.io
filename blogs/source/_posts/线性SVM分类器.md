@@ -3,10 +3,15 @@ title: 线性SVM分类器
 categories:
   - [机器学习]
   - [分类器]
-  - [编程]
+  - [编程, 编程语言]
+  - [编程, 代码库]
 tags:
   - 支持向量机
   - python
+  - numpy
+  - matplotlib
+  - pandas
+  - sklearn
 abbrlink: ebe205e
 date: 2019-07-14 10:24:22
 ---

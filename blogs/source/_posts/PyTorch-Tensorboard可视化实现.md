@@ -1,11 +1,13 @@
 ---
 title: '[PyTorch]Tensorboard可视化实现'
 categories:
-  - - 编程
+  - [编程, 编程语言]
+  - [编程, 代码库]
   - - 工具
 tags:
   - python
   - pytorch
+  - torchvision
   - tensorboard
 abbrlink: eb6f2b71
 date: 2019-12-11 14:56:00

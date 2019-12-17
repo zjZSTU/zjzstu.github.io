@@ -2,12 +2,12 @@
 title: Fashion-MNIST数据集解析
 categories: 
 - [数据集]
-- [编程]
-- [代码库]
+- [编程, 编程语言]
+- [编程, 代码库]
 tags: 
 - fashion-mnist
-- pytorch
 - python
+- pytorch
 - torchvision
 - matplotlib
 - numpy

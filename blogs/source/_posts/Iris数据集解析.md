@@ -2,8 +2,8 @@
 title: Iris数据集解析
 categories: 
 - [数据集]
-- [编程]
-- [代码库]
+- [编程, 代码库]
+- [编程, 编程语言]
 tags: 
 - iris
 - python

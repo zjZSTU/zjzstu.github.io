@@ -3,11 +3,14 @@ title: 神经网络实现-pytorch
 categories:
   - [机器学习]
   - [深度学习]
-  - [编程]
+  - [编程, 编程语言]
+  - [编程, 代码库]
 tags:
   - 神经网络
   - python
   - pytorch
+  - matplotlib
+  - numpy
 abbrlink: 5a77dbca
 date: 2019-05-18 15:01:30
 ---

@@ -3,10 +3,15 @@ title: KNN分类器
 categories: 
 - [机器学习]
 - [分类器]
-- [编程]
+- [编程, 编程语言]
+- [编程, 代码库]
 tags:
   - K近邻
   - python
+  - numpy
+  - matplotlib
+  - sklearn
+  - pandas
 abbrlink: 1ee29eaf
 date: 2019-07-11 19:34:29
 ---
