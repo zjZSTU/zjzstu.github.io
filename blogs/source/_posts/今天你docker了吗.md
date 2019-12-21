@@ -15,7 +15,7 @@ tags:
 
 ## 简介
 
-参考：[[译]docker概述](https://containerization-automation.readthedocs.io/zh_CN/latest/docker/basic/[%E8%AF%91]docker%E6%A6%82%E8%BF%B0.html)
+参考：[[译]docker概述](https://containerization-automation.readthedocs.io/zh_CN/latest/docker/basic/[%E8%AF%91]docker%E6%A6%82%E8%BF%B0/)
 
 >`Docker`是一个开发、发布和运行应用程序的开放平台，提供了在松散隔离的环境（称为容器）中打包和运行应用程序的能力。利用`Docker`可以将应用程序与基础架构分离，能够统一应用程序运行环境，保证快速的发布、测试和部署
 
@@ -34,7 +34,7 @@ tags:
 
 当前已实现的`Docker GUI`应用，包括`wechat/qq/wps/thunder`等等
 
-* [可视化运行](https://containerization-automation.readthedocs.io/zh_CN/latest/docker/gui.html)
+* [可视化运行](https://containerization-automation.readthedocs.io/zh_CN/latest/docker/gui/[Docker]GUI%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/)
 * [Containerization-Automation/dockerfiles/](https://github.com/zjZSTU/Containerization-Automation/tree/master/dockerfiles)
 
 ### 统一开发环境
@@ -55,5 +55,5 @@ tags:
 
 随着对`Docker`学习的深入，更加坚信这项工具对于软件开发的用处。未来的`Docker`会成为基础工具，类似`Linux`系统一样，加速信息服务在各个领域的应用
 
-* [docker使用指南](https://containerization-automation.readthedocs.io/zh_CN/latest/docker/index.html)
+* [docker使用指南](https://containerization-automation.readthedocs.io/zh_CN/latest/docker/basic/[%E8%AF%91]docker%E6%A6%82%E8%BF%B0/)
 * [zjZSTU/Containerization-Automation](https://github.com/zjZSTU/Containerization-Automation)

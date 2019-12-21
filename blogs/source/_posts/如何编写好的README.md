@@ -33,7 +33,7 @@ date: 2019-09-10 19:06:02
 `standard-readme`提供了一个编写规范，原文和翻译如下
 
 * 原文：[Specification](https://github.com/RichardLitt/standard-readme/blob/master/spec.md)
-* 翻译：[[译]规范](https://zj-git-guide.readthedocs.io/zh_CN/latest/readme/[译]规范.html)
+* 翻译：[[译]规范](https://zj-git-guide.readthedocs.io/zh_CN/latest/readme/[%E8%AF%91]%E8%A7%84%E8%8C%83/)
 
 里面提出了`README`的章节列表：
 
@@ -101,7 +101,7 @@ date: 2019-09-10 19:06:02
 
 规范中已经提到了一个徽章章节，里面添加的是仓库编写、部署过程中使用的工具、规范等相应的徽章，而本章节在于给出自己仓库的专属徽章
 
-徽章生成参考[自定义徽章](https://zj-git-guide.readthedocs.io/zh_CN/latest/readme/自定义徽章.html)；章节内容参考[RichardLitt/standard-readme
+徽章生成参考[自定义徽章](https://zj-git-guide.readthedocs.io/zh_CN/latest/readme/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BE%BD%E7%AB%A0/)；章节内容参考[RichardLitt/standard-readme
 ](https://github.com/RichardLitt/standard-readme#badge)
 
 ### 版本更新日志
@@ -110,8 +110,8 @@ date: 2019-09-10 19:06:02
 * 必要条件：
     * 使用`git`进行版本管理
 * 建议：
-    * 基于[Conventional提交规范](https://zj-git-guide.readthedocs.io/zh_CN/latest/message-guideline/Conventional提交规范.html)和[语义版本规范](https://zj-git-guide.readthedocs.io/zh_CN/latest/message-guideline/语义版本规范.html)进行版本提交
-    * 使用[standard-version](https://zj-git-guide.readthedocs.io/zh_CN/latest/message-guideline/自动版本化和生成CHANGELOG工具standard-version.html)进行`CHANGELOG`生成
+    * 基于[Conventional提交规范](https://zj-git-guide.readthedocs.io/zh_CN/latest/message/Conventional%E6%8F%90%E4%BA%A4%E8%A7%84%E8%8C%83/)和[[SEMVER]语义版本规范](https://zj-git-guide.readthedocs.io/zh_CN/latest/version/[SEMVER]%E8%AF%AD%E4%B9%89%E7%89%88%E6%9C%AC%E8%A7%84%E8%8C%83/)进行版本提交
+    * 使用[standard-version](https://zj-git-guide.readthedocs.io/zh_CN/latest/version/[standard-version]%E7%89%88%E6%9C%AC%E8%87%AA%E5%8A%A8%E5%8C%96%E5%8F%8ACHANGELOG%E7%94%9F%E6%88%90/)进行`CHANGELOG`生成
     * 链接到本地仓库的`CHANGELOG`文件
 
 ### 待办事项
@@ -127,8 +127,8 @@ date: 2019-09-10 19:06:02
 
 在参与贡献方式章节中应该明确是否允许合并请求，并给出进行版本管理的相应规范，比如
 
-* [git提交规范](https://www.conventionalcommits.org/en/v1.0.0-beta.4/)
-* [语义版本规范](https://zj-git-guide.readthedocs.io/zh_CN/latest/message-guideline/语义版本规范.html)
+* [GIT提交规范](https://www.conventionalcommits.org/en/v1.0.0-beta.4/)
+* [语义版本规范](https://semver.org/lang/zh-CN/)
 * [README编辑规范](https://github.com/RichardLitt/standard-readme)
 
 ### 完整内容列表
@@ -158,7 +158,7 @@ date: 2019-09-10 19:06:02
 
 ## 生成器
 
-参考：[README生成器](https://zj-git-guide.readthedocs.io/zh_CN/latest/readme/readme生成器.html)
+参考：[README生成器](https://zj-git-guide.readthedocs.io/zh_CN/latest/readme/readme%E7%94%9F%E6%88%90%E5%99%A8/)
 
 ## 模板
 
