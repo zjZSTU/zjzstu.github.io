@@ -50,7 +50,7 @@ $ sudo apt-get install gcc g++ build_essential cmake git vim
 
 ### Python环境
 
-* 安装`Anaconda`工具包，替换国内镜像源能够加速安装，参考：[配置国内镜像源](https://zj-image-processing.readthedocs.io/zh_CN/latest/anaconda/%E9%85%8D%E7%BD%AE%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F%E6%BA%90.html)
+* 安装`Anaconda`工具包，替换国内镜像源能够加速安装，参考：[配置国内镜像源](https://vscode-guide.readthedocs.io/zh_CN/latest/anaconda/%E9%85%8D%E7%BD%AE%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F%E6%BA%90/)
 
 * 安装`PyCharm`
 
