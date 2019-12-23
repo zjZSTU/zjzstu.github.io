@@ -88,7 +88,8 @@ category_map:
 
   算法: algorithm
   最优化: optimization
-  评判标准: criterion
+  评价标准: criterion
+  混淆矩阵: confusion matrix
   机器学习: data learning
   深度学习: deep learning
   分类器: classifier
@@ -135,6 +136,11 @@ tag_map:
   权重初始化: weight initialization
   超参数优化: hyperparameter optimization
   模型集成: model ensemble
+
+  真阳性: true positive
+  假阳性: false positive
+  真阴性: true negative
+  假阴性: false negative
 
   高斯滤波: gaussian filter
   卷积: convolution
