@@ -45,7 +45,7 @@ tags:
 
 越来越多的容器运行在系统上，除了通过`docker-cli`进行直接管理外，还有一些工具可以进行容器编排
 
-* `Docker Compose`：可以将多个`Docker`容器组成一个应用
+* `Docker Compose`：定义和运行多容器的`Docker`工具
 * `Docker Swarm`：`Docker`官方提供的容器集群管理工具，其主要作用是把若干台`Docker`主机抽象为一个整体，并且通过一个入口统一管理这些`Docker`主机上的各种`Docker`资源
 * `K8S`：基于容器的集群管理平台，全称是`kubernetes`
 
