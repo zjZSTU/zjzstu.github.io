@@ -9,6 +9,7 @@ categories:
 tags: 
 - jenkins
 - gitlab
+- docker
 ---
 
 之前实现了[在Docker中运行Jenkins](https://zhujian.tech/posts/202ee452.html)以及[[Docker]GitLab使用](https://zj-git-guide.readthedocs.io/zh_CN/latest/platform/[Docker]GitLab%E4%BD%BF%E7%94%A8/)，参考[Docker Compose](https://containerization-automation.readthedocs.io/zh_CN/latest/docker/compose/[%E8%AF%91]Docker%20Compose%E6%A6%82%E8%BF%B0/)，通过`docker-compose`方式同时启动两个容器
