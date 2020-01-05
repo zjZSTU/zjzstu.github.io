@@ -65,10 +65,15 @@ category_map:
   随笔: essay
   文档: doc
   自动化: automation
-  软件工程: software-engineer
+
   数学: math
   工具: tool
   翻译: translation
+
+  软件工程: software-engineer
+  开发模型: dev-model
+  测试模型: test-model
+  开发流程: dev-process
 
   版本控制: version control
   托管平台: hosting platform
@@ -153,10 +158,6 @@ tag_map:
   接受者操作特征曲线: receiver operating characteristic curve
   曲线下面积: area under the curve
 
-  开发模型: dev-model
-  测试模型: test-model
-  开发流程: dev-process
-
   概率论: probability-theory
   统计学: statistics
   微积分: calculus
@@ -167,6 +168,13 @@ tag_map:
   并查集: disjoint set
   邻接矩阵: adjacency list
   邻接表: adjacency matrix
+
+  瀑布模型: waterfall model
+  螺旋模型: spiral model
+  迭代模型: iterative model
+  敏捷开发: agile develop
+  测试驱动开发: test-driven development
+  单元测试: unit testing
 
 # Metadata elements
 ## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
