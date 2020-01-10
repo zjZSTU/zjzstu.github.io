@@ -1,14 +1,15 @@
 ---
 title: "[二分类]PR曲线"
 categories:
-  - - 算法
-    - 评价标准
+  - [算法, 评价标准, PR曲线]
   - - 编程
     - 编程语言
   - - 编程
     - 代码库
 tags:
-  - PR curve
+  - AP
+  - 精确率
+  - 召回率
   - python
   - sklearn
 abbrlink: bca792b4

@@ -1,14 +1,15 @@
 ---
 title: "[二分类]ROC曲线"
 categories:
-  - - 算法
-    - 评价标准
+  - [算法, 评价标准, ROC曲线]
   - - 编程
     - 编程语言
   - - 编程
     - 代码库
 tags:
-  - ROC curve
+  - AUC
+  - TPR
+  - FPR
   - python
   - sklearn
 abbrlink: 71a847e
