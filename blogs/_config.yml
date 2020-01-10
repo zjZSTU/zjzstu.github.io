@@ -94,6 +94,8 @@ category_map:
   算法: algorithm
   最优化: optimization
   评价标准: criterion
+  接受者操作特征曲线: receiver operating characteristic curve
+  PR曲线: precision-recall curve
   混淆矩阵: confusion matrix
   机器学习: data learning
   深度学习: deep learning
@@ -146,6 +148,11 @@ tag_map:
   假阳性: false positive
   真阴性: true negative
   假阴性: false negative
+  曲线下面积: area under the curve
+  平均精度: average precision
+  准确率: accuracy
+  精确率: precision
+  召回率: recall rate
 
   高斯滤波: gaussian filter
   卷积: convolution
@@ -154,9 +161,6 @@ tag_map:
   颜色直方图: color histogram
   纹理特征: texture feature
   颜色特征: color feature
-
-  接受者操作特征曲线: receiver operating characteristic curve
-  曲线下面积: area under the curve
 
   概率论: probability-theory
   统计学: statistics
