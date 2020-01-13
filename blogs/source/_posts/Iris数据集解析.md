@@ -38,7 +38,7 @@ date: 2019-12-14 21:08:21
 
 *`Kaggle`也提供了`Iris`数据集，其数据集格式略有差别，具体参考[鸢尾数据集](https://zhujian.tech/posts/2626bec3.html)*
 
-## python
+## 解析
 
 通过`pandas`库解析`csv`文件，通过`sklearn`库分离训练集和测试集，通过`matplotlib`绘制图像
 
@@ -123,3 +123,42 @@ if __name__ == '__main__':
 ![](/imgs/iris/iris-sepal.png)
 
 ![](/imgs/iris/iris-petal.png)
+
+## sklearn
+
+`sklearn`库提供了`iris`数据集的封装
+
+```
+# -*- coding: utf-8 -*-
+
+from sklearn import datasets
+from sklearn.model_selection import train_test_split
+
+def load_data():
+    # Import some data to play with
+    iris = datasets.load_iris()
+    X = iris.data
+    y = iris.target
+
+    # shuffle and split training and test sets
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=.5)
+
+    return X_train, X_test, y_train, y_test
+
+if __name__ == '__main__':
+    X_train, X_test, y_train, y_test = load_data()
+
+    print(X_train.shape)
+    print(X_test.shape)
+    print(y_train.shape)
+    print(y_test.shape)
+```
+
+输出如下：
+
+```
+(75, 4)
+(75, 4)
+(75,)
+(75,)
+```
