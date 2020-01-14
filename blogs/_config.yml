@@ -93,6 +93,7 @@ category_map:
 
   算法: algorithm
   最优化: optimization
+  逐元素自适应学习率方法: per-parameter adaptive learning rate methods
   评价标准: criterion
   接受者操作特征曲线: receiver operating characteristic curve
   PR曲线: precision-recall curve
@@ -137,7 +138,6 @@ tag_map:
   正则化: regularization
   激活函数: activation
   动量更新: momentum update
-  逐元素自适应学习率方法: per-parameter adaptive learning rate methods
   梯度检查: gradient check
   合理性检查: sanity check
   权重初始化: weight initialization
