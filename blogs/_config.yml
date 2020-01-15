@@ -100,6 +100,7 @@ category_map:
   混淆矩阵: confusion matrix
   机器学习: data learning
   深度学习: deep learning
+  卷积神经网络: convolutional neural network
   分类器: classifier
 
   图像处理: image process
@@ -120,7 +121,6 @@ tag_map:
   函数式编程: functional programming
 
   神经网络: nerual network
-  卷积神经网络: convolutional neural network
   支持向量机: support vector machine
   逻辑回归: logistic regression
   线性回归: linear regression

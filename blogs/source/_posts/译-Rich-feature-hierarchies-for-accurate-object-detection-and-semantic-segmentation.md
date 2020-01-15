@@ -3,15 +3,14 @@ title: >-
   [译]Rich feature hierarchies for accurate object detection and semantic
   segmentation
 categories:
-  - [算法, 深度学习]
+  - [算法, 深度学习, 卷积神经网络]
   - [算法, 机器学习]
   - [算法, 图像处理, 目标检测]
   - - 翻译
 tags:
   - 选择性搜索
-  - 卷积神经网络
-  - alexnet
-  - rcnn
+  - AlexNet
+  - R-CNN
 abbrlink: 69fce0f5
 date: 2019-11-28 15:15:04
 ---
