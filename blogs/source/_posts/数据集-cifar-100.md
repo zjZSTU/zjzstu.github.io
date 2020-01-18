@@ -1,5 +1,5 @@
 ---
-title: cifar-100数据集解析
+title: '[数据集]cifar-100'
 categories: 
 - [数据, 数据集]
 - [编程, 编程语言]

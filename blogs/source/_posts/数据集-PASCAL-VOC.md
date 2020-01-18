@@ -1,5 +1,5 @@
 ---
-title: PASCAL-VOC数据集解析
+title: '[数据集]PASCAL-VOC'
 categories: 
 - [数据, 数据集]
 tags: pascal voc

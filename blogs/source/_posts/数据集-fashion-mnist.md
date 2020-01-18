@@ -1,5 +1,5 @@
 ---
-title: Fashion-MNIST数据集解析
+title: '[数据集]Fashion-MNIST'
 categories: 
 - [数据, 数据集]
 - [编程, 编程语言]
@@ -23,18 +23,18 @@ date: 2019-12-10 19:08:55
 
 `Fashion-MNIST`是关于衣物饰品的数据集，其格式类似于`MNIST`，包含了`10`类标签，每张图片为`28x28`大小灰度图像，共`60000`张训练集和`10000`张测试集
 
-| Label | Description |
-| --- | --- |
-| 0 | T-shirt/top(T恤) |
-| 1 | Trouser(裤子) |
-| 2 | Pullover(套衫) |
-| 3 | Dress(连衣裙) |
-| 4 | Coat(外套) |
-| 5 | Sandal(凉鞋) |
-| 6 | Shirt(衬衫) |
-| 7 | Sneaker(运动鞋) |
-| 8 | Bag(包) |
-| 9 | Ankle boot(短靴) |
+| Label | Description      |
+| ----- | ---------------- |
+| 0     | T-shirt/top(T恤) |
+| 1     | Trouser(裤子)    |
+| 2     | Pullover(套衫)   |
+| 3     | Dress(连衣裙)    |
+| 4     | Coat(外套)       |
+| 5     | Sandal(凉鞋)     |
+| 6     | Shirt(衬衫)      |
+| 7     | Sneaker(运动鞋)  |
+| 8     | Bag(包)          |
+| 9     | Ankle boot(短靴) |
 
 ## fashion-mnist vs. mnist
 

@@ -1,5 +1,5 @@
 ---
-title: German Credit Data数据集解析
+title: '[数据集]German Credit Data'
 categories:
   - [数据, 数据集]
   - [编程, 编程语言]

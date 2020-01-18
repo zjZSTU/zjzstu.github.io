@@ -1,5 +1,5 @@
 ---
-title: PASCAL VOC 2007数据集解析
+title: '[数据集]PASCAL VOC 2007'
 categories: 
 - [数据, 数据集]
 - [编程, 编程语言]
