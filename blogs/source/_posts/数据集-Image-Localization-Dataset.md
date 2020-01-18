@@ -28,7 +28,82 @@ date: 2020-01-18 19:00:29
 * 每类共有超过`60`张的图像，大小固定为`(227, 277, 3)`，每张图像里有一个物体
 * 每张图像有一个对应的`xml`文件，格式和`PASCAL VOC`数据集一致，包含图像信息以及标注信息
 
-![](/imgs/dataset-localization/localization.png)
+```
+# -*- coding: utf-8 -*-
+
+"""
+@author: zj
+@file:   show_img.py
+@time:   2020-01-18
+"""
+
+import os
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+import xmltodict
+
+from matplotlib.font_manager import _rebuild
+
+_rebuild()  # reload一下
+
+plt.rcParams['font.sans-serif'] = ['simhei']  # 用来正常显示中文标签
+plt.rcParams['axes.unicode_minus'] = False  # 用来正常显示负号
+
+
+def draw_rect(img_path, xml_path):
+    img = cv2.imread(img_path)
+    xml_data = xmltodict.parse(open(xml_path, 'rb'))
+
+    bndbox = xml_data['annotation']['object']['bndbox']
+    bndbox = np.array([int(bndbox['xmin']), int(bndbox['ymin']), int(bndbox['xmax']), int(bndbox['ymax'])])
+    x_min, y_min, x_max, y_max = bndbox
+    cv2.rectangle(img, (x_min, y_min), (x_max, y_max), (0, 255, 0), thickness=2)
+
+    return img
+
+
+def load_img():
+    root_dir = './data/image-localization-dataset/training_images/'
+    img_cucumber = os.path.join(root_dir, 'cucumber_1.jpg')
+    img_eggplant = os.path.join(root_dir, 'eggplant_1.jpg')
+    img_mushroom = os.path.join(root_dir, 'mushroom_1.jpg')
+
+    xml_cucumber = os.path.join(root_dir, 'cucumber_1.xml')
+    xml_eggplant = os.path.join(root_dir, 'eggplant_1.xml')
+    xml_mushroom = os.path.join(root_dir, 'mushroom_1.xml')
+
+    img_cucumber = draw_rect(img_cucumber, xml_cucumber)
+    img_eggplant = draw_rect(img_eggplant, xml_eggplant)
+    img_mushroom = draw_rect(img_mushroom, xml_mushroom)
+
+    return img_cucumber, img_eggplant, img_mushroom
+
+
+if __name__ == '__main__':
+    img_cucumber, img_eggplant, img_mushroom = load_img()
+
+    plt.style.use('dark_background')
+
+    plt.figure(figsize=(10, 5))  # 设置窗口大小
+    plt.suptitle('图像定位数据集')  # 图片名称
+
+    plt.subplot(1, 3, 1)
+    plt.title('cucumber')
+    plt.imshow(img_cucumber), plt.axis('off')
+
+    plt.subplot(1, 3, 2)
+    plt.title('eggplant')
+    plt.imshow(img_eggplant), plt.axis('off')
+
+    plt.subplot(1, 3, 3)
+    plt.title('mushroom')
+    plt.imshow(img_mushroom), plt.axis('off')
+
+    plt.show()
+```
+
+![](/imgs/dataset-localization/img_location.png)
 
 ## sklearn加载
 
