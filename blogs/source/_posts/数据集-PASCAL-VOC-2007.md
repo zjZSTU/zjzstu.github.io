@@ -91,8 +91,6 @@ if __name__ == '__main__':
 
 ![](/img-dataset/voc-2007/voc-samples.png)
 
-
-
 ## 下载
 
 训练相关
