@@ -39,6 +39,60 @@ date: 2019-12-06 16:42:02
 1. 标注准则参考[Annotation Guidelines](http://host.robots.ox.ac.uk/pascal/VOC/voc2007/guidelines.html)
 2. 详细的训练/验证数据集的个数参考[Database Statistics](http://host.robots.ox.ac.uk/pascal/VOC/voc2007/dbstats.html)
 
+```
+# -*- coding: utf-8 -*-
+
+"""
+@author: zj
+@file:   pascal-voc.py
+@time:   2020-01-19
+"""
+
+import cv2
+import numpy as np
+from torchvision.datasets import VOCDetection
+
+
+def show_data():
+    dataset = VOCDetection('./data', year='2007', image_set='trainval')
+
+    for i in range(10):
+        img, target = dataset.__getitem__(i)
+        img = np.array(img)
+
+        print(img.shape)
+        print(target)
+
+        objects = target['annotation']['object']
+        if isinstance(objects, list):
+            for obj in objects:
+                print(obj)
+                bndbox = obj['bndbox']
+                cv2.rectangle(img, (int(bndbox['xmin']), int(bndbox['ymin'])),
+                              (int(bndbox['xmax']), int(bndbox['ymax'])), (0, 255, 0), thickness=1)
+                cv2.putText(img, obj['name'], (int(bndbox['xmin']), int(bndbox['ymin'])),
+                            cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255))
+        elif isinstance(objects, dict):
+            bndbox = objects['bndbox']
+            cv2.rectangle(img, (int(bndbox['xmin']), int(bndbox['ymin'])),
+                          (int(bndbox['xmax']), int(bndbox['ymax'])), (0, 255, 0), thickness=1)
+            cv2.putText(img, objects['name'], (int(bndbox['xmin']), int(bndbox['ymin'])),
+                        cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255))
+        else:
+            pass
+
+        cv2.imshow(target['annotation']['filename'], img)
+        cv2.waitKey(0)
+
+
+if __name__ == '__main__':
+    show_data()
+```
+
+![](/img-dataset/voc-2007/voc-samples.png)
+
+
+
 ## 下载
 
 训练相关
