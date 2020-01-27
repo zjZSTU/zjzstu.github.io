@@ -55,7 +55,6 @@ $ git checkout -b dev origin/dev
 $ cd ./blogs/
 $ git clone https://github.com/zjZSTU/hexo-theme-next.git themes/next
 $ git clone https://github.com/zjZSTU/theme-next-canvas-nest themes/next/source/lib/canvas-nest
-$ git clone https://github.com/zjZSTU/theme-next-algolia-instant-search themes/next/source/lib/algolia-instant-search
 $ git clone https://github.com/zjZSTU/theme-next-fancybox3 themes/next/source/lib/fancybox
 $ git clone https://github.com/zjZSTU/theme-next-pace.git themes/next/source/lib/pace
 
