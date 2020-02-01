@@ -5,7 +5,8 @@
 # Site
 title: 做一个幸福的人
 subtitle: 面朝大海，春暖花开
-description: '如是我闻，如是我见'
+# description: '如是我闻，如是我见'
+description: one bite at a time
 keywords:
 author: zhujian
 language: zh-CN
