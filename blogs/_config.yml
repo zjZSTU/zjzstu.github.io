@@ -103,6 +103,7 @@ category_map:
   深度学习: deep learning
   卷积神经网络: convolutional neural network
   分类器: classifier
+  损失函数: loss function
 
   图像处理: image process
   颜色空间: color space
@@ -145,6 +146,8 @@ tag_map:
   超参数优化: hyperparameter optimization
   模型集成: model ensemble
   迁移学习: transfer learning
+
+  折页损失: hinge loss
 
   真阳性: true positive
   假阳性: false positive
