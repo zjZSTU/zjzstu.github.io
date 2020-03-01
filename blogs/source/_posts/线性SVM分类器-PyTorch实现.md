@@ -17,7 +17,6 @@ tags:
   - pytorch
   - torchvision
   - 折页损失
-  - hinge loss
 abbrlink: 4d25cbab
 date: 2020-03-01 14:31:21
 ---
