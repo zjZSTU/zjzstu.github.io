@@ -2,7 +2,7 @@ pipeline {
     agent any
     tools {nodejs "node"}
     environment {
-        ID_RSA=credentials('fa1b8cd3-c422-4ab6-a240-2d2ba8dc5b4a')
+        ID_RSA=credentials('e46b6d92-f84d-491c-93f4-f0c1055e87f9')
     }
     stages {
         stage('Install') {
