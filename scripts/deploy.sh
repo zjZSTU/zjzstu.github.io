@@ -60,4 +60,4 @@ git add .
 git commit -m "Update blogs"
 git push --force git@${HEXO_SERVER_ADDRESS}:/data/repositories/blogs.git master
 git push --force git@github.com:zjZSTU/zjzstu.github.io.git master
-git push --force git@git.dev.tencent.com:zjZSTU/zjZSTU.coding.me.git master
+git push --force git@e.coding.net:zjZSTU/zjZSTU.coding.me.git master
