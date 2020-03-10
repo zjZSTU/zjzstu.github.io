@@ -63,4 +63,4 @@ then
 fi
 
 git clone ${Node_GIT}
-npm install
+# npm install
