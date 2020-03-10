@@ -63,4 +63,9 @@ then
 fi
 
 git clone ${Node_GIT}
+pwd
+export
+node -v
+npm -v
+npx -v
 npm install
