@@ -5,8 +5,9 @@ set -eux
 function set_config
 {
     echo -e "Host ${HEXO_SERVER_ADDRESS}\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-    echo -e "Host github.com\n\tStrictHostKeyChecking no\n\tPort 443\n" >> ~/.ssh/config
-    echo -e "Host e.coding.net\n\tStrictHostKeyChecking no\n\tPort 443\n" >> ~/.ssh/config
+    echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+    echo -e "Host coding.net\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+    chmod 600 ~/.ssh/config
 }
 
 # GIT环境
